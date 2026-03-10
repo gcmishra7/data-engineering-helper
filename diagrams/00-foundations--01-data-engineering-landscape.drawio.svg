@@ -10,11 +10,7 @@
       <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.12" />
     </filter>
   </defs>
-
-  <!-- Background -->
   <rect width="960" height="760" fill="#fafafa" rx="8" />
-
-  <!-- ===== NODES ===== -->
 
   <!-- Raw Sources -->
   <g filter="url(#shadow)">
@@ -72,27 +68,18 @@
     <text x="770" y="384" text-anchor="middle" font-size="11" fill="#666">Unity Catalog · Great Expectations</text>
   </g>
 
-  <!-- ===== ARROWS: Main flow (solid) ===== -->
-  <!-- Raw Sources → Ingestion -->
+  <!-- Main flow arrows -->
   <line x1="430" y1="84" x2="380" y2="148" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
-  <!-- Ingestion → Storage -->
   <line x1="360" y1="212" x2="360" y2="278" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
-  <!-- Storage → Transformation -->
   <line x1="360" y1="342" x2="360" y2="408" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
-  <!-- Transformation → Serving -->
   <line x1="360" y1="472" x2="360" y2="538" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
-  <!-- Serving → Consumers -->
   <line x1="380" y1="602" x2="420" y2="668" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
 
-  <!-- ===== ARROWS: Orchestration (dashed) ===== -->
-  <!-- Orchestration → Ingestion -->
+  <!-- Orchestration dashed arrows -->
   <line x1="640" y1="200" x2="500" y2="180" stroke="#999" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-gray)" />
-  <!-- Orchestration → Transformation -->
   <line x1="680" y1="244" x2="500" y2="430" stroke="#999" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-gray)" />
 
-  <!-- ===== ARROWS: Governance (dashed) ===== -->
-  <!-- Governance → Storage -->
+  <!-- Governance dashed arrows -->
   <line x1="640" y1="360" x2="500" y2="320" stroke="#999" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-gray)" />
-  <!-- Governance → Transformation -->
   <line x1="660" y1="404" x2="500" y2="440" stroke="#999" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-gray)" />
 </svg>

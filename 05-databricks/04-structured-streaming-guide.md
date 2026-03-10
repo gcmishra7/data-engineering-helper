@@ -5,18 +5,9 @@ Writing correct, fault-tolerant streaming code from scratch is hard. Structured 
 
 ## How it works
 
-```mermaid
-graph LR
-    K[Kafka / Delta / Files] -->|readStream| T[Unbounded Table]
-    T -->|transformations| O[Output Table]
-    O -->|writeStream| D[Delta Lake / Kafka / Console]
-    CP[Checkpoint Location] <-->|offset tracking| O
-```
+<!-- Editable: open diagrams/05-databricks--04-structured-streaming-guide.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Unbounded Table** | new rows = new events |
-| **Checkpoint Location** | S3/ADLS/GCS |
+![diagram](../diagrams/05-databricks--04-structured-streaming-guide.drawio.svg)
 
 ### Reading from Kafka
 

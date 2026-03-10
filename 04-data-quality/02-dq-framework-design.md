@@ -5,21 +5,9 @@ Ad-hoc quality checks are inconsistent, hard to scale, and invisible. A DQ frame
 
 ## The Four Layers
 
-```mermaid
-graph LR
-    P[Prevention] --> D
-    D[Detection] --> R
-    R[Remediation] --> M
-    M[Monitoring]
-    M -->|feedback loop| P
-```
+<!-- Editable: open diagrams/04-data-quality--02-dq-framework-design.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Prevention** | Data Contracts, Schema Registry, Input Validation |
-| **Detection** | Expectations, Tests, Anomaly Detection |
-| **Remediation** | Quarantine, Alerts, Dead Letter Queue |
-| **Monitoring** | DQ Scorecards, SLA Tracking, Trend Dashboards |
+![diagram](../diagrams/04-data-quality--02-dq-framework-design.drawio.svg)
 
 ### Layer 1: Prevention
 Stop bad data from entering the platform.

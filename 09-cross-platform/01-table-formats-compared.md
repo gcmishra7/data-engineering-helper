@@ -11,30 +11,9 @@ All three add a metadata layer on top of Parquet files on object storage to prov
 - Time travel / snapshots
 - Partition management
 
-```mermaid
-graph TD
-    P[Parquet Files] --> D[Delta Lake]
-    P --> I[Apache Iceberg]
-    P --> H[Apache Hudi]
+<!-- Editable: open diagrams/09-cross-platform--01-table-formats-compared.drawio.svg in draw.io -->
 
-    D --> DB[Databricks]
-    D --> SF[Snowflake]
-    I --> SF2[Snowflake]
-    I --> DB2[Databricks]
-    H --> EMR[AWS EMR]
-```
-
-| Node | Details |
-|------|---------|
-| **Parquet Files** | on S3/ADLS/GCS |
-| **Delta Lake** | _delta_log/ JSON+Parquet |
-| **Apache Iceberg** | metadata/ JSON+Avro |
-| **Apache Hudi** | .hoodie/ avro+parquet |
-| **Databricks** | native |
-| **Snowflake** | via External Iceberg Tables |
-| **Snowflake** | native Iceberg |
-| **Databricks** | native |
-| **AWS EMR** | Spark on Hadoop |
+![diagram](../diagrams/09-cross-platform--01-table-formats-compared.drawio.svg)
 
 ## Feature Comparison
 

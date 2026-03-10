@@ -5,64 +5,9 @@ Choosing how to wire together Databricks with cloud storage, streaming, orchestr
 
 ## Architecture 1 — Batch Lakehouse (Azure)
 
-```mermaid
-graph TD
-    subgraph Sources
-        DB1[(ERP / CRM)]
-        API[REST APIs]
-        FILES[File Drops]
-    end
+<!-- Editable: open diagrams/05-databricks--10-reference-architectures-1.drawio.svg in draw.io -->
 
-    subgraph Ingestion
-        ADF[Azure Data Factory]
-        DBZ[Debezium on AKS]
-        AUTO[Auto Loader]
-    end
-
-    subgraph Storage[ADLS Gen2]
-        BRONZE[Bronze Container]
-        SILVER[Silver Container]
-        GOLD[Gold Container]
-    end
-
-    subgraph Compute[Azure Databricks]
-        JOB1[Job Cluster: Ingest]
-        JOB2[Job Cluster: Transform]
-        JOB3[Job Cluster: Serve]
-        SQL[SQL Warehouse]
-    end
-
-    subgraph Serving
-        PBI[Power BI]
-        SYNAPSE[Azure Synapse]
-    end
-
-    DB1 --> DBZ --> BRONZE
-    API --> ADF --> BRONZE
-    FILES --> AUTO --> BRONZE
-    BRONZE --> JOB2 --> SILVER
-    SILVER --> JOB3 --> GOLD
-    GOLD --> SQL --> PBI
-    GOLD --> SYNAPSE
-```
-
-| Node | Details |
-|------|---------|
-| **ERP / CRM** | PostgreSQL |
-| **REST APIs** | Salesforce, Shopify |
-| **File Drops** | SFTP, SharePoint |
-| **Azure Data Factory** | Copy Activity, Schedule |
-| **Debezium on AKS** | CDC from PostgreSQL |
-| **Auto Loader** | Event Grid trigger |
-| **Bronze Container** | raw, immutable |
-| **Silver Container** | cleaned, Delta |
-| **Gold Container** | aggregated, Delta |
-| **Job Cluster: Ingest** | Bronze pipeline |
-| **Job Cluster: Transform** | Silver DLT pipeline |
-| **Job Cluster: Serve** | Gold dbt models |
-| **SQL Warehouse** | BI queries |
-| **Power BI** | dashboards |
-| **Azure Synapse** | external tables |
+![diagram](../diagrams/05-databricks--10-reference-architectures-1.drawio.svg)
 
 **Key design decisions:**
 - Debezium for operational DBs (real-time CDC), ADF for bulk/API sources
@@ -76,37 +21,9 @@ graph TD
 
 ## Architecture 2 — Real-Time Streaming Lakehouse (Azure)
 
-```mermaid
-graph LR
-    APP[Application Events] --> EH[Azure Event Hubs]
-    DB2[(PostgreSQL)] --> DBZ2[Debezium] --> EH
+<!-- Editable: open diagrams/05-databricks--10-reference-architectures-2.drawio.svg in draw.io -->
 
-    EH -->|Structured Streaming| ADB[Databricks]
-
-    subgraph DLT[Delta Live Tables]
-        B2[Bronze]
-        S2[Silver]
-        G2[Gold]
-    end
-
-    ADB --> B2 --> S2 --> G2
-
-    G2 --> DBSQL[Databricks SQL]
-    G2 --> ALERT[Alerting]
-    S2 --> MLSERVE[Model Serving]
-```
-
-| Node | Details |
-|------|---------|
-| **Application Events** | clickstream, payments |
-| **Azure Event Hubs** | Kafka-compatible |
-| **Databricks** | DLT Pipeline |
-| **Bronze** | raw Kafka events |
-| **Silver** | parsed, deduped, scored |
-| **Gold** | 5-min aggregations |
-| **Databricks SQL** | live dashboard |
-| **Alerting** | Databricks SQL Alerts |
-| **Model Serving** | real-time scoring |
+![diagram](../diagrams/05-databricks--10-reference-architectures-2.drawio.svg)
 
 **SLA targets:**
 | Stage | Latency |
@@ -128,32 +45,9 @@ graph LR
 
 ## Architecture 3 — Multi-Cloud Lakehouse (Azure primary + GCP analytics)
 
-```mermaid
-graph TD
-    subgraph Azure[Azure — Primary]
-        ADLS[ADLS Gen2]
-        ADB[Databricks Workspace]
-        UC[Unity Catalog]
-    end
+<!-- Editable: open diagrams/05-databricks--10-reference-architectures-3.drawio.svg in draw.io -->
 
-    subgraph GCP[GCP — Analytics]
-        BQ[BigQuery]
-        SF[Snowflake on GCP]
-    end
-
-    ADLS -->|Delta UniForm, Iceberg metadata| BQ
-    ADLS -->|Delta UniForm, zero copy| SF
-    ADB -->|Databricks-to-BigQuery, spark-bigquery connector| BQ
-    UC -->|Delta Sharing, open protocol| GCP
-```
-
-| Node | Details |
-|------|---------|
-| **ADLS Gen2** | Delta Lake storage |
-| **Databricks Workspace** | ETL + ML |
-| **Unity Catalog** | Primary Metastore |
-| **BigQuery** | SQL analytics + BI |
-| **Snowflake on GCP** | Data sharing |
+![diagram](../diagrams/05-databricks--10-reference-architectures-3.drawio.svg)
 
 **Key design decisions:**
 - Delta UniForm on Gold tables: write once in Delta, Snowflake/BigQuery read as Iceberg
@@ -165,45 +59,9 @@ graph TD
 
 ## Architecture 4 — ML Platform Lakehouse
 
-```mermaid
-graph TD
-    subgraph Data[Delta Lake — Feature Engineering]
-        SIL[Silver Tables]
-        FS[Feature Store]
-        SIL --> FS
-    end
+<!-- Editable: open diagrams/05-databricks--10-reference-architectures-4.drawio.svg in draw.io -->
 
-    subgraph Training[Model Training]
-        EXP[MLflow Experiments]
-        MR[Model Registry]
-        FS --> EXP --> MR
-    end
-
-    subgraph Inference[Serving]
-        BATCH[Batch Scoring]
-        RT[Model Serving]
-        MR --> BATCH
-        MR --> RT
-    end
-
-    subgraph Monitoring[Model Monitoring]
-        DRIFT[Databricks Lakehouse Monitoring]
-        BATCH --> DRIFT
-        DRIFT --> RETRAIN[Trigger Retraining]
-        RETRAIN --> EXP
-    end
-```
-
-| Node | Details |
-|------|---------|
-| **Silver Tables** | clean events |
-| **Feature Store** | precomputed features |
-| **MLflow Experiments** | hyperparameter tuning |
-| **Model Registry** | Staging to Production |
-| **Batch Scoring** | nightly Delta table |
-| **Model Serving** | REST endpoint |
-| **Databricks Lakehouse Monitoring** | data drift, model drift |
-| **Trigger Retraining** | Databricks Workflow |
+![diagram](../diagrams/05-databricks--10-reference-architectures-4.drawio.svg)
 
 **Key design decisions:**
 - Feature Store as the single source of truth for features (no training-serving skew)

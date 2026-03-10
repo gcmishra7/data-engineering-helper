@@ -5,47 +5,9 @@ Normalised OLTP schemas are optimised for writes, not reads. Analysts need to an
 
 ## How it works
 
-```mermaid
-erDiagram
-    FACT_SALES {
-        int sale_id PK
-        int date_id FK
-        int customer_id FK
-        int product_id FK
-        int store_id FK
-        decimal revenue
-        int quantity
-        decimal discount
-    }
-    DIM_DATE {
-        int date_id PK
-        date full_date
-        int year
-        int quarter
-        int month
-        string month_name
-        string day_of_week
-        bool is_holiday
-    }
-    DIM_CUSTOMER {
-        int customer_id PK
-        string name
-        string email
-        string city
-        string country
-        string segment
-    }
-    DIM_PRODUCT {
-        int product_id PK
-        string name
-        string category
-        string subcategory
-        decimal unit_price
-    }
-    FACT_SALES }o--|| DIM_DATE : "on"
-    FACT_SALES }o--|| DIM_CUSTOMER : "by"
-    FACT_SALES }o--|| DIM_PRODUCT : "of"
-```
+<!-- Editable: open diagrams/01-data-modeling--02-star-schema.drawio.svg in draw.io -->
+
+![Star Schema](../diagrams/01-data-modeling--02-star-schema.drawio.svg)
 
 ### Facts vs Dimensions
 

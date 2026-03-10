@@ -5,26 +5,9 @@ When a dashboard shows wrong numbers, how do you find the root cause? When a sou
 
 ## How it works
 
-```mermaid
-graph LR
-    S1[(PostgreSQL)] -->|Debezium CDC| K[Kafka]
-    K -->|Spark Streaming| B[Bronze]
-    B -->|dbt staging| SL[Silver]
-    SL -->|dbt mart| G[Gold]
-    G -->|Tableau| D1[Revenue Dashboard]
-    G -->|ML Pipeline| M[Churn Model]
-    G -->|dbt| G2[Gold]
-    G2 --> D2[Finance Report]
-```
+<!-- Editable: open diagrams/03-governance--03-data-lineage.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **PostgreSQL** | orders |
-| **Kafka** | orders topic |
-| **Bronze** | raw_orders |
-| **Silver** | stg_orders |
-| **Gold** (G) | fact_orders |
-| **Gold** (G2) | fact_revenue |
+![diagram](../diagrams/03-governance--03-data-lineage.drawio.svg)
 
 ### Lineage levels
 

@@ -5,20 +5,9 @@ When a dashboard shows wrong numbers, how do you find the root cause? Without li
 
 ## How it works
 
-```mermaid
-graph LR
-    SPARK[Spark Job] -->|OpenLineage event| MQ[Marquez / DataHub]
-    AIRFLOW[Airflow DAG] -->|OpenLineage event| MQ
-    DBT[dbt run] -->|dbt-ol adapter| MQ
-    MQ --> UI[DataHub UI]
-    MQ --> API[Lineage API]
-```
+<!-- Editable: open diagrams/07-ecosystem-tools--04-openlineage-datahub.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Marquez / DataHub** | lineage backend |
-| **DataHub UI** | lineage graph, search, docs |
-| **Lineage API** | programmatic access |
+![diagram](../diagrams/07-ecosystem-tools--04-openlineage-datahub.drawio.svg)
 
 ### OpenLineage — the open standard
 

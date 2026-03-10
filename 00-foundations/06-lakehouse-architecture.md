@@ -6,38 +6,9 @@ Data warehouses are fast but expensive and closed. Data lakes are cheap and flex
 
 ## How it works
 
-```mermaid
-graph TD
-    subgraph "Data Lake (old)"
-        L1[Object Storage] --> L2[Raw Files]
-        L2 --> L3[Limitations]
-    end
+<!-- Editable: open diagrams/00-foundations--06-lakehouse-architecture.drawio.svg in draw.io -->
 
-    subgraph "Data Warehouse (old)"
-        W1[Proprietary Storage] --> W2[Managed Tables]
-        W2 --> W3[Tradeoffs]
-    end
-
-    subgraph "Lakehouse (now)"
-        LH1[Object Storage] --> LH2[Open Table Format]
-        LH2 --> LH3[Lakehouse Features]
-        LH3 --> LH4a[Databricks SQL]
-        LH3 --> LH4b[Spark / Python]
-        LH3 --> LH4c[Snowflake]
-    end
-```
-
-| Node | Details |
-|------|---------|
-| **Object Storage** (L1, LH1) | S3/ADLS/GCS |
-| **Raw Files** | Parquet/CSV |
-| **Limitations** | No ACID, No schema enforcement, No time travel, Slow BI queries |
-| **Tradeoffs** | ACID, Fast BI, Expensive, Closed, No ML |
-| **Open Table Format** | Delta Lake, Iceberg, Hudi |
-| **Lakehouse Features** | ACID Transactions, Schema Enforcement, Time Travel, Fast BI + ML |
-| **Databricks SQL** | BI Queries |
-| **Spark / Python** | ML + DS |
-| **Snowflake** | via Iceberg External Tables |
+![diagram](../diagrams/00-foundations--06-lakehouse-architecture.drawio.svg)
 
 ### Key Properties of a Lakehouse
 

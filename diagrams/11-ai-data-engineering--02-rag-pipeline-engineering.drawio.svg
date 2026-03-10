@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1050" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#999" />
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.12" />
+    </filter>
+  </defs>
+  <rect width="1280" height="1050" fill="#fafafa" rx="8" />
+  <rect x="25" y="0" width="1170" height="101" rx="8" fill="#f0f4ff" stroke="#b0c4de" stroke-width="1" stroke-dasharray="6,3" />
+  <text x="35" y="16" font-size="11" font-weight="bold" fill="#b0c4de">Sources</text>
+  <rect x="315" y="96" width="270" height="197" rx="8" fill="#f0fff0" stroke="#90b090" stroke-width="1" stroke-dasharray="6,3" />
+  <text x="325" y="112" font-size="11" font-weight="bold" fill="#90b090">Ingestion Layer</text>
+  <rect x="315" y="192" width="270" height="677" rx="8" fill="#fffaf0" stroke="#d0b880" stroke-width="1" stroke-dasharray="6,3" />
+  <text x="325" y="208" font-size="11" font-weight="bold" fill="#d0b880">Processing Layer - Spark / Databricks</text>
+  <rect x="315" y="864" width="270" height="101" rx="8" fill="#f8f0ff" stroke="#b090c0" stroke-width="1" stroke-dasharray="6,3" />
+  <text x="325" y="880" font-size="11" font-weight="bold" fill="#b090c0">Vector Store</text>
+  <line x1="450" y1="182" x2="450.0" y2="214.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="182" x2="450.0" y2="214.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="278" x2="450.0" y2="310.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="278" x2="450.0" y2="310.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="374" x2="450.0" y2="406.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="374" x2="450.0" y2="406.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="470" x2="450.0" y2="502.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="470" x2="450.0" y2="502.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="566" x2="450.0" y2="598.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="566" x2="450.0" y2="598.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="662" x2="450.0" y2="694.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="662" x2="450.0" y2="694.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="758" x2="450.0" y2="790.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="758" x2="450.0" y2="790.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="854" x2="450.0" y2="886.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="854" x2="450.0" y2="886.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="160" y1="86" x2="442.0750309660522" y2="124.90690082290375" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="160" y1="86" x2="442.0750309660522" y2="124.90690082290375" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="460" y1="86" x2="451.94028500029066" y2="118.23885999883734" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="460" y1="86" x2="451.94028500029066" y2="118.23885999883734" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="760" y1="86" x2="457.9342229330722" y2="124.97622929895843" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="760" y1="86" x2="457.9342229330722" y2="124.97622929895843" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="1060" y1="86" x2="457.9828555924025" y2="125.47653405951459" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="1060" y1="86" x2="457.9828555924025" y2="125.47653405951459" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <g filter="url(#shadow)">
+    <rect x="40" y="30" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="160" y="52" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">S3 / ADLS / GCS</text>
+    <text x="160" y="70" text-anchor="middle" font-size="10" fill="#555">blob storage</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="340" y="30" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="460" y="52" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Confluence / Notion</text>
+    <text x="460" y="70" text-anchor="middle" font-size="10" fill="#555">wiki systems</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="640" y="30" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="760" y="52" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">PostgreSQL / MySQL</text>
+    <text x="760" y="70" text-anchor="middle" font-size="10" fill="#555">structured + text columns</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="940" y="30" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="1060" y="52" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Slack / Teams</text>
+    <text x="1060" y="70" text-anchor="middle" font-size="10" fill="#555">conversations</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="330" y="126" width="240" height="56" rx="8" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+    <text x="450" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Change Detector</text>
+    <text x="450" y="166" text-anchor="middle" font-size="10" fill="#555">file events, webhooks, CDC</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="330" y="222" width="240" height="56" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" />
+    <text x="450" y="244" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Message Queue</text>
+    <text x="450" y="262" text-anchor="middle" font-size="10" fill="#555">Kafka, SQS</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="330" y="318" width="240" height="56" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" />
+    <text x="450" y="351" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Document Loader</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="330" y="414" width="240" height="56" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" />
+    <text x="450" y="436" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Parser</text>
+    <text x="450" y="454" text-anchor="middle" font-size="10" fill="#555">PDF, HTML, DOCX</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="330" y="510" width="240" height="56" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" />
+    <text x="450" y="543" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Chunker</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="330" y="606" width="240" height="56" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" />
+    <text x="450" y="628" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Metadata Extractor</text>
+    <text x="450" y="646" text-anchor="middle" font-size="10" fill="#555">title, date, author, tags</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="330" y="702" width="240" height="56" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" />
+    <text x="450" y="724" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Embedding Worker</text>
+    <text x="450" y="742" text-anchor="middle" font-size="10" fill="#555">batch API calls</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="330" y="798" width="240" height="56" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" />
+    <text x="450" y="820" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Vector Store Upsert</text>
+    <text x="450" y="838" text-anchor="middle" font-size="10" fill="#555">idempotent by doc_id</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="330" y="894" width="240" height="56" rx="8" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.5" />
+    <text x="450" y="916" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Pinecone / Weaviate</text>
+    <text x="450" y="934" text-anchor="middle" font-size="10" fill="#555">pgvector / Chroma</text>
+  </g>
+</svg>

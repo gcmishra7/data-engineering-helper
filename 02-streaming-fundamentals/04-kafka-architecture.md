@@ -5,35 +5,9 @@ Systems need to communicate asynchronously at high throughput without tight coup
 
 ## How it works
 
-```mermaid
-graph TD
-    P1[Producer: App Server] --> T
-    P2[Producer: CDC / Debezium] --> T
-    P3[Producer: Mobile Events] --> T
+<!-- Editable: open diagrams/02-streaming-fundamentals--04-kafka-architecture.drawio.svg in draw.io -->
 
-    subgraph T[Topic: payments — 6 partitions]
-        Pa[Partition 0]
-        Pb[Partition 1]
-        Pc[Partition 2]
-        Pd[Partition 3]
-        Pe[Partition 4]
-        Pf[Partition 5]
-    end
-
-    T --> CG1
-    T --> CG2
-
-    subgraph CG1[Consumer Group: fraud-service]
-        C1a[Consumer 1 → P0,P1]
-        C1b[Consumer 2 → P2,P3]
-        C1c[Consumer 3 → P4,P5]
-    end
-
-    subgraph CG2[Consumer Group: spark-streaming]
-        C2a[Spark Executor 1 → P0-P2]
-        C2b[Spark Executor 2 → P3-P5]
-    end
-```
+![diagram](../diagrams/02-streaming-fundamentals--04-kafka-architecture.drawio.svg)
 
 ### Core Concepts
 

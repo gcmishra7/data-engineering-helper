@@ -5,24 +5,9 @@
 
 ## The Six Dimensions
 
-```mermaid
-graph TD
-    DQ[Data Quality] --> AC[Accuracy]
-    DQ --> CO[Completeness]
-    DQ --> CN[Consistency]
-    DQ --> TI[Timeliness]
-    DQ --> VA[Validity]
-    DQ --> UN[Uniqueness]
-```
+<!-- Editable: open diagrams/04-data-quality--01-dq-dimensions.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Accuracy** | Is it correct? |
-| **Completeness** | Is it all there? |
-| **Consistency** | Does it agree? |
-| **Timeliness** | Is it fresh? |
-| **Validity** | Does it conform? |
-| **Uniqueness** | Is it deduplicated? |
+![diagram](../diagrams/04-data-quality--01-dq-dimensions.drawio.svg)
 
 ### 1. Accuracy
 Data correctly represents reality.

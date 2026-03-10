@@ -5,19 +5,9 @@ Data engineers want to use Python (pandas, scikit-learn, custom libraries) but r
 
 ## How it works
 
-```mermaid
-graph LR
-    PY[Python Code] -->|Snowpark API| SF[Snowflake]
-    SF --> EX[Executes on]
-    EX --> SNOW[Snowflake Storage]
-```
+<!-- Editable: open diagrams/06-snowflake--09-snowpark.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Python Code** | local or notebook |
-| **Snowflake** | query plan |
-| **Executes on** | Virtual Warehouse |
-| **Snowflake Storage** | no data egress |
+![diagram](../diagrams/06-snowflake--09-snowpark.drawio.svg)
 
 Snowpark translates Python DataFrame operations into SQL query plans executed inside Snowflake. Data never leaves Snowflake.
 

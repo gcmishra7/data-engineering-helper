@@ -7,25 +7,9 @@ Real-time payment processing pipeline: Kafka → Databricks fraud scoring → De
 
 ## Architecture
 
-```mermaid
-graph LR
-    PG[(PostgreSQL)] -->|Debezium CDC| K[Kafka]
-    APP[Mobile/Web App] -->|direct produce| K
-    K -->|Structured Streaming| DB[Databricks]
-    DB -->|Delta with UniForm| ADLS[ADLS Gen2]
-    ADLS -->|Iceberg metadata| SF[Snowflake]
-    SF -->|Data Sharing| AUD[External Auditors]
-    ADLS -->|Feature Store| ML[MLflow]
-```
+<!-- Editable: open diagrams/10-scenarios--01-fintech-payment-pipeline.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **PostgreSQL** | transactions |
-| **Kafka** | payments topic |
-| **Databricks** | Fraud ML Scoring |
-| **ADLS Gen2** | Bronze, Silver, Gold |
-| **Snowflake** | Compliance Reporting |
-| **MLflow** | Fraud Model |
+![diagram](../diagrams/10-scenarios--01-fintech-payment-pipeline.drawio.svg)
 
 ## Pipeline Stages
 

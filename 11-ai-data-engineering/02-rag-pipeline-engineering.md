@@ -5,53 +5,9 @@ A prototype RAG chatbot running on 100 documents breaks at 1 million documents. 
 
 ## How it works
 
-```mermaid
-graph TD
-    subgraph Sources
-        S3[S3 / ADLS / GCS]
-        CONF[Confluence / Notion]
-        DB[PostgreSQL / MySQL]
-        SLACK[Slack / Teams]
-    end
+<!-- Editable: open diagrams/11-ai-data-engineering--02-rag-pipeline-engineering.drawio.svg in draw.io -->
 
-    subgraph Ingestion Layer
-        WATCH[Change Detector]
-        WATCH --> Q[Message Queue]
-    end
-
-    subgraph Processing Layer - Spark / Databricks
-        Q --> LOAD[Document Loader]
-        LOAD --> PARSE[Parser]
-        PARSE --> CHUNK[Chunker]
-        CHUNK --> META[Metadata Extractor]
-        META --> EMBED[Embedding Worker]
-        EMBED --> UPSERT[Vector Store Upsert]
-    end
-
-    subgraph Vector Store
-        VS[Pinecone / Weaviate]
-    end
-
-    UPSERT --> VS
-    S3 --> WATCH
-    CONF --> WATCH
-    DB --> WATCH
-    SLACK --> WATCH
-```
-
-| Node | Details |
-|------|---------|
-| **S3 / ADLS / GCS** | blob storage |
-| **Confluence / Notion** | wiki systems |
-| **PostgreSQL / MySQL** | structured + text columns |
-| **Slack / Teams** | conversations |
-| **Change Detector** | file events, webhooks, CDC |
-| **Message Queue** | Kafka, SQS |
-| **Parser** | PDF, HTML, DOCX |
-| **Metadata Extractor** | title, date, author, tags |
-| **Embedding Worker** | batch API calls |
-| **Vector Store Upsert** | idempotent by doc_id |
-| **Pinecone / Weaviate** | pgvector / Chroma |
+![diagram](../diagrams/11-ai-data-engineering--02-rag-pipeline-engineering.drawio.svg)
 
 ### Production indexing pipeline (Databricks + Delta Lake)
 

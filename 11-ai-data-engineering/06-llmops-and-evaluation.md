@@ -5,27 +5,9 @@ An LLM pipeline that looks good in demos can silently degrade in production — 
 
 ## How it works
 
-```mermaid
-graph TD
-    subgraph Development
-        BUILD[Build RAG Pipeline] --> EVAL[Offline Evaluation]
-        EVAL --> ITERATE[Iterate on chunking]
-    end
-    subgraph Production
-        DEPLOY[Deploy] --> LOG[Log all requests]
-        LOG --> MON[Online Monitoring]
-        MON --> ALERT[Alert on degradation]
-        ALERT --> RETUNE[Retune or rollback]
-    end
-    ITERATE --> DEPLOY
-```
+<!-- Editable: open diagrams/11-ai-data-engineering--06-llmops-and-evaluation.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Offline Evaluation** | benchmark dataset |
-| **Iterate on chunking** | retrieval, prompts |
-| **Log all requests** | + responses + retrievals |
-| **Online Monitoring** | latency, cost, quality signals |
+![diagram](../diagrams/11-ai-data-engineering--06-llmops-and-evaluation.drawio.svg)
 
 ### RAG evaluation metrics
 

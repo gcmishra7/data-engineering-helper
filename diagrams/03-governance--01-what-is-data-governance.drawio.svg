@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1880 378" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#999" />
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.12" />
+    </filter>
+  </defs>
+  <rect width="1880" height="378" fill="#fafafa" rx="8" />
+  <line x1="300" y1="86" x2="167.6921915811266" y2="123.80223097682098" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="300" y1="86" x2="167.6921915811266" y2="123.80223097682098" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="300" y1="86" x2="452.23885999883737" y2="124.05971499970934" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="300" y1="86" x2="452.23885999883737" y2="124.05971499970934" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="300" y1="86" x2="752.0300752944345" y2="125.30696306908126" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="300" y1="86" x2="752.0300752944345" y2="125.30696306908126" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="600" y1="86" x2="1052.0300752944345" y2="125.30696306908126" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="600" y1="86" x2="1052.0300752944345" y2="125.30696306908126" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="600" y1="86" x2="1352.0110573653399" y2="125.5795293350179" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="600" y1="86" x2="1352.0110573653399" y2="125.5795293350179" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="600" y1="86" x2="1652.0056899011465" y2="125.69832792079798" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="600" y1="86" x2="1652.0056899011465" y2="125.69832792079798" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="160" y1="182" x2="160.0" y2="214.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="160" y1="182" x2="160.0" y2="214.0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="160" y1="182" x2="452.07017679453895" y2="220.94269023927185" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="160" y1="182" x2="452.07017679453895" y2="220.94269023927185" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="160" y1="182" x2="752.0177187371471" y2="221.4678479158098" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="160" y1="182" x2="752.0177187371471" y2="221.4678479158098" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <g filter="url(#shadow)">
+    <rect x="180" y="30" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="300" y="63" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Data Governance</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="480" y="30" width="240" height="56" rx="8" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+    <text x="600" y="52" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Policies</text>
+    <text x="600" y="70" text-anchor="middle" font-size="10" fill="#555">What rules apply</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="126" width="240" height="56" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" />
+    <text x="160" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Roles</text>
+    <text x="160" y="166" text-anchor="middle" font-size="10" fill="#555">Who is accountable</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="340" y="126" width="240" height="56" rx="8" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.5" />
+    <text x="460" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Processes</text>
+    <text x="460" y="166" text-anchor="middle" font-size="10" fill="#555">How changes are made</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="640" y="126" width="240" height="56" rx="8" fill="#f8cecc" stroke="#b85450" stroke-width="1.5" />
+    <text x="760" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Technology</text>
+    <text x="760" y="166" text-anchor="middle" font-size="10" fill="#555">Catalogues, Access control, Lineage</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="940" y="126" width="240" height="56" rx="8" fill="#d0e0e3" stroke="#56839b" stroke-width="1.5" />
+    <text x="1060" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Data Classification</text>
+    <text x="1060" y="166" text-anchor="middle" font-size="10" fill="#555">PII, PCI, PHI, Internal</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1240" y="126" width="240" height="56" rx="8" fill="#fce5cd" stroke="#d79b00" stroke-width="1.5" />
+    <text x="1360" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Access Policies</text>
+    <text x="1360" y="166" text-anchor="middle" font-size="10" fill="#555">RBAC, ABAC</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1540" y="126" width="240" height="56" rx="8" fill="#f5f5f5" stroke="#999999" stroke-width="1.5" />
+    <text x="1660" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Quality Standards</text>
+    <text x="1660" y="166" text-anchor="middle" font-size="10" fill="#555">SLAs, Expectations</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="222" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="160" y="244" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Data Owner</text>
+    <text x="160" y="262" text-anchor="middle" font-size="10" fill="#555">Business accountability</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="340" y="222" width="240" height="56" rx="8" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+    <text x="460" y="244" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Data Steward</text>
+    <text x="460" y="262" text-anchor="middle" font-size="10" fill="#555">Day-to-day curation</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="640" y="222" width="240" height="56" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" />
+    <text x="760" y="244" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Data Custodian</text>
+    <text x="760" y="262" text-anchor="middle" font-size="10" fill="#555">Technical implementation</text>
+  </g>
+</svg>

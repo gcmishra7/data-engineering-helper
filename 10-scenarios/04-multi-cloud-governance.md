@@ -7,41 +7,9 @@ Enterprise running Databricks on Azure (primary) + Snowflake on GCP (analytics) 
 
 ## Architecture
 
-```mermaid
-graph TD
-    subgraph Azure[Azure — Primary Platform]
-        ADB[Databricks Workspace]
-        UC[Unity Catalog]
-        ADLS[ADLS Gen2]
-        ADB --> ADLS
-        UC --> ADLS
-    end
+<!-- Editable: open diagrams/10-scenarios--04-multi-cloud-governance.drawio.svg in draw.io -->
 
-    subgraph GCP[GCP — Analytics Platform]
-        SF[Snowflake on GCP]
-        SFH[Snowflake Horizon]
-        SF --> SFH
-    end
-
-    subgraph Shared
-        DH[DataHub]
-        POL[Policy Sync]
-    end
-
-    ADLS -->|Delta UniForm, Iceberg metadata| SF
-    UC -->|OpenLineage| DH
-    SF -->|Snowflake connector| DH
-    UC -->|tag export| POL --> SFH
-```
-
-| Node | Details |
-|------|---------|
-| **Unity Catalog** | primary governance |
-| **ADLS Gen2** | Delta Lake |
-| **Snowflake on GCP** | SQL analytics + BI |
-| **Snowflake Horizon** | masking + row filters |
-| **DataHub** | unified catalogue + lineage |
-| **Policy Sync** | UC tags → SF tags |
+![diagram](../diagrams/10-scenarios--04-multi-cloud-governance.drawio.svg)
 
 ## Governance Alignment Pattern
 

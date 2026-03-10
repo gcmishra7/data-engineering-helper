@@ -2,28 +2,9 @@
 
 ## Databricks on GCP
 
-```mermaid
-graph TD
-    subgraph GCP Project
-        DB[Databricks Workspace]
-        GCS[Google Cloud Storage]
-        PS[Cloud Pub/Sub]
-        CC[Cloud Composer]
-        WIF[Workload Identity Federation]
-    end
+<!-- Editable: open diagrams/08-cloud-platforms--03-gcp-databricks-setup.drawio.svg in draw.io -->
 
-    DB -->|WIF auth| GCS
-    DB -->|Pub/Sub connector| PS
-    CC -->|Databricks provider| DB
-```
-
-| Node | Details |
-|------|---------|
-| **Databricks Workspace** | GKE-based workers |
-| **Google Cloud Storage** | Bronze, Silver, Gold |
-| **Cloud Pub/Sub** | Streaming events |
-| **Cloud Composer** | Managed Airflow |
-| **Workload Identity Federation** | No service account keys |
+![diagram](../diagrams/08-cloud-platforms--03-gcp-databricks-setup.drawio.svg)
 
 **GCS access via Workload Identity**
 ```python

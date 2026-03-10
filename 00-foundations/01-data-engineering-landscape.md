@@ -6,9 +6,9 @@ Raw data is useless at scale. A company generating 10TB/day of events cannot let
 
 ## How it works
 
-<!-- Editable diagram: open diagrams/01-data-engineering-landscape.drawio in draw.io or VS Code draw.io extension -->
+<!-- Editable: open diagrams/00-foundations--01-data-engineering-landscape.drawio.svg in draw.io -->
 
-[![Data Engineering Landscape](../diagrams/01-data-engineering-landscape.drawio.svg)](../diagrams/01-data-engineering-landscape.drawio)
+![Data Engineering Landscape](../diagrams/00-foundations--01-data-engineering-landscape.drawio.svg)
 
 ### Roles
 

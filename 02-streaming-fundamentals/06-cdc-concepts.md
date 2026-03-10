@@ -8,21 +8,9 @@ Nightly full table dumps are slow and expensive for large tables. CDC captures o
 ### Log-based CDC (preferred)
 Reads the database's write-ahead log (WAL/binlog/redo log) — the same log used for replication. No queries on source tables; zero additional load.
 
-```mermaid
-graph LR
-    DB[(PostgreSQL)] --> D[Debezium]
-    D --> K[Kafka Topic]
-    K --> S[Spark Structured Streaming]
-    K --> F[Flink Job]
-    S --> DL[Delta Lake]
-    F --> ES[Elasticsearch]
-```
+<!-- Editable: open diagrams/02-streaming-fundamentals--06-cdc-concepts.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **PostgreSQL** | WAL |
-| **Debezium** | Connector |
-| **Kafka Topic** | postgres.public.orders |
+![diagram](../diagrams/02-streaming-fundamentals--06-cdc-concepts.drawio.svg)
 
 ### Query-based CDC
 Polls the source table periodically: `SELECT * WHERE updated_at > last_poll_time`. Adds load to source, misses deletes, requires `updated_at` column.

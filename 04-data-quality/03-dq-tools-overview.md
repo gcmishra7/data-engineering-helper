@@ -5,32 +5,9 @@ Dozens of data quality tools exist. Choosing the right one depends on where your
 
 ## Tool Landscape
 
-```mermaid
-graph TD
-    DQ[Data Quality Tools] --> INLINE[Inline / Pipeline]
-    DQ --> EXTERNAL[External / Observability]
-    DQ --> NATIVE[Platform Native]
+<!-- Editable: open diagrams/04-data-quality--03-dq-tools-overview.drawio.svg in draw.io -->
 
-    INLINE --> DLT[DLT Expectations]
-    INLINE --> GX[Great Expectations]
-    INLINE --> DBT[dbt Tests]
-
-    EXTERNAL --> MC[Monte Carlo]
-    EXTERNAL --> BIGEYE[Bigeye]
-    EXTERNAL --> SOD[Soda]
-
-    NATIVE --> DMF[Snowflake Data Metric Functions]
-    NATIVE --> DLT2[Databricks DLT Expectations]
-```
-
-| Node | Details |
-|------|---------|
-| **DLT Expectations** | Databricks pipelines |
-| **Great Expectations** | any platform |
-| **dbt Tests** | SQL transformations |
-| **Monte Carlo** | ML anomaly detection |
-| **Bigeye** | automated monitoring |
-| **Soda** | YAML-defined checks |
+![diagram](../diagrams/04-data-quality--03-dq-tools-overview.drawio.svg)
 
 ## Tool Comparison
 

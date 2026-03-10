@@ -5,20 +5,9 @@ Organisations using both Databricks (for ML and Spark ETL) and Snowflake (for SQ
 
 ## How it works
 
-```mermaid
-graph LR
-    UC[Unity Catalog] -->|Delta UniForm| SF[Snowflake]
-    UC -->|OpenLineage events| DH[DataHub]
-    SF -->|Snowflake connector| DH
-    UC -->|tag export API| SYNC[Policy Sync Job]
-    SYNC -->|Snowflake DDL| SF
-```
+<!-- Editable: open diagrams/03-governance--06-cross-platform-governance.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Unity Catalog** | Azure Databricks |
-| **Snowflake** | Iceberg External Tables |
-| **DataHub** | unified catalogue |
+![diagram](../diagrams/03-governance--06-cross-platform-governance.drawio.svg)
 
 ### Governance alignment checklist
 

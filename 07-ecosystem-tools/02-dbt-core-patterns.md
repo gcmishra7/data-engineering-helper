@@ -5,30 +5,9 @@ SQL transformation logic lives in ad-hoc scripts, stored procedures, or BI tool 
 
 ## How it works
 
-```mermaid
-graph LR
-    SRC[Sources] --> STG[Staging Models]
-    STG --> INT[Intermediate Models]
-    INT --> MART[Mart Models]
-    MART --> BI[BI Tools]
+<!-- Editable: open diagrams/07-ecosystem-tools--02-dbt-core-patterns.drawio.svg in draw.io -->
 
-    TEST[dbt tests] --> STG
-    TEST --> INT
-    TEST --> MART
-    DOC[dbt docs] --> STG
-    DOC --> INT
-    DOC --> MART
-```
-
-| Node | Details |
-|------|---------|
-| **Sources** | raw schema tables |
-| **Staging Models** | one-to-one source, light casting |
-| **Intermediate Models** | cross-source joins, dedup logic |
-| **Mart Models** | fact + dim tables, business logic |
-| **BI Tools** | Tableau, Power BI |
-| **dbt tests** | not_null, unique, accepted_values |
-| **dbt docs** | auto-generated |
+![diagram](../diagrams/07-ecosystem-tools--02-dbt-core-patterns.drawio.svg)
 
 ### Project structure
 

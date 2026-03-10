@@ -5,64 +5,9 @@
 
 ## How it works
 
-```mermaid
-graph TD
-    subgraph Raw Unstructured Data
-        PDF[PDFs]
-        IMG[Images]
-        AUDIO[Audio]
-        EMAIL[Email / Slack]
-        HTML[HTML / Web]
-    end
+<!-- Editable: open diagrams/11-ai-data-engineering--04-unstructured-data-pipelines.drawio.svg in draw.io -->
 
-    subgraph Extraction Layer
-        PARSE[Parser]
-        OCR[OCR]
-        ASR[Speech-to-Text]
-        VIS[Vision Model]
-    end
-
-    subgraph Processing Layer
-        CHUNK[Chunker + Embedder] --> VS[Vector Store]
-        EXTRACT[LLM Extraction] --> DELTA[Delta Table]
-        CLASS[Classifier] --> ROUTE[Processing Route]
-    end
-
-    PDF --> PARSE
-    HTML --> PARSE
-    IMG --> OCR
-    IMG --> VIS
-    AUDIO --> ASR
-    EMAIL --> PARSE
-    PARSE --> CHUNK
-    PARSE --> EXTRACT
-    PARSE --> CLASS
-    OCR --> CHUNK
-    OCR --> EXTRACT
-    OCR --> CLASS
-    ASR --> CHUNK
-    ASR --> EXTRACT
-    ASR --> CLASS
-    VIS --> CHUNK
-    VIS --> EXTRACT
-    VIS --> CLASS
-```
-
-| Node | Details |
-|------|---------|
-| **PDFs** | contracts, reports, invoices |
-| **Images** | screenshots, diagrams, scans |
-| **Audio** | call recordings, meetings |
-| **Email / Slack** | conversations |
-| **HTML / Web** | pages, docs |
-| **Parser** | Unstructured.io, PyMuPDF, Tika |
-| **OCR** | Tesseract, Azure Document Intelligence |
-| **Speech-to-Text** | Whisper, Azure Speech |
-| **Vision Model** | GPT-4o, Claude, Gemini |
-| **Vector Store** | RAG retrieval |
-| **LLM Extraction** | structured JSON from text |
-| **Delta Table** | structured analytics |
-| **Classifier** | route by content type |
+![diagram](../diagrams/11-ai-data-engineering--04-unstructured-data-pipelines.drawio.svg)
 
 ### PDF parsing — layout-aware extraction
 

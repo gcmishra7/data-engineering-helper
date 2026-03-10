@@ -5,29 +5,9 @@ Traditional databases can't efficiently find "similar" rows. A SQL `LIKE` or ful
 
 ## How it works
 
-```mermaid
-graph LR
-    subgraph Indexing
-        TEXT[Text / Image / Audio] --> EMBED[Embedding Model]
-        EMBED --> VEC[Vector]
-        VEC --> IDX[ANN Index]
-    end
+<!-- Editable: open diagrams/11-ai-data-engineering--03-vector-databases.drawio.svg in draw.io -->
 
-    subgraph Query
-        Q[Query Text] --> QE[Embed Query]
-        QE --> QVEC[Query Vector]
-        QVEC --> SEARCH[ANN Search]
-        IDX --> SEARCH
-        SEARCH --> TOP[Top-K Results]
-    end
-```
-
-| Node | Details |
-|------|---------|
-| **Vector** | 1536 float32 values |
-| **ANN Index** | HNSW, IVF, DiskANN |
-| **ANN Search** | cosine similarity |
-| **Top-K Results** | + metadata + score |
+![diagram](../diagrams/11-ai-data-engineering--03-vector-databases.drawio.svg)
 
 ### ANN algorithms
 

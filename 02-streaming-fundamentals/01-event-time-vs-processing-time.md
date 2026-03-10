@@ -5,29 +5,9 @@ Streaming systems deal with two clocks: when an event *happened* vs when the sys
 
 ## How it works
 
-```mermaid
-graph LR
-    E[Event occurs] --> N[Network delay] --> K[Kafka ingestion]
-    K --> P[Processing delay] --> S[Spark processes]
+<!-- Editable: open diagrams/02-streaming-fundamentals--01-event-time-vs-processing-time.drawio.svg in draw.io -->
 
-    style E fill:#2196F3
-    style K fill:#FF9800
-    style S fill:#4CAF50
-```
-
-| Node | Details |
-|------|---------|
-| **Event occurs** | at 10:00:00 |
-| **Network delay** | +2 min |
-| **Kafka ingestion** | at 10:02:00 |
-| **Processing delay** | +30 sec |
-| **Spark processes** | at 10:02:30 |
-
-| Clock | What it measures | Controlled by |
-|-------|-----------------|---------------|
-| Event time | When the event actually occurred | The producing system |
-| Ingestion time | When Kafka/broker received it | Network + producer |
-| Processing time | When your job processed it | Your cluster, backlog |
+![diagram](../diagrams/02-streaming-fundamentals--01-event-time-vs-processing-time.drawio.svg)
 
 ### Why it matters: wrong aggregation
 

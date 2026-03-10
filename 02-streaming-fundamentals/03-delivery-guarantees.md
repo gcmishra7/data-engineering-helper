@@ -32,17 +32,9 @@ Achieved by combining:
 1. **Idempotent writes** — re-writing same data produces same result
 2. **Transactional commits** — offset commit and output write are atomic
 
-```mermaid
-graph LR
-    K[Kafka] <-->|atomic| D[Delta Lake]
-    style K fill:#FF9800
-    style D fill:#2196F3
-```
+<!-- Editable: open diagrams/02-streaming-fundamentals--03-delivery-guarantees.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Kafka** | committed offset |
-| **Delta Lake** | transaction commit |
+![diagram](../diagrams/02-streaming-fundamentals--03-delivery-guarantees.drawio.svg)
 
 ## Spark Structured Streaming: exactly-once with Delta
 

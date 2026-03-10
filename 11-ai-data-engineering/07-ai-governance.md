@@ -5,40 +5,9 @@ AI pipelines introduce new governance challenges not covered by traditional data
 
 ## How it works
 
-```mermaid
-graph TD
-    subgraph Data Governance Layer
-        PII[PII Detection]
-        ACCESS[Access Control]
-        LINEAGE[AI Lineage]
-        RETENTION[Data Retention]
-    end
+<!-- Editable: open diagrams/11-ai-data-engineering--07-ai-governance.drawio.svg in draw.io -->
 
-    subgraph AI Safety Layer
-        GUARD[Guardrails]
-        PROMPT[Prompt Injection Detection]
-        HALLUC[Hallucination Detection]
-    end
-
-    subgraph Audit Layer
-        AUDIT_LOG[Audit Log]
-        EXPLAIN[Explainability]
-        COST_LOG[Cost Attribution]
-    end
-```
-
-| Node | Details |
-|------|---------|
-| **PII Detection** | before embedding / LLM call |
-| **Access Control** | which users can query which data |
-| **AI Lineage** | question → chunks → answer |
-| **Data Retention** | conversation logs, embeddings |
-| **Guardrails** | input + output validation |
-| **Prompt Injection Detection** | adversarial input filtering |
-| **Hallucination Detection** | faithfulness scoring |
-| **Audit Log** | who queried what when |
-| **Explainability** | which chunks drove the answer |
-| **Cost Attribution** | per team, per use case |
+![diagram](../diagrams/11-ai-data-engineering--07-ai-governance.drawio.svg)
 
 ### PII handling in AI pipelines
 

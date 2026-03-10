@@ -7,30 +7,9 @@ Modern ELT data platform ingesting from 50 sources into a Snowflake-centric lake
 
 ## Architecture
 
-```mermaid
-graph LR
-    subgraph Sources[50 Sources]
-        ERP[12 ERP systems]
-        SF2[Salesforce]
-        SHOP[Shopify]
-        SUP[35 Supplier feeds]
-    end
-    Sources -->|Fivetran connectors| RAW[Raw Schema]
-    RAW -->|dbt staging| STG[Staging Models]
-    STG -->|dbt intermediate| INT[Intermediate]
-    INT -->|dbt marts| GOLD[Gold Marts]
-    GOLD --> BI[Tableau]
-    GOLD -->|Data Sharing| PART[Supplier Partners]
-    GOLD --> DB2[Databricks]
-```
+<!-- Editable: open diagrams/10-scenarios--02-retail-lakehouse.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Raw Schema** | Snowflake |
-| **Staging Models** | Snowflake |
-| **Intermediate** | Snowflake |
-| **Gold Marts** | Snowflake |
-| **Databricks** | Demand Forecasting ML |
+![diagram](../diagrams/10-scenarios--02-retail-lakehouse.drawio.svg)
 
 ## Key components
 

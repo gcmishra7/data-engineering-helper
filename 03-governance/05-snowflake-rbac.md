@@ -5,17 +5,9 @@ Snowflake's access model is role-based — users don't have direct privileges, r
 
 ## How it works
 
-```mermaid
-graph TD
-    ACCOUNTADMIN --> SYSADMIN
-    ACCOUNTADMIN --> SECURITYADMIN
-    SYSADMIN --> DB_ADMIN_ROLE
-    SECURITYADMIN --> ANALYST_ROLE
-    SECURITYADMIN --> ENGINEER_ROLE
-    DB_ADMIN_ROLE --> U1[User: dbt_service_account]
-    ANALYST_ROLE --> U2[User: alice]
-    ENGINEER_ROLE --> U3[User: bob]
-```
+<!-- Editable: open diagrams/03-governance--05-snowflake-rbac.drawio.svg in draw.io -->
+
+![diagram](../diagrams/03-governance--05-snowflake-rbac.drawio.svg)
 
 ### System Roles
 

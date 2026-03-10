@@ -5,36 +5,9 @@ Without layering, data engineers either overwrite raw data (losing auditability)
 
 ## How it works
 
-```mermaid
-graph LR
-    SRC[Sources] --> B
+<!-- Editable: open diagrams/01-data-modeling--05-medallion-architecture.drawio.svg in draw.io -->
 
-    subgraph B[Bronze — Raw]
-        B1[Append-only]
-    end
-
-    B --> S
-
-    subgraph S[Silver — Cleaned]
-        S1[Deduplication]
-    end
-
-    S --> G
-
-    subgraph G[Gold — Serving]
-        G1[Star schema]
-    end
-
-    G --> BI[BI Tools]
-```
-
-| Node | Details |
-|------|---------|
-| **Sources** | DBs, APIs, Events |
-| **Append-only** (Bronze) | Schema-on-read, Full history, No transformations |
-| **Deduplication** (Silver) | Type casting, Null handling, PII masked, Schema enforced |
-| **Star schema** (Gold) | Aggregations, Business logic, Optimised for BI/ML |
-| **BI Tools** | ML Models, APIs |
+![diagram](../diagrams/01-data-modeling--05-medallion-architecture.drawio.svg)
 
 ### Layer Responsibilities
 

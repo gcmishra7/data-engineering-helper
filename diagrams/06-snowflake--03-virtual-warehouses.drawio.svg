@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 378" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#999" />
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.12" />
+    </filter>
+  </defs>
+  <rect width="980" height="378" fill="#fafafa" rx="8" />
+  <rect x="25" y="96" width="870" height="101" rx="8" fill="#f0f4ff" stroke="#b0c4de" stroke-width="1" stroke-dasharray="6,3" />
+  <text x="35" y="112" font-size="11" font-weight="bold" fill="#b0c4de">Compute Layer — Virtual Warehouses</text>
+  <line x1="160" y1="182" x2="442.0750309660522" y2="220.90690082290376" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="160" y1="182" x2="442.0750309660522" y2="220.90690082290376" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="460" y1="182" x2="451.94028500029066" y2="214.23885999883734" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="460" y1="182" x2="451.94028500029066" y2="214.23885999883734" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="760" y1="182" x2="457.9342229330722" y2="220.97622929895843" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="760" y1="182" x2="457.9342229330722" y2="220.97622929895843" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="86" x2="167.9249690339478" y2="124.90690082290375" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="86" x2="167.9249690339478" y2="124.90690082290375" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="86" x2="458.05971499970934" y2="118.23885999883734" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="86" x2="458.05971499970934" y2="118.23885999883734" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="86" x2="752.0657770669278" y2="124.97622929895843" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="450" y1="86" x2="752.0657770669278" y2="124.97622929895843" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <g filter="url(#shadow)">
+    <rect x="330" y="30" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="450" y="52" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Cloud Services Layer</text>
+    <text x="450" y="70" text-anchor="middle" font-size="10" fill="#555">query parsing, optimisation, auth</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="126" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="160" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Warehouse: ANALYTICS_WH</text>
+    <text x="160" y="166" text-anchor="middle" font-size="10" fill="#555">X-Large, 4 clusters</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="340" y="126" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="460" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Warehouse: ETL_WH</text>
+    <text x="460" y="166" text-anchor="middle" font-size="10" fill="#555">Large, 1 cluster</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="640" y="126" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="760" y="148" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Warehouse: BI_WH</text>
+    <text x="760" y="166" text-anchor="middle" font-size="10" fill="#555">Small, auto-suspend 1min</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="330" y="222" width="240" height="56" rx="8" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+    <text x="450" y="244" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Storage Layer</text>
+    <text x="450" y="262" text-anchor="middle" font-size="10" fill="#555">micro-partitioned Parquet on S3/ADLS/GCS</text>
+  </g>
+</svg>

@@ -17,16 +17,9 @@ Picking the wrong storage type kills performance and inflates cost. Object stora
 
 ### File Formats
 
-```mermaid
-graph TD
-    A[Data Engineer chooses format] --> B{Access pattern?}
-    B -->|Analytics, columnar scans| C[Parquet or ORC]
-    B -->|Row-level reads/writes| D[Avro or JSON]
-    B -->|Schema evolution + ACID| E[Delta Lake or Iceberg]
-    B -->|Human readable| F[CSV or JSON]
-    C --> G[Best for: Spark, Snowflake, Athena]
-    E --> H[Best for: Lakehouses, CDC pipelines]
-```
+<!-- Editable: open diagrams/00-foundations--03-storage-concepts.drawio.svg in draw.io -->
+
+![diagram](../diagrams/00-foundations--03-storage-concepts.drawio.svg)
 
 ### Columnar vs Row Storage
 

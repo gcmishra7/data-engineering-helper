@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.12" />
+    </filter>
+  </defs>
+  <rect width="920" height="520" fill="#fafafa" rx="8" />
+
+  <!-- FACT_SALES (center) -->
+  <g filter="url(#shadow)">
+    <rect x="310" y="140" width="260" height="240" rx="6" fill="#fff2cc" stroke="#d6b656" stroke-width="2" />
+    <rect x="310" y="140" width="260" height="32" rx="6" fill="#d6b656" />
+    <rect x="310" y="140" width="260" height="32" rx="0" fill="#d6b656" />
+    <rect x="310" y="166" width="260" height="6" rx="0" fill="#d6b656" />
+    <text x="440" y="162" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">FACT_SALES</text>
+    <text x="320" y="195" font-size="11" fill="#333">🔑 sale_id (PK)</text>
+    <text x="320" y="215" font-size="11" fill="#555">🔗 date_id (FK)</text>
+    <text x="320" y="235" font-size="11" fill="#555">🔗 customer_id (FK)</text>
+    <text x="320" y="255" font-size="11" fill="#555">🔗 product_id (FK)</text>
+    <text x="320" y="275" font-size="11" fill="#555">🔗 store_id (FK)</text>
+    <text x="320" y="298" font-size="11" fill="#888">revenue (decimal)</text>
+    <text x="320" y="318" font-size="11" fill="#888">quantity (int)</text>
+    <text x="320" y="338" font-size="11" fill="#888">discount (decimal)</text>
+  </g>
+
+  <!-- DIM_DATE (top-left) -->
+  <g filter="url(#shadow)">
+    <rect x="20" y="20" width="220" height="200" rx="6" fill="#dae8fc" stroke="#6c8ebf" stroke-width="2" />
+    <rect x="20" y="20" width="220" height="32" rx="6" fill="#6c8ebf" />
+    <rect x="20" y="46" width="220" height="6" rx="0" fill="#6c8ebf" />
+    <text x="130" y="42" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">DIM_DATE</text>
+    <text x="30" y="72" font-size="11" fill="#333">🔑 date_id (PK)</text>
+    <text x="30" y="92" font-size="11" fill="#555">full_date</text>
+    <text x="30" y="112" font-size="11" fill="#555">year, quarter, month</text>
+    <text x="30" y="132" font-size="11" fill="#555">month_name</text>
+    <text x="30" y="152" font-size="11" fill="#555">day_of_week</text>
+    <text x="30" y="172" font-size="11" fill="#555">is_holiday</text>
+  </g>
+
+  <!-- DIM_CUSTOMER (top-right) -->
+  <g filter="url(#shadow)">
+    <rect x="660" y="20" width="220" height="180" rx="6" fill="#d5e8d4" stroke="#82b366" stroke-width="2" />
+    <rect x="660" y="20" width="220" height="32" rx="6" fill="#82b366" />
+    <rect x="660" y="46" width="220" height="6" rx="0" fill="#82b366" />
+    <text x="770" y="42" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">DIM_CUSTOMER</text>
+    <text x="670" y="72" font-size="11" fill="#333">🔑 customer_id (PK)</text>
+    <text x="670" y="92" font-size="11" fill="#555">name, email</text>
+    <text x="670" y="112" font-size="11" fill="#555">city, country</text>
+    <text x="670" y="132" font-size="11" fill="#555">segment</text>
+  </g>
+
+  <!-- DIM_PRODUCT (bottom-right) -->
+  <g filter="url(#shadow)">
+    <rect x="660" y="300" width="220" height="170" rx="6" fill="#e1d5e7" stroke="#9673a6" stroke-width="2" />
+    <rect x="660" y="300" width="220" height="32" rx="6" fill="#9673a6" />
+    <rect x="660" y="326" width="220" height="6" rx="0" fill="#9673a6" />
+    <text x="770" y="322" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">DIM_PRODUCT</text>
+    <text x="670" y="352" font-size="11" fill="#333">🔑 product_id (PK)</text>
+    <text x="670" y="372" font-size="11" fill="#555">name, category</text>
+    <text x="670" y="392" font-size="11" fill="#555">subcategory</text>
+    <text x="670" y="412" font-size="11" fill="#555">unit_price (decimal)</text>
+  </g>
+
+  <!-- Relationship lines -->
+  <!-- FACT_SALES --on--> DIM_DATE -->
+  <line x1="310" y1="220" x2="240" y2="120" stroke="#666" stroke-width="2" />
+  <text x="260" y="160" font-size="10" fill="#999" font-style="italic">on</text>
+
+  <!-- FACT_SALES --by--> DIM_CUSTOMER -->
+  <line x1="570" y1="200" x2="660" y2="110" stroke="#666" stroke-width="2" />
+  <text x="620" y="145" font-size="10" fill="#999" font-style="italic">by</text>
+
+  <!-- FACT_SALES --of--> DIM_PRODUCT -->
+  <line x1="570" y1="310" x2="660" y2="380" stroke="#666" stroke-width="2" />
+  <text x="620" y="355" font-size="10" fill="#999" font-style="italic">of</text>
+
+  <!-- Legend -->
+  <text x="20" y="490" font-size="11" fill="#999">⭐ Star Schema — Fact table at center, dimension tables radiate outward</text>
+</svg>

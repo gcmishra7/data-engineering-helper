@@ -7,26 +7,9 @@ Real-time data quality monitoring for a streaming payments pipeline — detect b
 
 ## Architecture
 
-```mermaid
-graph LR
-    K[Kafka] --> DLT[DLT Pipeline]
-    DLT -->|clean records| S[Silver Delta]
-    DLT -->|failed records| Q[Quarantine Delta]
-    DLT -->|event log| EL[DLT Event Log]
-    EL --> MON[Quality Dashboard]
-    MON -->|threshold breach| ALERT[PagerDuty / Slack]
-    Q --> HEAL[Auto-Heal Job]
-    HEAL -->|fixed records| S
-```
+<!-- Editable: open diagrams/10-scenarios--05-streaming-quality-pipeline.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Kafka** | payments topic |
-| **DLT Pipeline** | with Expectations |
-| **Silver Delta** | silver.payments |
-| **Quarantine Delta** | silver.payments_quarantine |
-| **Quality Dashboard** | Databricks SQL |
-| **Auto-Heal Job** | attempt reprocessing |
+![diagram](../diagrams/10-scenarios--05-streaming-quality-pipeline.drawio.svg)
 
 ## DLT Pipeline with Quality Expectations
 

@@ -5,40 +5,9 @@ LLMs are isolated from external systems. Every integration (database, file syste
 
 ## How it works
 
-```mermaid
-graph LR
-    subgraph Host Application
-        APP[Claude / GPT / Cursor]
-        MCPClient[MCP Client]
-        APP --> MCPClient
-    end
+<!-- Editable: open diagrams/11-ai-data-engineering--05-mcp-model-context-protocol.drawio.svg in draw.io -->
 
-    subgraph MCP Servers
-        DB_SRV[Database Server]
-        FS_SRV[Filesystem Server]
-        API_SRV[API Server]
-        K8S_SRV[Kubernetes Server]
-    end
-
-    MCPClient -->|JSON-RPC over stdio/HTTP| DB_SRV
-    MCPClient -->|JSON-RPC over stdio/HTTP| FS_SRV
-    MCPClient -->|JSON-RPC over stdio/HTTP| API_SRV
-    MCPClient -->|JSON-RPC over stdio/HTTP| K8S_SRV
-
-    DB_SRV --> PG[(PostgreSQL)]
-    DB_SRV --> SF[(Snowflake)]
-    FS_SRV --> FILES[Local / Cloud Files]
-    API_SRV --> REST[REST APIs]
-```
-
-| Node | Details |
-|------|---------|
-| **Claude / GPT / Cursor** | AI assistant |
-| **MCP Client** | manages connections |
-| **Database Server** | query_sql, list_tables |
-| **Filesystem Server** | read_file, write_file, list_dir |
-| **API Server** | call_endpoint, get_schema |
-| **Kubernetes Server** | get_pods, get_logs |
+![diagram](../diagrams/11-ai-data-engineering--05-mcp-model-context-protocol.drawio.svg)
 
 ### MCP primitives
 

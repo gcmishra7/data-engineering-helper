@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 964" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#999" />
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.12" />
+    </filter>
+  </defs>
+  <rect width="500" height="964" fill="#fafafa" rx="8" />
+  <rect x="25" y="10" width="270" height="293" rx="8" fill="#f0f4ff" stroke="#b0c4de" stroke-width="1" stroke-dasharray="6,3" />
+  <text x="35" y="26" font-size="11" font-weight="bold" fill="#b0c4de">Without Clustering</text>
+  <rect x="25" y="298" width="270" height="293" rx="8" fill="#f0fff0" stroke="#90b090" stroke-width="1" stroke-dasharray="6,3" />
+  <text x="35" y="314" font-size="11" font-weight="bold" fill="#90b090">With Clustering on date</text>
+  <g filter="url(#shadow)">
+    <rect x="40" y="40" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="160" y="73" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Partition 1</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="136" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="160" y="169" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Partition 2</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="232" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="160" y="265" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Partition 3</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="328" width="240" height="56" rx="8" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+    <text x="160" y="361" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Partition 1</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="424" width="240" height="56" rx="8" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+    <text x="160" y="457" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Partition 2</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="520" width="240" height="56" rx="8" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+    <text x="160" y="553" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Partition 3</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="616" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="160" y="649" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Query: WHERE date = 'Jan 15'</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="712" width="240" height="56" rx="8" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+    <text x="160" y="745" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Slow</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="808" width="240" height="56" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" />
+    <text x="160" y="841" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Fast</text>
+  </g>
+</svg>

@@ -5,24 +5,9 @@ Understanding Spark's execution model is required for tuning — knowing why a j
 
 ## How it works
 
-```mermaid
-graph TD
-    D[Driver] --> C[Cluster Manager]
-    C --> E1[Executor 1]
-    C --> E2[Executor 2]
-    C --> E3[Executor 3]
-    E1 --> T1[Task · Task · Task · Task]
-    E2 --> T2[Task · Task · Task · Task]
-    E3 --> T3[Task · Task · Task · Task]
-```
+<!-- Editable: open diagrams/05-databricks--03-spark-architecture-1.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Driver** | SparkContext, DAG Scheduler, Task Scheduler |
-| **Cluster Manager** | YARN, K8s, Standalone, Databricks |
-| **Executor 1** | JVM process, 4 cores, 16GB RAM |
-| **Executor 2** | JVM process, 4 cores, 16GB RAM |
-| **Executor 3** | JVM process, 4 cores, 16GB RAM |
+![diagram](../diagrams/05-databricks--03-spark-architecture-1.drawio.svg)
 
 ### Driver
 - Runs your Python/Scala/SQL code
@@ -42,16 +27,9 @@ graph TD
 - **Shuffle**: exchange of data between executors (expensive — network + disk I/O)
 - **Task**: one unit of work, processes one partition
 
-```mermaid
-graph LR
-    S1[Stage 1] -->|shuffle, groupBy| S2[Stage 2] -->|shuffle, join| S3[Stage 3]
-```
+<!-- Editable: open diagrams/05-databricks--03-spark-architecture-2.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Stage 1** | read + filter + map |
-| **Stage 2** | aggregate |
-| **Stage 3** | join + write |
+![diagram](../diagrams/05-databricks--03-spark-architecture-2.drawio.svg)
 
 ### Memory model
 

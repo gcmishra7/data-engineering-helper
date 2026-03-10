@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 572" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#999" />
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.12" />
+    </filter>
+  </defs>
+  <rect width="980" height="572" fill="#fafafa" rx="8" />
+  <rect x="25" y="98" width="270" height="197" rx="8" fill="#f0f4ff" stroke="#b0c4de" stroke-width="1" stroke-dasharray="6,3" />
+  <text x="35" y="114" font-size="11" font-weight="bold" fill="#b0c4de">Training Data</text>
+  <rect x="25" y="146" width="870" height="245" rx="8" fill="#f0fff0" stroke="#90b090" stroke-width="1" stroke-dasharray="6,3" />
+  <text x="35" y="162" font-size="11" font-weight="bold" fill="#90b090">Training Pipeline - Databricks ML</text>
+  <rect x="25" y="338" width="570" height="149" rx="8" fill="#fffaf0" stroke="#d0b880" stroke-width="1" stroke-dasharray="6,3" />
+  <text x="35" y="354" font-size="11" font-weight="bold" fill="#d0b880">Deployment</text>
+  <line x1="280" y1="156" x2="333.7530495244558" y2="199.0024396195646" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="280" y1="156" x2="333.7530495244558" y2="199.0024396195646" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="280" y1="252" x2="333.7530495244558" y2="208.9975603804354" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="280" y1="252" x2="333.7530495244558" y2="208.9975603804354" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="580" y1="204" x2="635.7600084799745" y2="293.2160135679593" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="280" y1="348" x2="333.7530495244558" y2="304.9975603804354" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="280" y1="444" x2="333.7530495244558" y2="400.9975603804354" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="580" y1="204" x2="635.7600084799745" y2="293.2160135679593" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="280" y1="348" x2="333.7530495244558" y2="304.9975603804354" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="280" y1="444" x2="333.7530495244558" y2="400.9975603804354" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" />
+  <g filter="url(#shadow)">
+    <rect x="40" y="128" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="160" y="150" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Q&amp;A Pairs</text>
+    <text x="160" y="168" text-anchor="middle" font-size="10" fill="#555">Delta Table, human-curated</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="224" width="240" height="56" rx="8" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="160" y="246" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Synthetic Q&amp;A</text>
+    <text x="160" y="264" text-anchor="middle" font-size="10" fill="#555">GPT-4o generated, from corpus</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="340" y="176" width="240" height="56" rx="8" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+    <text x="460" y="198" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Data Prep</text>
+    <text x="460" y="216" text-anchor="middle" font-size="10" fill="#555">format, filter, split</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="640" y="272" width="240" height="56" rx="8" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+    <text x="760" y="294" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Fine-Tune</text>
+    <text x="760" y="312" text-anchor="middle" font-size="10" fill="#555">Llama 3.1 8B, on domain data</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="320" width="240" height="56" rx="8" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+    <text x="160" y="342" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Evaluation</text>
+    <text x="160" y="360" text-anchor="middle" font-size="10" fill="#555">RAGAS, custom rubric</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="340" y="272" width="240" height="56" rx="8" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+    <text x="460" y="305" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">MLflow Model Registry</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="416" width="240" height="56" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" />
+    <text x="160" y="438" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">Databricks Model Serving</text>
+    <text x="160" y="456" text-anchor="middle" font-size="10" fill="#555">or vLLM on GPU</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="340" y="368" width="240" height="56" rx="8" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" />
+    <text x="460" y="390" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">RAG Pipeline</text>
+    <text x="460" y="408" text-anchor="middle" font-size="10" fill="#555">domain LLM + vector search</text>
+  </g>
+</svg>

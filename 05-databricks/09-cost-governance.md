@@ -5,30 +5,9 @@ Databricks bills by DBU (Databricks Unit) per second. Without governance, engine
 
 ## How it works
 
-```mermaid
-graph TD
-    SPEND[DBU Spend] --> C[Compute Cost]
-    SPEND --> S[Storage Cost]
-    SPEND --> SQL[SQL Warehouse Cost]
+<!-- Editable: open diagrams/05-databricks--09-cost-governance.drawio.svg in draw.io -->
 
-    C --> JC[Job Clusters]
-    C --> AC[All-Purpose Clusters]
-    C --> POOL[Cluster Pools]
-
-    SQL --> SV[Serverless]
-    SQL --> PR[Pro Warehouse]
-```
-
-| Node | Details |
-|------|---------|
-| **Compute Cost** | Cluster DBUs |
-| **Storage Cost** | ADLS/S3/GCS |
-| **SQL Warehouse Cost** | DBUs while running |
-| **Job Clusters** | terminate after job |
-| **All-Purpose Clusters** | risk: idle billing |
-| **Cluster Pools** | pre-warmed, shared |
-| **Serverless** | per-query billing |
-| **Pro Warehouse** | per-second billing |
+![diagram](../diagrams/05-databricks--09-cost-governance.drawio.svg)
 
 ### DBU pricing model
 

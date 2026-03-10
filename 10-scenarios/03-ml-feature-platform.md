@@ -7,43 +7,9 @@ End-to-end ML feature platform serving both real-time (< 100ms) and batch infere
 
 ## Architecture
 
-```mermaid
-graph TD
-    subgraph Offline[Offline Store — Delta Lake]
-        SF[Silver Tables]
-        FT[Feature Tables]
-        SF --> FT
-    end
+<!-- Editable: open diagrams/10-scenarios--03-ml-feature-platform.drawio.svg in draw.io -->
 
-    subgraph Training[Model Training]
-        FS[Feature Store]
-        EXP[MLflow Experiments]
-        MR[Model Registry]
-        FT --> FS --> EXP --> MR
-    end
-
-    subgraph Online[Online Store — Redis]
-        REDIS[Redis]
-        FT -->|nightly sync| REDIS
-    end
-
-    subgraph Serving[Inference]
-        BATCH[Batch Scoring Job]
-        RT[FastAPI + Model Serving]
-        MR --> BATCH
-        MR --> RT
-        REDIS --> RT
-    end
-```
-
-| Node | Details |
-|------|---------|
-| **Silver Tables** | raw events |
-| **Feature Tables** | precomputed daily |
-| **Feature Store** | training set creation |
-| **Redis** | latest features per entity |
-| **Batch Scoring Job** | daily Delta table |
-| **FastAPI + Model Serving** | real-time < 100ms |
+![diagram](../diagrams/10-scenarios--03-ml-feature-platform.drawio.svg)
 
 ## Feature Engineering
 

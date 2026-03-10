@@ -2,33 +2,9 @@
 
 ## How it works
 
-```mermaid
-graph TD
-    subgraph Azure Subscription
-        subgraph ADB[Azure Databricks Workspace]
-            CP[Control Plane]
-            DP[Data Plane]
-        end
-        ADLS[Azure Data Lake Storage Gen2]
-        EH[Azure Event Hubs]
-        KV[Azure Key Vault]
-        MI[Managed Identity]
-    end
+<!-- Editable: open diagrams/08-cloud-platforms--02-azure-databricks-setup.drawio.svg in draw.io -->
 
-    CP <--> DP
-    DP -->|Managed Identity auth| ADLS
-    DP -->|Kafka protocol| EH
-    DP -->|secret scope| KV
-```
-
-| Node | Details |
-|------|---------|
-| **Control Plane** | Databricks-managed, UI, APIs, Jobs |
-| **Data Plane** | Your VNet, Driver + Worker VMs |
-| **Azure Data Lake Storage Gen2** | Bronze, Silver, Gold data |
-| **Azure Event Hubs** | Kafka-compatible streaming |
-| **Azure Key Vault** | Secrets management |
-| **Managed Identity** | No passwords for storage auth |
+![diagram](../diagrams/08-cloud-platforms--02-azure-databricks-setup.drawio.svg)
 
 ### Key Azure-specific features
 

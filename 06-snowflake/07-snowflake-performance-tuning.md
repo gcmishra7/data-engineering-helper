@@ -5,31 +5,9 @@ Snowflake auto-optimises many things (micro-partition pruning, result cache), bu
 
 ## How it works
 
-```mermaid
-graph TD
-    SLOW[Slow Query] --> QP[Query Profile]
-    QP --> SCAN{Full Table Scan?}
-    QP --> SPILL{Spill to Disk?}
-    QP --> QUEUE{Queued?}
-    QP --> JOIN{Inefficient Join?}
+<!-- Editable: open diagrams/06-snowflake--07-snowflake-performance-tuning.drawio.svg in draw.io -->
 
-    SCAN --> F1[Add partition filter]
-    SPILL --> F2[Increase warehouse size]
-    QUEUE --> F3[Multi-cluster warehouse]
-    JOIN --> F4[Review join order]
-```
-
-| Node | Details |
-|------|---------|
-| **Query Profile** | in Snowflake UI |
-| **Full Table Scan?** | partitions_scanned ≈ partitions_total |
-| **Spill to Disk?** | bytes_spilled_to_local > 0 |
-| **Queued?** | queued_overload_time > 0 |
-| **Inefficient Join?** | large intermediate result |
-| **Add partition filter** | Cluster the table, Use search optimisation |
-| **Increase warehouse size** | Reduce intermediate size, Filter earlier |
-| **Multi-cluster warehouse** | or separate warehouses |
-| **Review join order** | Filter before join, Materialise intermediate |
+![diagram](../diagrams/06-snowflake--07-snowflake-performance-tuning.drawio.svg)
 
 ### Query Profile — the primary diagnostic tool
 

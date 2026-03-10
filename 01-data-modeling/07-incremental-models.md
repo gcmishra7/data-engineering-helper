@@ -5,19 +5,9 @@ Full table refreshes on 500M-row fact tables take 30+ minutes and cost significa
 
 ## How it works
 
-```mermaid
-graph LR
-    A[First run] --> B[Process ALL rows]
-    C[Subsequent runs] --> D{incremental mode}
-    D --> E[Filter: only rows]
-    E --> F[MERGE or INSERT]
-```
+<!-- Editable: open diagrams/01-data-modeling--07-incremental-models.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Process ALL rows** | build full table |
-| **Filter: only rows** | since last run |
-| **MERGE or INSERT** | into existing table |
+![diagram](../diagrams/01-data-modeling--07-incremental-models.drawio.svg)
 
 ### Strategies
 

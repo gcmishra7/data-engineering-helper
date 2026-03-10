@@ -33,25 +33,9 @@ Warehouse/Lakehouse → [Reverse ETL Tool] → Salesforce · HubSpot · Product 
 
 **When to use:** Activating analytics data in operational workflows (e.g., customer health scores in Salesforce).
 
-```mermaid
-graph LR
-    subgraph ETL
-        S1[Source] --> T1[Transform] --> W1[Warehouse]
-    end
-    subgraph ELT
-        S2[Source] --> L2[Raw Load] --> W2[Warehouse] --> T2[Transform]
-    end
-    subgraph Reverse ETL
-        W3[Warehouse] --> R3[Reverse ETL] --> O3[Operational Systems]
-    end
-```
+<!-- Editable: open diagrams/00-foundations--04-data-pipeline-patterns.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Transform** (T1) | external |
-| **Transform** (T2) | inside |
-| **Reverse ETL** | Census, Hightouch |
-| **Operational Systems** | (previously multi-line) |
+![diagram](../diagrams/00-foundations--04-data-pipeline-patterns.drawio.svg)
 
 ## Comparison
 

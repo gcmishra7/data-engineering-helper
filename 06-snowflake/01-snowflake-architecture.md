@@ -5,35 +5,9 @@ Traditional data warehouses coupled storage and compute — scale one, you scale
 
 ## How it works
 
-```mermaid
-graph TD
-    subgraph CS[Cloud Services Layer]
-        QO[Query Optimiser]
-        AC[Access Control]
-        MM[Metadata Management]
-        TM[Transaction Manager]
-    end
+<!-- Editable: open diagrams/06-snowflake--01-snowflake-architecture.drawio.svg in draw.io -->
 
-    subgraph VWH[Virtual Warehouse Layer - Compute]
-        W1[Warehouse: ANALYTICS_WH]
-        W2[Warehouse: LOADING_WH]
-        W3[Warehouse: ML_WH]
-    end
-
-    subgraph DSL[Database Storage Layer]
-        MP[Micro-partitions]
-    end
-
-    CS --> VWH
-    VWH --> DSL
-```
-
-| Node | Details |
-|------|---------|
-| **Warehouse: ANALYTICS_WH** | XL, 16 nodes |
-| **Warehouse: LOADING_WH** | M, 4 nodes |
-| **Warehouse: ML_WH** | L, 8 nodes |
-| **Micro-partitions** | compressed columnar Parquet, S3 / Azure Blob / GCS |
+![diagram](../diagrams/06-snowflake--01-snowflake-architecture.drawio.svg)
 
 ### Three Layers
 

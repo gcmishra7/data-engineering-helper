@@ -5,32 +5,9 @@ Plain Parquet on S3/ADLS has no ACID guarantees. Two writers corrupt data. No ro
 
 ## How it works
 
-```mermaid
-graph TD
-    W1[Writer 1] --> TL
-    W2[Writer 2] --> TL
-    R1[Reader] --> TL
+<!-- Editable: open diagrams/05-databricks--02-delta-lake-internals.drawio.svg in draw.io -->
 
-    subgraph TL[Transaction Log — _delta_log/]
-        C0[000.json]
-        C1[001.json]
-        C2[002.json]
-        C3[003.json]
-    end
-
-    TL --> D[Data Files]
-```
-
-| Node | Details |
-|------|---------|
-| **Writer 1** | INSERT |
-| **Writer 2** | UPDATE |
-| **Reader** | SELECT |
-| **000.json** | initial schema |
-| **001.json** | add files A, B |
-| **002.json** | add file C, remove file A |
-| **003.json** | schema change |
-| **Data Files** | Parquet on S3/ADLS/GCS |
+![diagram](../diagrams/05-databricks--02-delta-lake-internals.drawio.svg)
 
 ### The Transaction Log
 Every write creates a new JSON commit file in `_delta_log/`. Each file records:

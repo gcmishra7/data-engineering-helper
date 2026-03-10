@@ -5,24 +5,9 @@ Data quality rules spread across ad-hoc SQL checks, notebook assertions, and und
 
 ## How it works
 
-```mermaid
-graph LR
-    DS[Data Source] --> VAL[Validation Run]
-    EXP[Expectation Suite] --> VAL
-    VAL --> RES[Validation Result]
-    RES --> CP[Checkpoint]
-    CP --> DOCS[Data Docs]
-    CP --> ALERT[Alert on Failure]
-```
+<!-- Editable: open diagrams/07-ecosystem-tools--03-great-expectations.drawio.svg in draw.io -->
 
-| Node | Details |
-|------|---------|
-| **Data Source** | Spark, Pandas, SQL |
-| **Expectation Suite** | JSON definition |
-| **Validation Result** | pass/fail per expectation |
-| **Checkpoint** | batch orchestration |
-| **Data Docs** | HTML quality report |
-| **Alert on Failure** | Slack, email, PagerDuty |
+![diagram](../diagrams/07-ecosystem-tools--03-great-expectations.drawio.svg)
 
 ### Core concepts
 

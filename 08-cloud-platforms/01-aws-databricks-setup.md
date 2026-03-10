@@ -2,31 +2,9 @@
 
 ## Databricks on AWS
 
-```mermaid
-graph TD
-    subgraph AWS Account
-        subgraph VPC[Customer VPC]
-            DB_CP[Databricks Control Plane]
-            DB_DP[Databricks Data Plane]
-        end
-        S3[Amazon S3]
-        MSK[Amazon MSK]
-        GLUE[AWS Glue]
-        IAM[IAM Instance Profile]
-    end
+<!-- Editable: open diagrams/08-cloud-platforms--01-aws-databricks-setup.drawio.svg in draw.io -->
 
-    DB_DP -->|Instance Profile| S3
-    DB_DP -->|Kafka protocol| MSK
-```
-
-| Node | Details |
-|------|---------|
-| **Databricks Control Plane** | Cross-account IAM role |
-| **Databricks Data Plane** | EC2 Driver + Workers |
-| **Amazon S3** | Bronze, Silver, Gold |
-| **Amazon MSK** | Managed Kafka |
-| **AWS Glue** | Data Catalog optional |
-| **IAM Instance Profile** | Grants EC2 to S3 access |
+![diagram](../diagrams/08-cloud-platforms--01-aws-databricks-setup.drawio.svg)
 
 **S3 access via instance profile (Unity Catalog)**
 ```terraform

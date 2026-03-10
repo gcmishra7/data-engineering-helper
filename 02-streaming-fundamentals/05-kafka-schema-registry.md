@@ -5,21 +5,9 @@ Without schema enforcement, producers can change message structure silently, bre
 
 ## How it works
 
-```mermaid
-sequenceDiagram
-    participant P as Producer
-    participant R as Schema Registry
-    participant K as Kafka
-    participant C as Consumer
+<!-- Editable: open diagrams/02-streaming-fundamentals--05-kafka-schema-registry.drawio.svg in draw.io -->
 
-    P->>R: Register schema (Avro/Protobuf)
-    R-->>P: schema_id=42
-    P->>K: Produce message [schema_id=42 | payload]
-    C->>K: Consume message
-    C->>R: GET schema for id=42
-    R-->>C: Schema definition
-    C->>C: Deserialise with schema
-```
+![Schema Registry Flow](../diagrams/02-streaming-fundamentals--05-kafka-schema-registry.drawio.svg)
 
 ### Compatibility Modes
 

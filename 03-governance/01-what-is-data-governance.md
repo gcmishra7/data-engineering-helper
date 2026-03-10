@@ -7,34 +7,9 @@ Without governance, data is untrustworthy, ungoverned PII creates regulatory ris
 
 Data governance is the system of policies, processes, roles, and technologies that ensure data is managed as a strategic asset.
 
-```mermaid
-graph TD
-    G[Data Governance] --> P[Policies]
-    G --> R[Roles]
-    G --> Pro[Processes]
-    G --> T[Technology]
+<!-- Editable: open diagrams/03-governance--01-what-is-data-governance.drawio.svg in draw.io -->
 
-    P --> D[Data Classification]
-    P --> A[Access Policies]
-    P --> Q[Quality Standards]
-
-    R --> O[Data Owner]
-    R --> S[Data Steward]
-    R --> C[Data Custodian]
-```
-
-| Node | Details |
-|------|---------|
-| **Policies** | What rules apply |
-| **Roles** | Who is accountable |
-| **Processes** | How changes are made |
-| **Technology** | Catalogues, Access control, Lineage |
-| **Data Classification** | PII, PCI, PHI, Internal |
-| **Access Policies** | RBAC, ABAC |
-| **Quality Standards** | SLAs, Expectations |
-| **Data Owner** | Business accountability |
-| **Data Steward** | Day-to-day curation |
-| **Data Custodian** | Technical implementation |
+![diagram](../diagrams/03-governance--01-what-is-data-governance.drawio.svg)
 
 ### The Four Pillars
 

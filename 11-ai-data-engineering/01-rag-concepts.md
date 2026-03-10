@@ -5,32 +5,9 @@ LLMs have a knowledge cutoff and no access to your private data. Retraining or f
 
 ## How it works
 
-```mermaid
-graph LR
-    subgraph Indexing Pipeline - offline
-        DOC[Raw Documents] --> CHUNK[Chunking]
-        CHUNK --> EMBED[Embedding Model]
-        EMBED --> VS[Vector Store]
-    end
+<!-- Editable: open diagrams/11-ai-data-engineering--01-rag-concepts.drawio.svg in draw.io -->
 
-    subgraph Query Pipeline - online
-        Q[User Question] --> QE[Embed Question]
-        QE --> RET[Retrieve Top-K]
-        VS --> RET
-        RET --> CTX[Build Context]
-        CTX --> LLM[LLM]
-        LLM --> ANS[Answer]
-    end
-```
-
-| Node | Details |
-|------|---------|
-| **Raw Documents** | PDFs, Confluence, Slack |
-| **Embedding Model** | text-embedding-3-small |
-| **Vector Store** | Pinecone, Weaviate, pgvector |
-| **Retrieve Top-K** | similarity search |
-| **Build Context** | question + chunks |
-| **LLM** | GPT-4, Claude, Llama |
+![diagram](../diagrams/11-ai-data-engineering--01-rag-concepts.drawio.svg)
 
 ### The two pipelines
 

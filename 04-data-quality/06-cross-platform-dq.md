@@ -5,36 +5,9 @@ Most organisations use both Databricks (for ML and Spark-based ETL) and Snowflak
 
 ## How it works
 
-```mermaid
-graph LR
-    subgraph Databricks
-        DLT[DLT Expectations]
-        GX[Great Expectations]
-    end
-    subgraph Snowflake
-        DMF[Data Metric Functions]
-        GX2[Great Expectations]
-    end
-    subgraph Shared
-        META[Quality Metadata Store]
-        DASH[Quality Dashboard]
-    end
+<!-- Editable: open diagrams/04-data-quality--06-cross-platform-dq.drawio.svg in draw.io -->
 
-    DLT --> META
-    GX --> META
-    DMF --> META
-    GX2 --> META
-    META --> DASH
-```
-
-| Node | Details |
-|------|---------|
-| **DLT Expectations** | @expect, @expect_or_drop |
-| **Great Expectations** (Databricks) | Spark datasource |
-| **Data Metric Functions** | native Snowflake DQ |
-| **Great Expectations** (Snowflake) | SQLAlchemy datasource |
-| **Quality Metadata Store** | Delta or Snowflake table |
-| **Quality Dashboard** | Databricks SQL or Tableau |
+![diagram](../diagrams/04-data-quality--06-cross-platform-dq.drawio.svg)
 
 ### Strategy: define once, measure on both platforms
 

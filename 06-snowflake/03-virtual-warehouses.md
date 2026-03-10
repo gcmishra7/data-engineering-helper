@@ -5,33 +5,9 @@ Snowflake separates storage from compute. Understanding how virtual warehouses w
 
 ## How it works
 
-```mermaid
-graph TD
-    subgraph Snowflake Architecture
-        CS[Cloud Services Layer]
-        subgraph Compute[Compute Layer — Virtual Warehouses]
-            VW1[Warehouse: ANALYTICS_WH]
-            VW2[Warehouse: ETL_WH]
-            VW3[Warehouse: BI_WH]
-        end
-        ST[Storage Layer]
-    end
+<!-- Editable: open diagrams/06-snowflake--03-virtual-warehouses.drawio.svg in draw.io -->
 
-    VW1 --> ST
-    VW2 --> ST
-    VW3 --> ST
-    CS --> VW1
-    CS --> VW2
-    CS --> VW3
-```
-
-| Node | Details |
-|------|---------|
-| **Cloud Services Layer** | query parsing, optimisation, auth |
-| **Warehouse: ANALYTICS_WH** | X-Large, 4 clusters |
-| **Warehouse: ETL_WH** | Large, 1 cluster |
-| **Warehouse: BI_WH** | Small, auto-suspend 1min |
-| **Storage Layer** | micro-partitioned Parquet on S3/ADLS/GCS |
+![diagram](../diagrams/06-snowflake--03-virtual-warehouses.drawio.svg)
 
 ### Virtual Warehouse sizes and credits
 

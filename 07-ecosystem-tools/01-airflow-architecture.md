@@ -5,30 +5,9 @@ Data pipelines have dependencies — run job B only after job A succeeds, retry 
 
 ## How it works
 
-```mermaid
-graph TD
-    subgraph Airflow Components
-        S[Scheduler] --> MQ[Message Queue]
-        MQ --> W1[Worker 1]
-        MQ --> W2[Worker 2]
-        MQ --> W3[Worker 3]
-        S --> DB[(Metadata DB)]
-        WS[Webserver] --> DB
-        W1 --> DB
-        W2 --> DB
-        W3 --> DB
-    end
+<!-- Editable: open diagrams/07-ecosystem-tools--01-airflow-architecture.drawio.svg in draw.io -->
 
-    DAG[DAG Files] --> S
-```
-
-| Node | Details |
-|------|---------|
-| **Scheduler** | parses DAGs, triggers tasks |
-| **Message Queue** | Celery / Redis |
-| **Metadata DB** | PostgreSQL |
-| **Webserver** | UI + REST API |
-| **DAG Files** | S3 / Git / Local |
+![diagram](../diagrams/07-ecosystem-tools--01-airflow-architecture.drawio.svg)
 
 ### Core Concepts
 

@@ -7,26 +7,9 @@ Guessing cluster size leads to two failure modes: under-sized clusters OOM or ru
 
 ## The Sizing Decision Framework
 
-```mermaid
-flowchart TD
-    A[Start: What is the job type?] --> B{Batch ETL}
-    A --> C{Structured Streaming}
-    A --> D{Interactive / Notebook}
-    A --> E{ML Training}
+<!-- Editable: open diagrams/05-databricks--11-cluster-sizing-guide.drawio.svg in draw.io -->
 
-    B --> B1[How large is the input data?]
-    B1 -->|< 10 GB| B2[Single-node or 2-worker\nStandard_DS3_v2 / m5.xlarge]
-    B1 -->|10–100 GB| B3[4–8 workers\nStandard_DS4_v2 / m5.2xlarge]
-    B1 -->|100 GB – 1 TB| B4[8–20 workers\nStandard_DS5_v2 / m5.4xlarge]
-    B1 -->|> 1 TB| B5[20–80 workers\nStandard_DS5_v2 / r5.4xlarge\nConsider Z-ordering + partitioning first]
-
-    C --> C1[Measure: msgs/sec × avg msg size]
-    C1 --> C2[2–6 workers\nStandard_DS4_v2\nFixed size, no autoscaling]
-
-    D --> D1[2–4 workers\nSmall memory-optimised\nAutoscaling ON min=0]
-
-    E --> E1[GPU cluster\nNCADS_A100_v4 / p3.2xlarge\nWorkers = number of GPUs needed]
-```
+![diagram](../diagrams/05-databricks--11-cluster-sizing-guide.drawio.svg)
 
 ---
 
