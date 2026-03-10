@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 760" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#999" />
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="760" fill="#fafafa" rx="8" />
+
+  <!-- ===== NODES ===== -->
+
+  <!-- Raw Sources -->
+  <g filter="url(#shadow)">
+    <rect x="310" y="20" width="240" height="64" rx="10" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="430" y="42" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">Raw Sources</text>
+    <text x="430" y="62" text-anchor="middle" font-size="11" fill="#555">DBs · APIs · Events · Files</text>
+  </g>
+
+  <!-- Ingestion -->
+  <g filter="url(#shadow)">
+    <rect x="220" y="148" width="280" height="64" rx="10" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5" />
+    <text x="360" y="172" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">Ingestion</text>
+    <text x="360" y="192" text-anchor="middle" font-size="11" fill="#555">Fivetran · Airbyte · Kafka · Debezium</text>
+  </g>
+
+  <!-- Storage -->
+  <g filter="url(#shadow)">
+    <rect x="220" y="278" width="280" height="64" rx="10" fill="#fff2cc" stroke="#d6b656" stroke-width="1.5" />
+    <text x="360" y="302" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">Storage</text>
+    <text x="360" y="322" text-anchor="middle" font-size="11" fill="#555">Data Lake · Lakehouse · Warehouse</text>
+  </g>
+
+  <!-- Transformation -->
+  <g filter="url(#shadow)">
+    <rect x="220" y="408" width="280" height="64" rx="10" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.5" />
+    <text x="360" y="432" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">Transformation</text>
+    <text x="360" y="452" text-anchor="middle" font-size="11" fill="#555">Spark · dbt · SQL</text>
+  </g>
+
+  <!-- Serving -->
+  <g filter="url(#shadow)">
+    <rect x="220" y="538" width="280" height="64" rx="10" fill="#f8cecc" stroke="#b85450" stroke-width="1.5" />
+    <text x="360" y="562" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">Serving</text>
+    <text x="360" y="582" text-anchor="middle" font-size="11" fill="#555">Snowflake · Databricks SQL · BI Tools</text>
+  </g>
+
+  <!-- Consumers -->
+  <g filter="url(#shadow)">
+    <rect x="310" y="668" width="240" height="64" rx="10" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5" />
+    <text x="430" y="692" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">Consumers</text>
+    <text x="430" y="712" text-anchor="middle" font-size="11" fill="#555">Analysts · Scientists · Apps</text>
+  </g>
+
+  <!-- Orchestration -->
+  <g filter="url(#shadow)">
+    <rect x="640" y="180" width="220" height="64" rx="10" fill="#f5f5f5" stroke="#999" stroke-width="1.5" />
+    <text x="750" y="204" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Orchestration</text>
+    <text x="750" y="224" text-anchor="middle" font-size="11" fill="#666">Airflow · Workflows</text>
+  </g>
+
+  <!-- Governance & Quality -->
+  <g filter="url(#shadow)">
+    <rect x="640" y="340" width="260" height="64" rx="10" fill="#f5f5f5" stroke="#999" stroke-width="1.5" />
+    <text x="770" y="364" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Governance &amp; Quality</text>
+    <text x="770" y="384" text-anchor="middle" font-size="11" fill="#666">Unity Catalog · Great Expectations</text>
+  </g>
+
+  <!-- ===== ARROWS: Main flow (solid) ===== -->
+  <!-- Raw Sources → Ingestion -->
+  <line x1="430" y1="84" x2="380" y2="148" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- Ingestion → Storage -->
+  <line x1="360" y1="212" x2="360" y2="278" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- Storage → Transformation -->
+  <line x1="360" y1="342" x2="360" y2="408" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- Transformation → Serving -->
+  <line x1="360" y1="472" x2="360" y2="538" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- Serving → Consumers -->
+  <line x1="380" y1="602" x2="420" y2="668" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- ===== ARROWS: Orchestration (dashed) ===== -->
+  <!-- Orchestration → Ingestion -->
+  <line x1="640" y1="200" x2="500" y2="180" stroke="#999" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-gray)" />
+  <!-- Orchestration → Transformation -->
+  <line x1="680" y1="244" x2="500" y2="430" stroke="#999" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-gray)" />
+
+  <!-- ===== ARROWS: Governance (dashed) ===== -->
+  <!-- Governance → Storage -->
+  <line x1="640" y1="360" x2="500" y2="320" stroke="#999" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-gray)" />
+  <!-- Governance → Transformation -->
+  <line x1="660" y1="404" x2="500" y2="440" stroke="#999" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-gray)" />
+</svg>

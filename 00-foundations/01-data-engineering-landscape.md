@@ -6,29 +6,9 @@ Raw data is useless at scale. A company generating 10TB/day of events cannot let
 
 ## How it works
 
-```mermaid
-graph TD
-    A[Raw Sources] --> B[Ingestion]
-    B --> C[Storage]
-    C --> D[Transformation]
-    D --> E[Serving]
-    E --> F[Consumers]
-    G[Orchestration] --> B
-    G --> D
-    H[Governance] --> C
-    H --> D
-```
+<!-- Editable diagram: open diagrams/01-data-engineering-landscape.drawio in draw.io or VS Code draw.io extension -->
 
-| Layer | Tools |
-|-------|-------|
-| **Raw Sources** | DBs, APIs, Events, Files |
-| **Ingestion** | Fivetran, Airbyte, Kafka, Debezium |
-| **Storage** | Data Lake, Lakehouse, Warehouse |
-| **Transformation** | Spark, dbt, SQL |
-| **Serving** | Snowflake, Databricks SQL, BI Tools |
-| **Consumers** | Analysts, Scientists, Apps |
-| **Orchestration** | Airflow, Workflows |
-| **Governance** | Unity Catalog, Great Expectations |
+[![Data Engineering Landscape](../diagrams/01-data-engineering-landscape.drawio.svg)](../diagrams/01-data-engineering-landscape.drawio)
 
 ### Roles
 
