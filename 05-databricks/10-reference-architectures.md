@@ -5,7 +5,7 @@ Choosing how to wire together Databricks with cloud storage, streaming, orchestr
 
 ## Architecture 1 — Batch Lakehouse (Azure)
 
-![diagram](../diagrams/05-databricks--10-reference-architectures-1.png)
+<img src="../diagrams/05-databricks--10-reference-architectures-1.png" width="700">
 
 **Key design decisions:**
 - Debezium for operational DBs (real-time CDC), ADF for bulk/API sources
@@ -19,7 +19,7 @@ Choosing how to wire together Databricks with cloud storage, streaming, orchestr
 
 ## Architecture 2 — Real-Time Streaming Lakehouse (Azure)
 
-![diagram](../diagrams/05-databricks--10-reference-architectures-2.png)
+<img src="../diagrams/05-databricks--10-reference-architectures-2.png" width="700">
 
 **SLA targets:**
 | Stage | Latency |
@@ -41,7 +41,7 @@ Choosing how to wire together Databricks with cloud storage, streaming, orchestr
 
 ## Architecture 3 — Multi-Cloud Lakehouse (Azure primary + GCP analytics)
 
-![diagram](../diagrams/05-databricks--10-reference-architectures-3.png)
+<img src="../diagrams/05-databricks--10-reference-architectures-3.png" width="700">
 
 **Key design decisions:**
 - Delta UniForm on Gold tables: write once in Delta, Snowflake/BigQuery read as Iceberg
@@ -53,7 +53,7 @@ Choosing how to wire together Databricks with cloud storage, streaming, orchestr
 
 ## Architecture 4 — ML Platform Lakehouse
 
-![diagram](../diagrams/05-databricks--10-reference-architectures-4.png)
+<img src="../diagrams/05-databricks--10-reference-architectures-4.png" width="700">
 
 **Key design decisions:**
 - Feature Store as the single source of truth for features (no training-serving skew)

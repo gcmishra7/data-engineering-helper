@@ -5,7 +5,7 @@ Snowflake auto-optimises many things (micro-partition pruning, result cache), bu
 
 ## How it works
 
-![diagram](../diagrams/06-snowflake--07-snowflake-performance-tuning.png)
+<img src="../diagrams/06-snowflake--07-snowflake-performance-tuning.png" width="700">
 
 ### Query Profile — the primary diagnostic tool
 

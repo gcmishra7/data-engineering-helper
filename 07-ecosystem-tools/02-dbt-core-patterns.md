@@ -5,7 +5,7 @@ SQL transformation logic lives in ad-hoc scripts, stored procedures, or BI tool 
 
 ## How it works
 
-![diagram](../diagrams/07-ecosystem-tools--02-dbt-core-patterns.png)
+<img src="../diagrams/07-ecosystem-tools--02-dbt-core-patterns.png" width="700">
 
 ### Project structure
 

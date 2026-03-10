@@ -5,7 +5,7 @@ Building production data pipelines requires wiring together ingestion, transform
 
 ## How it works
 
-![diagram](../diagrams/05-databricks--05-dlt-overview.png)
+<img src="../diagrams/05-databricks--05-dlt-overview.png" width="700">
 
 ### Streaming vs materialised view
 

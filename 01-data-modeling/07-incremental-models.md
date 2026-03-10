@@ -5,7 +5,7 @@ Full table refreshes on 500M-row fact tables take 30+ minutes and cost significa
 
 ## How it works
 
-![diagram](../diagrams/01-data-modeling--07-incremental-models.png)
+<img src="../diagrams/01-data-modeling--07-incremental-models.png" width="700">
 
 ### Strategies
 

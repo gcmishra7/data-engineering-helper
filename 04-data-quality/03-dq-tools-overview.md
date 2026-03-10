@@ -5,7 +5,7 @@ Dozens of data quality tools exist. Choosing the right one depends on where your
 
 ## Tool Landscape
 
-![diagram](../diagrams/04-data-quality--03-dq-tools-overview.png)
+<img src="../diagrams/04-data-quality--03-dq-tools-overview.png" width="700">
 
 ## Tool Comparison
 

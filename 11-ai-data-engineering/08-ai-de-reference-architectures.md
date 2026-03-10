@@ -2,7 +2,7 @@
 
 ## Architecture 1 — Enterprise RAG Platform
 
-![diagram](../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-1.png)
+<img src="../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-1.png" width="700">
 
 **Key design decisions:**
 - Databricks for indexing (parallelise over millions of documents)
@@ -15,7 +15,7 @@
 
 ## Architecture 2 — Unstructured Data Lakehouse
 
-![diagram](../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-2.png)
+<img src="../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-2.png" width="700">
 
 **SLA targets:**
 
@@ -29,7 +29,7 @@
 
 ## Architecture 3 — AI-Augmented Data Pipeline (agentic)
 
-![diagram](../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-3.png)
+<img src="../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-3.png" width="700">
 
 **Use cases:**
 - Automated data quality investigation: "silver.payments has 15% null rate spike — investigate root cause and report"
@@ -40,7 +40,7 @@
 
 ## Architecture 4 — Fine-Tuned Domain Model Pipeline
 
-![diagram](../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-4.png)
+<img src="../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-4.png" width="700">
 
 **When to fine-tune vs pure RAG:**
 

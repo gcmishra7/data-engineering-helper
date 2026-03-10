@@ -5,7 +5,7 @@ Traditional data sharing requires extracting data, transferring it, and loading 
 
 ## How it works
 
-![diagram](../diagrams/06-snowflake--05-snowflake-data-sharing.png)
+<img src="../diagrams/06-snowflake--05-snowflake-data-sharing.png" width="700">
 
 No data is copied. Recipients query provider's storage directly via Snowflake's metadata layer.
 

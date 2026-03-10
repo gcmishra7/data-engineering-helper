@@ -7,7 +7,7 @@ Enterprise running Databricks on Azure (primary) + Snowflake on GCP (analytics) 
 
 ## Architecture
 
-![diagram](../diagrams/10-scenarios--04-multi-cloud-governance.png)
+<img src="../diagrams/10-scenarios--04-multi-cloud-governance.png" width="700">
 
 ## Governance Alignment Pattern
 

@@ -2,7 +2,7 @@
 
 ## Architecture 1 — Modern ELT Lakehouse (Snowflake-primary)
 
-![diagram](../diagrams/06-snowflake--10-snowflake-reference-architectures-1.png)
+<img src="../diagrams/06-snowflake--10-snowflake-reference-architectures-1.png" width="700">
 
 **Key design decisions:**
 - Fivetran handles all source connectors (no custom ingestion code)
@@ -15,7 +15,7 @@
 
 ## Architecture 2 — Hybrid Databricks + Snowflake
 
-![diagram](../diagrams/06-snowflake--10-snowflake-reference-architectures-2.png)
+<img src="../diagrams/06-snowflake--10-snowflake-reference-architectures-2.png" width="700">
 
 **When to use this pattern:**
 - Streaming ingestion volume too high for Snowpipe → use Databricks Structured Streaming
@@ -26,7 +26,7 @@
 
 ## Architecture 3 — Snowflake as Data Mesh Node
 
-![diagram](../diagrams/06-snowflake--10-snowflake-reference-architectures-3.png)
+<img src="../diagrams/06-snowflake--10-snowflake-reference-architectures-3.png" width="700">
 
 **Data mesh principles applied:**
 - Each domain owns its Snowflake schema and dbt models

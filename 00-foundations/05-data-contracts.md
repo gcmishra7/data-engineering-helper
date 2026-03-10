@@ -12,7 +12,7 @@ A data contract specifies:
 - **SLA**: freshness, availability, volume expectations
 - **Owner**: who is accountable for the data
 
-![diagram](../diagrams/00-foundations--05-data-contracts.png)
+<img src="../diagrams/00-foundations--05-data-contracts.png" width="700">
 
 ## Contract Structure (YAML example)
 

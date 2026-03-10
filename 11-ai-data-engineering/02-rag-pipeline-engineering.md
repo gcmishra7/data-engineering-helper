@@ -5,7 +5,7 @@ A prototype RAG chatbot running on 100 documents breaks at 1 million documents. 
 
 ## How it works
 
-![diagram](../diagrams/11-ai-data-engineering--02-rag-pipeline-engineering.png)
+<img src="../diagrams/11-ai-data-engineering--02-rag-pipeline-engineering.png" width="700">
 
 ### Production indexing pipeline (Databricks + Delta Lake)
 

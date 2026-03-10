@@ -5,7 +5,7 @@ Most organisations use both Databricks (for ML and Spark-based ETL) and Snowflak
 
 ## How it works
 
-![diagram](../diagrams/04-data-quality--06-cross-platform-dq.png)
+<img src="../diagrams/04-data-quality--06-cross-platform-dq.png" width="700">
 
 ### Strategy: define once, measure on both platforms
 

@@ -11,7 +11,7 @@ All three add a metadata layer on top of Parquet files on object storage to prov
 - Time travel / snapshots
 - Partition management
 
-![diagram](../diagrams/09-cross-platform--01-table-formats-compared.png)
+<img src="../diagrams/09-cross-platform--01-table-formats-compared.png" width="700">
 
 ## Feature Comparison
 

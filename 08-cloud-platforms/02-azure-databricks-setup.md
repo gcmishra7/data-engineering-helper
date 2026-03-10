@@ -2,7 +2,7 @@
 
 ## How it works
 
-![diagram](../diagrams/08-cloud-platforms--02-azure-databricks-setup.png)
+<img src="../diagrams/08-cloud-platforms--02-azure-databricks-setup.png" width="700">
 
 ### Key Azure-specific features
 

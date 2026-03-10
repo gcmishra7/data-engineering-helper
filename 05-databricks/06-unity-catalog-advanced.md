@@ -5,7 +5,7 @@ The Unity Catalog overview covers RBAC basics. This guide covers the patterns ne
 
 ## How it works
 
-![diagram](../diagrams/05-databricks--06-unity-catalog-advanced.png)
+<img src="../diagrams/05-databricks--06-unity-catalog-advanced.png" width="700">
 
 ### Metastore and workspace assignment
 

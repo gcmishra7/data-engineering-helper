@@ -5,7 +5,7 @@ Ad-hoc quality checks are inconsistent, hard to scale, and invisible. A DQ frame
 
 ## The Four Layers
 
-![diagram](../diagrams/04-data-quality--02-dq-framework-design.png)
+<img src="../diagrams/04-data-quality--02-dq-framework-design.png" width="700">
 
 ### Layer 1: Prevention
 Stop bad data from entering the platform.

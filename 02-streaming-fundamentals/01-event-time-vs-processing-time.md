@@ -5,7 +5,7 @@ Streaming systems deal with two clocks: when an event *happened* vs when the sys
 
 ## How it works
 
-![diagram](../diagrams/02-streaming-fundamentals--01-event-time-vs-processing-time.png)
+<img src="../diagrams/02-streaming-fundamentals--01-event-time-vs-processing-time.png" width="700">
 
 ### Why it matters: wrong aggregation
 

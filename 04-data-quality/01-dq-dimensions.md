@@ -5,7 +5,7 @@
 
 ## The Six Dimensions
 
-![diagram](../diagrams/04-data-quality--01-dq-dimensions.png)
+<img src="../diagrams/04-data-quality--01-dq-dimensions.png" width="700">
 
 ### 1. Accuracy
 Data correctly represents reality.

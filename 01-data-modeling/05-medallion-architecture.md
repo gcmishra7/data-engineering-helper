@@ -5,7 +5,7 @@ Without layering, data engineers either overwrite raw data (losing auditability)
 
 ## How it works
 
-![diagram](../diagrams/01-data-modeling--05-medallion-architecture.png)
+<img src="../diagrams/01-data-modeling--05-medallion-architecture.png" width="700">
 
 ### Layer Responsibilities
 

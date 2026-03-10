@@ -7,7 +7,7 @@ Without governance, data is untrustworthy, ungoverned PII creates regulatory ris
 
 Data governance is the system of policies, processes, roles, and technologies that ensure data is managed as a strategic asset.
 
-![diagram](../diagrams/03-governance--01-what-is-data-governance.png)
+<img src="../diagrams/03-governance--01-what-is-data-governance.png" width="700">
 
 ### The Four Pillars
 

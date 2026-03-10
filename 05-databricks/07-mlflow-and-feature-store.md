@@ -5,7 +5,7 @@ ML experiments are hard to reproduce. Models trained last Tuesday with "slightly
 
 ## How it works
 
-![diagram](../diagrams/05-databricks--07-mlflow-and-feature-store.png)
+<img src="../diagrams/05-databricks--07-mlflow-and-feature-store.png" width="700">
 
 ### MLflow Tracking — log everything
 

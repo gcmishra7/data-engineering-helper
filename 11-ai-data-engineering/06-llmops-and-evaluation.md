@@ -5,7 +5,7 @@ An LLM pipeline that looks good in demos can silently degrade in production — 
 
 ## How it works
 
-![diagram](../diagrams/11-ai-data-engineering--06-llmops-and-evaluation.png)
+<img src="../diagrams/11-ai-data-engineering--06-llmops-and-evaluation.png" width="700">
 
 ### RAG evaluation metrics
 

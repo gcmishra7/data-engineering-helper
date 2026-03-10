@@ -17,7 +17,7 @@ Picking the wrong storage type kills performance and inflates cost. Object stora
 
 ### File Formats
 
-![diagram](../diagrams/00-foundations--03-storage-concepts.png)
+<img src="../diagrams/00-foundations--03-storage-concepts.png" width="700">
 
 ### Columnar vs Row Storage
 

@@ -6,7 +6,7 @@ Raw data is useless at scale. A company generating 10TB/day of events cannot let
 
 ## How it works
 
-![diagram](../diagrams/00-foundations--01-data-engineering-landscape.png)
+<img src="../diagrams/00-foundations--01-data-engineering-landscape.png" width="700">
 
 ### Roles
 

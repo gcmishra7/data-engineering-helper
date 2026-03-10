@@ -5,7 +5,7 @@ Plain Parquet on S3/ADLS has no ACID guarantees. Two writers corrupt data. No ro
 
 ## How it works
 
-![diagram](../diagrams/05-databricks--02-delta-lake-internals.png)
+<img src="../diagrams/05-databricks--02-delta-lake-internals.png" width="700">
 
 ### The Transaction Log
 Every write creates a new JSON commit file in `_delta_log/`. Each file records:

@@ -5,7 +5,7 @@ A Spark job that takes 4 hours can often be reduced to 15 minutes with targeted 
 
 ## How it works
 
-![diagram](../diagrams/05-databricks--08-performance-tuning.png)
+<img src="../diagrams/05-databricks--08-performance-tuning.png" width="700">
 
 ### Step 1 — Profile the job in Spark UI
 

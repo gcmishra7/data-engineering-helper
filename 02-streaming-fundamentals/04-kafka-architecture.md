@@ -5,7 +5,7 @@ Systems need to communicate asynchronously at high throughput without tight coup
 
 ## How it works
 
-![diagram](../diagrams/02-streaming-fundamentals--04-kafka-architecture.png)
+<img src="../diagrams/02-streaming-fundamentals--04-kafka-architecture.png" width="700">
 
 ### Core Concepts
 

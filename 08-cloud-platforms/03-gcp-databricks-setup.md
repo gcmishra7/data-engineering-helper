@@ -2,7 +2,7 @@
 
 ## Databricks on GCP
 
-![diagram](../diagrams/08-cloud-platforms--03-gcp-databricks-setup.png)
+<img src="../diagrams/08-cloud-platforms--03-gcp-databricks-setup.png" width="700">
 
 **GCS access via Workload Identity**
 ```python

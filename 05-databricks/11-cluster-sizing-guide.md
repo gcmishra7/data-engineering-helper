@@ -7,7 +7,7 @@ Guessing cluster size leads to two failure modes: under-sized clusters OOM or ru
 
 ## The Sizing Decision Framework
 
-![diagram](../diagrams/05-databricks--11-cluster-sizing-guide.png)
+<img src="../diagrams/05-databricks--11-cluster-sizing-guide.png" width="700">
 
 ---
 

@@ -5,7 +5,7 @@ Writing correct, fault-tolerant streaming code from scratch is hard. Structured 
 
 ## How it works
 
-![diagram](../diagrams/05-databricks--04-structured-streaming-guide.png)
+<img src="../diagrams/05-databricks--04-structured-streaming-guide.png" width="700">
 
 ### Reading from Kafka
 

@@ -5,7 +5,7 @@ Normalised OLTP schemas are optimised for writes, not reads. Analysts need to an
 
 ## How it works
 
-![diagram](../diagrams/01-data-modeling--02-star-schema.png)
+<img src="../diagrams/01-data-modeling--02-star-schema.png" width="700">
 
 ### Facts vs Dimensions
 

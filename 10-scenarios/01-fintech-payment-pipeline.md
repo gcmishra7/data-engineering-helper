@@ -7,7 +7,7 @@ Real-time payment processing pipeline: Kafka → Databricks fraud scoring → De
 
 ## Architecture
 
-![diagram](../diagrams/10-scenarios--01-fintech-payment-pipeline.png)
+<img src="../diagrams/10-scenarios--01-fintech-payment-pipeline.png" width="700">
 
 ## Pipeline Stages
 

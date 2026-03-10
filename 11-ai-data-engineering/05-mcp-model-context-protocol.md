@@ -5,7 +5,7 @@ LLMs are isolated from external systems. Every integration (database, file syste
 
 ## How it works
 
-![diagram](../diagrams/11-ai-data-engineering--05-mcp-model-context-protocol.png)
+<img src="../diagrams/11-ai-data-engineering--05-mcp-model-context-protocol.png" width="700">
 
 ### MCP primitives
 

@@ -5,7 +5,7 @@ Data pipelines have dependencies — run job B only after job A succeeds, retry 
 
 ## How it works
 
-![diagram](../diagrams/07-ecosystem-tools--01-airflow-architecture.png)
+<img src="../diagrams/07-ecosystem-tools--01-airflow-architecture.png" width="700">
 
 ### Core Concepts
 

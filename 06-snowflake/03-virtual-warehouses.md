@@ -5,7 +5,7 @@ Snowflake separates storage from compute. Understanding how virtual warehouses w
 
 ## How it works
 
-![diagram](../diagrams/06-snowflake--03-virtual-warehouses.png)
+<img src="../diagrams/06-snowflake--03-virtual-warehouses.png" width="700">
 
 ### Virtual Warehouse sizes and credits
 

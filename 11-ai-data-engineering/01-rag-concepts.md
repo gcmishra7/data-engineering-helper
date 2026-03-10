@@ -5,7 +5,7 @@ LLMs have a knowledge cutoff and no access to your private data. Retraining or f
 
 ## How it works
 
-![diagram](../diagrams/11-ai-data-engineering--01-rag-concepts.png)
+<img src="../diagrams/11-ai-data-engineering--01-rag-concepts.png" width="700">
 
 ### The two pipelines
 

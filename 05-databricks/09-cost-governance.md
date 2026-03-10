@@ -5,7 +5,7 @@ Databricks bills by DBU (Databricks Unit) per second. Without governance, engine
 
 ## How it works
 
-![diagram](../diagrams/05-databricks--09-cost-governance.png)
+<img src="../diagrams/05-databricks--09-cost-governance.png" width="700">
 
 ### DBU pricing model
 

@@ -6,7 +6,7 @@ Data warehouses are fast but expensive and closed. Data lakes are cheap and flex
 
 ## How it works
 
-![diagram](../diagrams/00-foundations--06-lakehouse-architecture.png)
+<img src="../diagrams/00-foundations--06-lakehouse-architecture.png" width="700">
 
 ### Key Properties of a Lakehouse
 

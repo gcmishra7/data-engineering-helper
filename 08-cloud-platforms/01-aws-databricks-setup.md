@@ -2,7 +2,7 @@
 
 ## Databricks on AWS
 
-![diagram](../diagrams/08-cloud-platforms--01-aws-databricks-setup.png)
+<img src="../diagrams/08-cloud-platforms--01-aws-databricks-setup.png" width="700">
 
 **S3 access via instance profile (Unity Catalog)**
 ```terraform

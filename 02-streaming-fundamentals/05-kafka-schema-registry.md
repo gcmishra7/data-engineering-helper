@@ -5,7 +5,7 @@ Without schema enforcement, producers can change message structure silently, bre
 
 ## How it works
 
-![diagram](../diagrams/02-streaming-fundamentals--05-kafka-schema-registry.png)
+<img src="../diagrams/02-streaming-fundamentals--05-kafka-schema-registry.png" width="700">
 
 ### Compatibility Modes
 

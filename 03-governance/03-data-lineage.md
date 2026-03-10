@@ -5,7 +5,7 @@ When a dashboard shows wrong numbers, how do you find the root cause? When a sou
 
 ## How it works
 
-![diagram](../diagrams/03-governance--03-data-lineage.png)
+<img src="../diagrams/03-governance--03-data-lineage.png" width="700">
 
 ### Lineage levels
 

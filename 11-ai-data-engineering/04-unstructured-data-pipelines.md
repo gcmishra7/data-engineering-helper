@@ -5,7 +5,7 @@
 
 ## How it works
 
-![diagram](../diagrams/11-ai-data-engineering--04-unstructured-data-pipelines.png)
+<img src="../diagrams/11-ai-data-engineering--04-unstructured-data-pipelines.png" width="700">
 
 ### PDF parsing — layout-aware extraction
 

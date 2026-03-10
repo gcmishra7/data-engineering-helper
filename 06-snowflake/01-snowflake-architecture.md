@@ -5,7 +5,7 @@ Traditional data warehouses coupled storage and compute — scale one, you scale
 
 ## How it works
 
-![diagram](../diagrams/06-snowflake--01-snowflake-architecture.png)
+<img src="../diagrams/06-snowflake--01-snowflake-architecture.png" width="700">
 
 ### Three Layers
 

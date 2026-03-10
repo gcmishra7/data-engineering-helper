@@ -7,7 +7,7 @@ Financial services company using Data Vault 2.0 methodology in the Silver layer 
 
 ## Architecture
 
-![diagram](../diagrams/10-scenarios--06-data-vault-lakehouse.png)
+<img src="../diagrams/10-scenarios--06-data-vault-lakehouse.png" width="700">
 
 ## Data Vault 2.0 Core Structures
 

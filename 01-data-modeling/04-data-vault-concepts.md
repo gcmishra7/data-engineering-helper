@@ -7,7 +7,7 @@ Kimball and Inmon models require rebuilding when source systems change. Data Vau
 
 Data Vault has three core entity types:
 
-![diagram](../diagrams/01-data-modeling--04-data-vault-concepts.png)
+<img src="../diagrams/01-data-modeling--04-data-vault-concepts.png" width="700">
 
 ### Hubs — Business Keys
 Store unique business keys. Never change. One row per unique business entity.

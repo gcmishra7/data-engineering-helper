@@ -5,7 +5,7 @@ Organisations using both Databricks (for ML and Spark ETL) and Snowflake (for SQ
 
 ## How it works
 
-![diagram](../diagrams/03-governance--06-cross-platform-governance.png)
+<img src="../diagrams/03-governance--06-cross-platform-governance.png" width="700">
 
 ### Governance alignment checklist
 

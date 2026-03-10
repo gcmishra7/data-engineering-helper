@@ -7,7 +7,7 @@ End-to-end ML feature platform serving both real-time (< 100ms) and batch infere
 
 ## Architecture
 
-![diagram](../diagrams/10-scenarios--03-ml-feature-platform.png)
+<img src="../diagrams/10-scenarios--03-ml-feature-platform.png" width="700">
 
 ## Feature Engineering
 

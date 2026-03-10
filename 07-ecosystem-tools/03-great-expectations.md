@@ -5,7 +5,7 @@ Data quality rules spread across ad-hoc SQL checks, notebook assertions, and und
 
 ## How it works
 
-![diagram](../diagrams/07-ecosystem-tools--03-great-expectations.png)
+<img src="../diagrams/07-ecosystem-tools--03-great-expectations.png" width="700">
 
 ### Core concepts
 

@@ -5,7 +5,7 @@ Before Unity Catalog, each Databricks workspace had its own Hive metastore — s
 
 ## How it works
 
-![diagram](../diagrams/03-governance--04-unity-catalog-overview.png)
+<img src="../diagrams/03-governance--04-unity-catalog-overview.png" width="700">
 
 ### Three-Level Namespace
 `catalog.schema.table`
