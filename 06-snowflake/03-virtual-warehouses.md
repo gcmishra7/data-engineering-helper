@@ -17,8 +17,12 @@ graph TD
         ST[Storage Layer<br/>micro-partitioned Parquet on S3/ADLS/GCS]
     end
 
-    VW1 & VW2 & VW3 --> ST
-    CS --> VW1 & VW2 & VW3
+    VW1 --> ST
+    VW2 --> ST
+    VW3 --> ST
+    CS --> VW1
+    CS --> VW2
+    CS --> VW3
 ```
 
 ### Virtual Warehouse sizes and credits

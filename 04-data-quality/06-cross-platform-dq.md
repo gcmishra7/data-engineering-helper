@@ -20,8 +20,10 @@ graph LR
         DASH[Quality Dashboard<br/>Databricks SQL or Tableau]
     end
 
-    DLT & GX --> META
-    DMF & GX2 --> META
+    DLT --> META
+    GX --> META
+    DMF --> META
+    GX2 --> META
     META --> DASH
 ```
 

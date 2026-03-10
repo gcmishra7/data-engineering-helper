@@ -5,7 +5,9 @@
 ```mermaid
 graph TD
     subgraph Sources
-        ERP[ERP / CRM] & SHOP[Shopify] & API[APIs]
+        ERP[ERP / CRM]
+        SHOP[Shopify]
+        API[APIs]
     end
     subgraph Ingestion
         FV[Fivetran<br/>managed connectors]
@@ -23,10 +25,15 @@ graph TD
         SP[Snowpark<br/>Python ML]
     end
 
-    ERP & SHOP & API --> FV --> RAW
+    ERP --> FV
+    SHOP --> FV
+    API --> FV
+    FV --> RAW
     Files --> SNOW_PIPE --> RAW
     RAW --> STG --> INT --> GOLD
-    GOLD --> BI & SHARE & SP
+    GOLD --> BI
+    GOLD --> SHARE
+    GOLD --> SP
 ```
 
 **Key design decisions:**
@@ -86,7 +93,8 @@ graph TD
 
     SF_A -->|publish contract| SHARE_A
     SF_B -->|publish contract| SHARE_B
-    SHARE_A & SHARE_B --> DH
+    SHARE_A --> DH
+    SHARE_B --> DH
 ```
 
 **Data mesh principles applied:**

@@ -10,9 +10,9 @@ graph LR
     E[Event occurs<br/>at 10:00:00] --> N[Network delay<br/>+2 min] --> K[Kafka ingestion<br/>at 10:02:00]
     K --> P[Processing delay<br/>+30 sec] --> S[Spark processes<br/>at 10:02:30]
 
-    style E fill:#2196F3,color:#fff
-    style K fill:#FF9800,color:#fff
-    style S fill:#4CAF50,color:#fff
+    style E fill:#2196F3
+    style K fill:#FF9800
+    style S fill:#4CAF50
 ```
 
 | Clock | What it measures | Controlled by |

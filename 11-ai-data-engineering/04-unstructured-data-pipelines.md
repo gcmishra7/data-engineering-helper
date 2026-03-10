@@ -28,11 +28,24 @@ graph TD
         CLASS[Classifier<br/>route by content type] --> ROUTE[Processing Route]
     end
 
-    PDF & HTML --> PARSE
-    IMG --> OCR & VIS
+    PDF --> PARSE
+    HTML --> PARSE
+    IMG --> OCR
+    IMG --> VIS
     AUDIO --> ASR
     EMAIL --> PARSE
-    PARSE & OCR & ASR & VIS --> CHUNK & EXTRACT & CLASS
+    PARSE --> CHUNK
+    PARSE --> EXTRACT
+    PARSE --> CLASS
+    OCR --> CHUNK
+    OCR --> EXTRACT
+    OCR --> CLASS
+    ASR --> CHUNK
+    ASR --> EXTRACT
+    ASR --> CLASS
+    VIS --> CHUNK
+    VIS --> EXTRACT
+    VIS --> CLASS
 ```
 
 ### PDF parsing — layout-aware extraction

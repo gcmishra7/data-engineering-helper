@@ -5,7 +5,9 @@
 ```mermaid
 graph TD
     subgraph Sources
-        CONF[Confluence] & S3[S3/ADLS] & DB_SRC[(PostgreSQL<br/>product docs)]
+        CONF[Confluence]
+        S3[S3/ADLS]
+        DB_SRC[(PostgreSQL<br/>product docs)]
     end
     subgraph Indexing Pipeline - Databricks
         AL[Auto Loader<br/>detect changes]
@@ -28,7 +30,10 @@ graph TD
         DASH[Quality Dashboard<br/>Databricks SQL]
     end
 
-    CONF & S3 & DB_SRC --> AL --> PARSE --> PII --> CHUNK --> EMBED
+    CONF --> AL
+    S3 --> AL
+    DB_SRC --> AL
+    AL --> PARSE --> PII --> CHUNK --> EMBED
     EMBED --> VS
     EMBED --> IDX_DELTA
     API --> GUARD --> VS --> LLM_GW --> LLM
@@ -49,7 +54,10 @@ graph TD
 ```mermaid
 graph LR
     subgraph Bronze - Raw Unstructured
-        PDF[PDFs] & IMG[Images] & AUDIO[Audio] & EMAIL[Emails]
+        PDF[PDFs]
+        IMG[Images]
+        AUDIO[Audio]
+        EMAIL[Emails]
     end
     subgraph Silver - Extracted + Structured
         PARSED[Parsed Text<br/>Delta Table]
@@ -62,11 +70,13 @@ graph LR
         EMBEDDINGS[Embedding Store<br/>Delta + pgvector]
     end
 
-    PDF & IMG --> PARSED
+    PDF --> PARSED
+    IMG --> PARSED
     AUDIO --> TRANSCRIPTS
     EMAIL --> PARSED
     PARSED --> EXTRACTED
-    PARSED & TRANSCRIPTS --> CLASSIFIED
+    PARSED --> CLASSIFIED
+    TRANSCRIPTS --> CLASSIFIED
     EXTRACTED --> METRICS
     PARSED --> EMBEDDINGS
 ```
@@ -95,7 +105,11 @@ graph TD
         NOTIFY[send_notification<br/>Slack · PagerDuty]
     end
 
-    AGENT --> SQL & SCHEMA & PROFILE & PIPELINE & NOTIFY
+    AGENT --> SQL
+    AGENT --> SCHEMA
+    AGENT --> PROFILE
+    AGENT --> PIPELINE
+    AGENT --> NOTIFY
     AGENT --> PLAN[Execution Plan<br/>human-approved]
     PLAN --> EXECUTE[Autonomous execution]
     EXECUTE --> REPORT[Summary report<br/>to data team Slack]
@@ -127,7 +141,9 @@ graph LR
         RAG2[RAG Pipeline<br/>domain LLM + vector search]
     end
 
-    QDELTA & SYNTHETIC --> PREP --> FINETUNE --> EVAL --> MR --> SERVING --> RAG2
+    QDELTA --> PREP
+    SYNTHETIC --> PREP
+    PREP --> FINETUNE --> EVAL --> MR --> SERVING --> RAG2
 ```
 
 **When to fine-tune vs pure RAG:**

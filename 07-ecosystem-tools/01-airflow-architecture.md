@@ -14,7 +14,9 @@ graph TD
         MQ --> W3[Worker 3]
         S --> DB[(Metadata DB<br/>PostgreSQL)]
         WS[Webserver<br/>UI + REST API] --> DB
-        W1 & W2 & W3 --> DB
+        W1 --> DB
+        W2 --> DB
+        W3 --> DB
     end
 
     DAG[DAG Files<br/>S3 / Git / Local] --> S

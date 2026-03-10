@@ -12,7 +12,9 @@ graph LR
     SL[Silver Table<br/>@dlt.table + @dlt.expect_or_drop] --> G
     G[Gold Table<br/>@dlt.table + @dlt.expect_or_fail] --> BI[BI / ML]
 
-    EL[Event Log<br/>quality metrics<br/>lineage<br/>timing] -.-> B & SL & G
+    EL[Event Log<br/>quality metrics<br/>lineage<br/>timing] -.-> B
+    EL -.-> SL
+    EL -.-> G
 ```
 
 ### Streaming vs materialised view

@@ -12,8 +12,12 @@ graph LR
     INT --> MART[Mart Models<br/>fact + dim tables<br/>business logic]
     MART --> BI[BI Tools<br/>Tableau · Power BI]
 
-    TEST[dbt tests<br/>not_null · unique<br/>accepted_values] --> STG & INT & MART
-    DOC[dbt docs<br/>auto-generated] --> STG & INT & MART
+    TEST[dbt tests<br/>not_null · unique<br/>accepted_values] --> STG
+    TEST --> INT
+    TEST --> MART
+    DOC[dbt docs<br/>auto-generated] --> STG
+    DOC --> INT
+    DOC --> MART
 ```
 
 ### Project structure

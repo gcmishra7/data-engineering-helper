@@ -13,7 +13,9 @@ graph LR
     BR --> HUB[Silver: Hubs<br/>hub_customer · hub_account · hub_transaction]
     BR --> LNK[Silver: Links<br/>lnk_customer_account · lnk_transaction_account]
     BR --> SAT[Silver: Satellites<br/>sat_customer_details · sat_account_status]
-    HUB & LNK & SAT --> GOLD[Gold: Business Vault<br/>pit tables · bridge tables]
+    HUB --> GOLD[Gold: Business Vault<br/>pit tables · bridge tables]
+    LNK --> GOLD
+    SAT --> GOLD
     GOLD --> MART[Gold: Kimball Marts<br/>fact_transactions · dim_customer]
     MART --> BI[Tableau · Power BI]
 ```

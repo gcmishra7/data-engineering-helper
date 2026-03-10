@@ -10,7 +10,10 @@ Modern ELT data platform ingesting from 50 sources into a Snowflake-centric lake
 ```mermaid
 graph LR
     subgraph Sources[50 Sources]
-        ERP[12 ERP systems] & SF2[Salesforce] & SHOP[Shopify] & SUP[35 Supplier feeds]
+        ERP[12 ERP systems]
+        SF2[Salesforce]
+        SHOP[Shopify]
+        SUP[35 Supplier feeds]
     end
     Sources -->|Fivetran connectors| RAW[Raw Schema<br/>Snowflake]
     RAW -->|dbt staging| STG[Staging Models<br/>Snowflake]

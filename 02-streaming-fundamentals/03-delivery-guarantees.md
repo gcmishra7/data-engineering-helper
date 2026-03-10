@@ -35,8 +35,8 @@ Achieved by combining:
 ```mermaid
 graph LR
     K[Kafka<br/>committed offset] <-->|atomic| D[Delta Lake<br/>transaction commit]
-    style K fill:#FF9800,color:#fff
-    style D fill:#2196F3,color:#fff
+    style K fill:#FF9800
+    style D fill:#2196F3
 ```
 
 ## Spark Structured Streaming: exactly-once with Delta

@@ -33,7 +33,10 @@ graph TD
     end
 
     UPSERT --> VS
-    S3 & CONF & DB & SLACK --> WATCH
+    S3 --> WATCH
+    CONF --> WATCH
+    DB --> WATCH
+    SLACK --> WATCH
 ```
 
 ### Production indexing pipeline (Databricks + Delta Lake)

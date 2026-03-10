@@ -13,8 +13,10 @@ graph TD
     C --> D[Transformation<br/>Spark · dbt · SQL]
     D --> E[Serving<br/>Snowflake · Databricks SQL · BI Tools]
     E --> F[Consumers<br/>Analysts · Scientists · Apps]
-    G[Orchestration<br/>Airflow · Workflows] --> B & D
-    H[Governance & Quality<br/>Unity Catalog · GE] --> C & D
+    G[Orchestration<br/>Airflow · Workflows] --> B
+    G --> D
+    H[Governance & Quality<br/>Unity Catalog · GE] --> C
+    H --> D
 ```
 
 ### Roles
