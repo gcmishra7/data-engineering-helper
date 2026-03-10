@@ -2,9 +2,7 @@
 
 ## How it works
 
-<!-- Editable: open diagrams/08-cloud-platforms--02-azure-databricks-setup.drawio.svg in draw.io -->
-
-![diagram](../diagrams/08-cloud-platforms--02-azure-databricks-setup.drawio.svg)
+![diagram](../diagrams/08-cloud-platforms--02-azure-databricks-setup.png)
 
 ### Key Azure-specific features
 

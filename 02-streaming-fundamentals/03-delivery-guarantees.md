@@ -32,9 +32,7 @@ Achieved by combining:
 1. **Idempotent writes** — re-writing same data produces same result
 2. **Transactional commits** — offset commit and output write are atomic
 
-<!-- Editable: open diagrams/02-streaming-fundamentals--03-delivery-guarantees.drawio.svg in draw.io -->
-
-![diagram](../diagrams/02-streaming-fundamentals--03-delivery-guarantees.drawio.svg)
+![diagram](../diagrams/02-streaming-fundamentals--03-delivery-guarantees.png)
 
 ## Spark Structured Streaming: exactly-once with Delta
 

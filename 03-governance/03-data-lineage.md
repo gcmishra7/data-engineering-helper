@@ -5,9 +5,7 @@ When a dashboard shows wrong numbers, how do you find the root cause? When a sou
 
 ## How it works
 
-<!-- Editable: open diagrams/03-governance--03-data-lineage.drawio.svg in draw.io -->
-
-![diagram](../diagrams/03-governance--03-data-lineage.drawio.svg)
+![diagram](../diagrams/03-governance--03-data-lineage.png)
 
 ### Lineage levels
 

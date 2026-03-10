@@ -5,9 +5,7 @@
 
 ## The Six Dimensions
 
-<!-- Editable: open diagrams/04-data-quality--01-dq-dimensions.drawio.svg in draw.io -->
-
-![diagram](../diagrams/04-data-quality--01-dq-dimensions.drawio.svg)
+![diagram](../diagrams/04-data-quality--01-dq-dimensions.png)
 
 ### 1. Accuracy
 Data correctly represents reality.

@@ -5,9 +5,7 @@ The Unity Catalog overview covers RBAC basics. This guide covers the patterns ne
 
 ## How it works
 
-<!-- Editable: open diagrams/05-databricks--06-unity-catalog-advanced.drawio.svg in draw.io -->
-
-![diagram](../diagrams/05-databricks--06-unity-catalog-advanced.drawio.svg)
+![diagram](../diagrams/05-databricks--06-unity-catalog-advanced.png)
 
 ### Metastore and workspace assignment
 

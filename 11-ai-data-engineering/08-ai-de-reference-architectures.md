@@ -2,9 +2,7 @@
 
 ## Architecture 1 — Enterprise RAG Platform
 
-<!-- Editable: open diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-1.drawio.svg in draw.io -->
-
-![diagram](../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-1.drawio.svg)
+![diagram](../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-1.png)
 
 **Key design decisions:**
 - Databricks for indexing (parallelise over millions of documents)
@@ -17,9 +15,7 @@
 
 ## Architecture 2 — Unstructured Data Lakehouse
 
-<!-- Editable: open diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-2.drawio.svg in draw.io -->
-
-![diagram](../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-2.drawio.svg)
+![diagram](../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-2.png)
 
 **SLA targets:**
 
@@ -33,9 +29,7 @@
 
 ## Architecture 3 — AI-Augmented Data Pipeline (agentic)
 
-<!-- Editable: open diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-3.drawio.svg in draw.io -->
-
-![diagram](../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-3.drawio.svg)
+![diagram](../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-3.png)
 
 **Use cases:**
 - Automated data quality investigation: "silver.payments has 15% null rate spike — investigate root cause and report"
@@ -46,9 +40,7 @@
 
 ## Architecture 4 — Fine-Tuned Domain Model Pipeline
 
-<!-- Editable: open diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-4.drawio.svg in draw.io -->
-
-![diagram](../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-4.drawio.svg)
+![diagram](../diagrams/11-ai-data-engineering--08-ai-de-reference-architectures-4.png)
 
 **When to fine-tune vs pure RAG:**
 

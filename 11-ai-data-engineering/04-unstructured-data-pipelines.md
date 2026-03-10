@@ -5,9 +5,7 @@
 
 ## How it works
 
-<!-- Editable: open diagrams/11-ai-data-engineering--04-unstructured-data-pipelines.drawio.svg in draw.io -->
-
-![diagram](../diagrams/11-ai-data-engineering--04-unstructured-data-pipelines.drawio.svg)
+![diagram](../diagrams/11-ai-data-engineering--04-unstructured-data-pipelines.png)
 
 ### PDF parsing — layout-aware extraction
 

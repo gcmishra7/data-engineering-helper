@@ -5,9 +5,7 @@ Snowflake's access model is role-based — users don't have direct privileges, r
 
 ## How it works
 
-<!-- Editable: open diagrams/03-governance--05-snowflake-rbac.drawio.svg in draw.io -->
-
-![diagram](../diagrams/03-governance--05-snowflake-rbac.drawio.svg)
+![diagram](../diagrams/03-governance--05-snowflake-rbac.png)
 
 ### System Roles
 

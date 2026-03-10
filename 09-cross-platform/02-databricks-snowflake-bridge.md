@@ -7,9 +7,7 @@ Databricks excels at ML and large-scale Spark processing. Snowflake excels at go
 
 ### Pattern 1: Delta UniForm (recommended for new builds)
 
-<!-- Editable: open diagrams/09-cross-platform--02-databricks-snowflake-bridge.drawio.svg in draw.io -->
-
-![diagram](../diagrams/09-cross-platform--02-databricks-snowflake-bridge.drawio.svg)
+![diagram](../diagrams/09-cross-platform--02-databricks-snowflake-bridge.png)
 
 Zero data duplication. Databricks writes, Snowflake reads. Works on Azure (ADLS) and AWS (S3).
 

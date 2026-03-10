@@ -15,9 +15,7 @@ Data is processed record-by-record or in micro-batches as it arrives. Complex, m
 ### Micro-batch
 Spark Structured Streaming processes data in small batches (seconds). Sits between pure streaming and batch. Good enough for most "near real-time" requirements.
 
-<!-- Editable: open diagrams/00-foundations--02-batch-vs-streaming.drawio.svg in draw.io -->
-
-![diagram](../diagrams/00-foundations--02-batch-vs-streaming.drawio.svg)
+![diagram](../diagrams/00-foundations--02-batch-vs-streaming.png)
 
 ## Decision Matrix
 

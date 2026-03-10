@@ -5,9 +5,7 @@ Running Apache Spark in production requires managing clusters, installing depend
 
 ## How it works
 
-<!-- Editable: open diagrams/05-databricks--01-databricks-platform-overview.drawio.svg in draw.io -->
-
-![diagram](../diagrams/05-databricks--01-databricks-platform-overview.drawio.svg)
+![diagram](../diagrams/05-databricks--01-databricks-platform-overview.png)
 
 ### Core components
 

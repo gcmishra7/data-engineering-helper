@@ -5,9 +5,7 @@ Data engineers want to use Python (pandas, scikit-learn, custom libraries) but r
 
 ## How it works
 
-<!-- Editable: open diagrams/06-snowflake--09-snowpark.drawio.svg in draw.io -->
-
-![diagram](../diagrams/06-snowflake--09-snowpark.drawio.svg)
+![diagram](../diagrams/06-snowflake--09-snowpark.png)
 
 Snowpark translates Python DataFrame operations into SQL query plans executed inside Snowflake. Data never leaves Snowflake.
 

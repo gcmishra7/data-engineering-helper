@@ -5,9 +5,7 @@ Snowflake stores data in micro-partitions (50–500MB). Without clustering, a qu
 
 ## How it works
 
-<!-- Editable: open diagrams/06-snowflake--02-micro-partitions-clustering.drawio.svg in draw.io -->
-
-![diagram](../diagrams/06-snowflake--02-micro-partitions-clustering.drawio.svg)
+![diagram](../diagrams/06-snowflake--02-micro-partitions-clustering.png)
 
 ### Clustering Key
 

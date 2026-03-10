@@ -17,9 +17,7 @@ Picking the wrong storage type kills performance and inflates cost. Object stora
 
 ### File Formats
 
-<!-- Editable: open diagrams/00-foundations--03-storage-concepts.drawio.svg in draw.io -->
-
-![diagram](../diagrams/00-foundations--03-storage-concepts.drawio.svg)
+![diagram](../diagrams/00-foundations--03-storage-concepts.png)
 
 ### Columnar vs Row Storage
 

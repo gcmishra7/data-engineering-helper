@@ -2,9 +2,7 @@
 
 ## Databricks on AWS
 
-<!-- Editable: open diagrams/08-cloud-platforms--01-aws-databricks-setup.drawio.svg in draw.io -->
-
-![diagram](../diagrams/08-cloud-platforms--01-aws-databricks-setup.drawio.svg)
+![diagram](../diagrams/08-cloud-platforms--01-aws-databricks-setup.png)
 
 **S3 access via instance profile (Unity Catalog)**
 ```terraform

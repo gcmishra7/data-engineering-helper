@@ -5,9 +5,7 @@ A Spark job that takes 4 hours can often be reduced to 15 minutes with targeted 
 
 ## How it works
 
-<!-- Editable: open diagrams/05-databricks--08-performance-tuning.drawio.svg in draw.io -->
-
-![diagram](../diagrams/05-databricks--08-performance-tuning.drawio.svg)
+![diagram](../diagrams/05-databricks--08-performance-tuning.png)
 
 ### Step 1 — Profile the job in Spark UI
 

@@ -7,9 +7,7 @@ Modern ELT data platform ingesting from 50 sources into a Snowflake-centric lake
 
 ## Architecture
 
-<!-- Editable: open diagrams/10-scenarios--02-retail-lakehouse.drawio.svg in draw.io -->
-
-![diagram](../diagrams/10-scenarios--02-retail-lakehouse.drawio.svg)
+![diagram](../diagrams/10-scenarios--02-retail-lakehouse.png)
 
 ## Key components
 

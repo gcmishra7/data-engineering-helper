@@ -5,9 +5,7 @@ Full table refreshes on 500M-row fact tables take 30+ minutes and cost significa
 
 ## How it works
 
-<!-- Editable: open diagrams/01-data-modeling--07-incremental-models.drawio.svg in draw.io -->
-
-![diagram](../diagrams/01-data-modeling--07-incremental-models.drawio.svg)
+![diagram](../diagrams/01-data-modeling--07-incremental-models.png)
 
 ### Strategies
 

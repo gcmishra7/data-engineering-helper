@@ -7,9 +7,7 @@ End-to-end ML feature platform serving both real-time (< 100ms) and batch infere
 
 ## Architecture
 
-<!-- Editable: open diagrams/10-scenarios--03-ml-feature-platform.drawio.svg in draw.io -->
-
-![diagram](../diagrams/10-scenarios--03-ml-feature-platform.drawio.svg)
+![diagram](../diagrams/10-scenarios--03-ml-feature-platform.png)
 
 ## Feature Engineering
 

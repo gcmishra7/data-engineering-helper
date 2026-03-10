@@ -11,9 +11,7 @@ All three add a metadata layer on top of Parquet files on object storage to prov
 - Time travel / snapshots
 - Partition management
 
-<!-- Editable: open diagrams/09-cross-platform--01-table-formats-compared.drawio.svg in draw.io -->
-
-![diagram](../diagrams/09-cross-platform--01-table-formats-compared.drawio.svg)
+![diagram](../diagrams/09-cross-platform--01-table-formats-compared.png)
 
 ## Feature Comparison
 

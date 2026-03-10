@@ -5,9 +5,7 @@ Without schema enforcement, producers can change message structure silently, bre
 
 ## How it works
 
-<!-- Editable: open diagrams/02-streaming-fundamentals--05-kafka-schema-registry.drawio.svg in draw.io -->
-
-![Schema Registry Flow](../diagrams/02-streaming-fundamentals--05-kafka-schema-registry.drawio.svg)
+![diagram](../diagrams/02-streaming-fundamentals--05-kafka-schema-registry.png)
 
 ### Compatibility Modes
 

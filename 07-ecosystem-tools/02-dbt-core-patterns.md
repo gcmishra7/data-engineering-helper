@@ -5,9 +5,7 @@ SQL transformation logic lives in ad-hoc scripts, stored procedures, or BI tool 
 
 ## How it works
 
-<!-- Editable: open diagrams/07-ecosystem-tools--02-dbt-core-patterns.drawio.svg in draw.io -->
-
-![diagram](../diagrams/07-ecosystem-tools--02-dbt-core-patterns.drawio.svg)
+![diagram](../diagrams/07-ecosystem-tools--02-dbt-core-patterns.png)
 
 ### Project structure
 

@@ -7,9 +7,7 @@ Real-time data quality monitoring for a streaming payments pipeline — detect b
 
 ## Architecture
 
-<!-- Editable: open diagrams/10-scenarios--05-streaming-quality-pipeline.drawio.svg in draw.io -->
-
-![diagram](../diagrams/10-scenarios--05-streaming-quality-pipeline.drawio.svg)
+![diagram](../diagrams/10-scenarios--05-streaming-quality-pipeline.png)
 
 ## DLT Pipeline with Quality Expectations
 

@@ -5,9 +5,7 @@ ML experiments are hard to reproduce. Models trained last Tuesday with "slightly
 
 ## How it works
 
-<!-- Editable: open diagrams/05-databricks--07-mlflow-and-feature-store.drawio.svg in draw.io -->
-
-![diagram](../diagrams/05-databricks--07-mlflow-and-feature-store.drawio.svg)
+![diagram](../diagrams/05-databricks--07-mlflow-and-feature-store.png)
 
 ### MLflow Tracking — log everything
 

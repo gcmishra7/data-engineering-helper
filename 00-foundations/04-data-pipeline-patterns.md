@@ -33,9 +33,7 @@ Warehouse/Lakehouse → [Reverse ETL Tool] → Salesforce · HubSpot · Product 
 
 **When to use:** Activating analytics data in operational workflows (e.g., customer health scores in Salesforce).
 
-<!-- Editable: open diagrams/00-foundations--04-data-pipeline-patterns.drawio.svg in draw.io -->
-
-![diagram](../diagrams/00-foundations--04-data-pipeline-patterns.drawio.svg)
+![diagram](../diagrams/00-foundations--04-data-pipeline-patterns.png)
 
 ## Comparison
 

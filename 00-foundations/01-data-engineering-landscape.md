@@ -6,9 +6,7 @@ Raw data is useless at scale. A company generating 10TB/day of events cannot let
 
 ## How it works
 
-<!-- Editable: open diagrams/00-foundations--01-data-engineering-landscape.drawio.svg in draw.io -->
-
-![Data Engineering Landscape](../diagrams/00-foundations--01-data-engineering-landscape.drawio.svg)
+![diagram](../diagrams/00-foundations--01-data-engineering-landscape.png)
 
 ### Roles
 

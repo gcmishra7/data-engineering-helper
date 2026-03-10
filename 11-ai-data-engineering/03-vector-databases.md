@@ -5,9 +5,7 @@ Traditional databases can't efficiently find "similar" rows. A SQL `LIKE` or ful
 
 ## How it works
 
-<!-- Editable: open diagrams/11-ai-data-engineering--03-vector-databases.drawio.svg in draw.io -->
-
-![diagram](../diagrams/11-ai-data-engineering--03-vector-databases.drawio.svg)
+![diagram](../diagrams/11-ai-data-engineering--03-vector-databases.png)
 
 ### ANN algorithms
 

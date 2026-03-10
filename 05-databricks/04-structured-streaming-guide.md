@@ -5,9 +5,7 @@ Writing correct, fault-tolerant streaming code from scratch is hard. Structured 
 
 ## How it works
 
-<!-- Editable: open diagrams/05-databricks--04-structured-streaming-guide.drawio.svg in draw.io -->
-
-![diagram](../diagrams/05-databricks--04-structured-streaming-guide.drawio.svg)
+![diagram](../diagrams/05-databricks--04-structured-streaming-guide.png)
 
 ### Reading from Kafka
 

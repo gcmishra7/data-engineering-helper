@@ -12,9 +12,7 @@ A data contract specifies:
 - **SLA**: freshness, availability, volume expectations
 - **Owner**: who is accountable for the data
 
-<!-- Editable: open diagrams/00-foundations--05-data-contracts.drawio.svg in draw.io -->
-
-![diagram](../diagrams/00-foundations--05-data-contracts.drawio.svg)
+![diagram](../diagrams/00-foundations--05-data-contracts.png)
 
 ## Contract Structure (YAML example)
 

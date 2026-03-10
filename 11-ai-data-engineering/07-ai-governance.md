@@ -5,9 +5,7 @@ AI pipelines introduce new governance challenges not covered by traditional data
 
 ## How it works
 
-<!-- Editable: open diagrams/11-ai-data-engineering--07-ai-governance.drawio.svg in draw.io -->
-
-![diagram](../diagrams/11-ai-data-engineering--07-ai-governance.drawio.svg)
+![diagram](../diagrams/11-ai-data-engineering--07-ai-governance.png)
 
 ### PII handling in AI pipelines
 

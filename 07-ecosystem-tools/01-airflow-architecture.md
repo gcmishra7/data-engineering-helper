@@ -5,9 +5,7 @@ Data pipelines have dependencies — run job B only after job A succeeds, retry 
 
 ## How it works
 
-<!-- Editable: open diagrams/07-ecosystem-tools--01-airflow-architecture.drawio.svg in draw.io -->
-
-![diagram](../diagrams/07-ecosystem-tools--01-airflow-architecture.drawio.svg)
+![diagram](../diagrams/07-ecosystem-tools--01-airflow-architecture.png)
 
 ### Core Concepts
 

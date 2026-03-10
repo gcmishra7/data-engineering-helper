@@ -5,9 +5,7 @@ When a dashboard shows wrong numbers, how do you find the root cause? Without li
 
 ## How it works
 
-<!-- Editable: open diagrams/07-ecosystem-tools--04-openlineage-datahub.drawio.svg in draw.io -->
-
-![diagram](../diagrams/07-ecosystem-tools--04-openlineage-datahub.drawio.svg)
+![diagram](../diagrams/07-ecosystem-tools--04-openlineage-datahub.png)
 
 ### OpenLineage — the open standard
 

@@ -5,9 +5,7 @@ Data quality rules spread across ad-hoc SQL checks, notebook assertions, and und
 
 ## How it works
 
-<!-- Editable: open diagrams/07-ecosystem-tools--03-great-expectations.drawio.svg in draw.io -->
-
-![diagram](../diagrams/07-ecosystem-tools--03-great-expectations.drawio.svg)
+![diagram](../diagrams/07-ecosystem-tools--03-great-expectations.png)
 
 ### Core concepts
 

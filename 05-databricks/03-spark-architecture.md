@@ -5,9 +5,7 @@ Understanding Spark's execution model is required for tuning — knowing why a j
 
 ## How it works
 
-<!-- Editable: open diagrams/05-databricks--03-spark-architecture-1.drawio.svg in draw.io -->
-
-![diagram](../diagrams/05-databricks--03-spark-architecture-1.drawio.svg)
+![diagram](../diagrams/05-databricks--03-spark-architecture-1.png)
 
 ### Driver
 - Runs your Python/Scala/SQL code
@@ -27,9 +25,7 @@ Understanding Spark's execution model is required for tuning — knowing why a j
 - **Shuffle**: exchange of data between executors (expensive — network + disk I/O)
 - **Task**: one unit of work, processes one partition
 
-<!-- Editable: open diagrams/05-databricks--03-spark-architecture-2.drawio.svg in draw.io -->
-
-![diagram](../diagrams/05-databricks--03-spark-architecture-2.drawio.svg)
+![diagram](../diagrams/05-databricks--03-spark-architecture-2.png)
 
 ### Memory model
 

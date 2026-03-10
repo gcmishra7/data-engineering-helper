@@ -5,9 +5,7 @@ Without layering, data engineers either overwrite raw data (losing auditability)
 
 ## How it works
 
-<!-- Editable: open diagrams/01-data-modeling--05-medallion-architecture.drawio.svg in draw.io -->
-
-![diagram](../diagrams/01-data-modeling--05-medallion-architecture.drawio.svg)
+![diagram](../diagrams/01-data-modeling--05-medallion-architecture.png)
 
 ### Layer Responsibilities
 

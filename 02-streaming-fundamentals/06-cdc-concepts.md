@@ -8,9 +8,7 @@ Nightly full table dumps are slow and expensive for large tables. CDC captures o
 ### Log-based CDC (preferred)
 Reads the database's write-ahead log (WAL/binlog/redo log) — the same log used for replication. No queries on source tables; zero additional load.
 
-<!-- Editable: open diagrams/02-streaming-fundamentals--06-cdc-concepts.drawio.svg in draw.io -->
-
-![diagram](../diagrams/02-streaming-fundamentals--06-cdc-concepts.drawio.svg)
+![diagram](../diagrams/02-streaming-fundamentals--06-cdc-concepts.png)
 
 ### Query-based CDC
 Polls the source table periodically: `SELECT * WHERE updated_at > last_poll_time`. Adds load to source, misses deletes, requires `updated_at` column.

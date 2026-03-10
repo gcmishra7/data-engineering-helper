@@ -2,9 +2,7 @@
 
 ## Databricks on GCP
 
-<!-- Editable: open diagrams/08-cloud-platforms--03-gcp-databricks-setup.drawio.svg in draw.io -->
-
-![diagram](../diagrams/08-cloud-platforms--03-gcp-databricks-setup.drawio.svg)
+![diagram](../diagrams/08-cloud-platforms--03-gcp-databricks-setup.png)
 
 **GCS access via Workload Identity**
 ```python
