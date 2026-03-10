@@ -9,16 +9,26 @@ Financial services company using Data Vault 2.0 methodology in the Silver layer 
 
 ```mermaid
 graph LR
-    SRC[12 Source Systems<br/>core banking · payments · CRM] --> BR[Bronze Layer<br/>raw · append-only]
-    BR --> HUB[Silver: Hubs<br/>hub_customer · hub_account · hub_transaction]
-    BR --> LNK[Silver: Links<br/>lnk_customer_account · lnk_transaction_account]
-    BR --> SAT[Silver: Satellites<br/>sat_customer_details · sat_account_status]
-    HUB --> GOLD[Gold: Business Vault<br/>pit tables · bridge tables]
+    SRC[12 Source Systems] --> BR[Bronze Layer]
+    BR --> HUB[Silver: Hubs]
+    BR --> LNK[Silver: Links]
+    BR --> SAT[Silver: Satellites]
+    HUB --> GOLD[Gold: Business Vault]
     LNK --> GOLD
     SAT --> GOLD
-    GOLD --> MART[Gold: Kimball Marts<br/>fact_transactions · dim_customer]
+    GOLD --> MART[Gold: Kimball Marts]
     MART --> BI[Tableau · Power BI]
 ```
+
+| Node | Details |
+|------|---------|
+| **12 Source Systems** | core banking, payments, CRM |
+| **Bronze Layer** | raw, append-only |
+| **Silver: Hubs** | hub_customer, hub_account, hub_transaction |
+| **Silver: Links** | lnk_customer_account, lnk_transaction_account |
+| **Silver: Satellites** | sat_customer_details, sat_account_status |
+| **Gold: Business Vault** | pit tables, bridge tables |
+| **Gold: Kimball Marts** | fact_transactions, dim_customer |
 
 ## Data Vault 2.0 Core Structures
 

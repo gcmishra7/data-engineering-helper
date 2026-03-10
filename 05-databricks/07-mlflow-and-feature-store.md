@@ -7,17 +7,28 @@ ML experiments are hard to reproduce. Models trained last Tuesday with "slightly
 
 ```mermaid
 graph LR
-    DATA[Delta Lake<br/>Silver/Gold] --> FS[Feature Store<br/>Precomputed features]
-    FS --> TR[Training Job<br/>MLflow experiment]
-    TR --> MR[Model Registry<br/>Staging → Production]
-    MR --> MS[Model Serving<br/>REST endpoint]
+    DATA[Delta Lake] --> FS[Feature Store]
+    FS --> TR[Training Job]
+    TR --> MR[Model Registry]
+    MR --> MS[Model Serving]
 
-    FS --> BATCH[Batch Inference<br/>scored Delta table]
+    FS --> BATCH[Batch Inference]
     MR --> BATCH
 
-    TR --> LOG[MLflow Tracking<br/>params · metrics · artifacts]
-    LOG --> UI[MLflow UI<br/>compare runs]
+    TR --> LOG[MLflow Tracking]
+    LOG --> UI[MLflow UI]
 ```
+
+| Node | Details |
+|------|---------|
+| **Delta Lake** | Silver/Gold |
+| **Feature Store** | Precomputed features |
+| **Training Job** | MLflow experiment |
+| **Model Registry** | Staging to Production |
+| **Model Serving** | REST endpoint |
+| **Batch Inference** | scored Delta table |
+| **MLflow Tracking** | params, metrics, artifacts |
+| **MLflow UI** | compare runs |
 
 ### MLflow Tracking — log everything
 

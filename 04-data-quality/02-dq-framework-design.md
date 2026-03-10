@@ -7,12 +7,19 @@ Ad-hoc quality checks are inconsistent, hard to scale, and invisible. A DQ frame
 
 ```mermaid
 graph LR
-    P[Prevention<br/>Data Contracts<br/>Schema Registry<br/>Input Validation] --> D
-    D[Detection<br/>Expectations<br/>Tests<br/>Anomaly Detection] --> R
-    R[Remediation<br/>Quarantine<br/>Alerts<br/>Dead Letter Queue] --> M
-    M[Monitoring<br/>DQ Scorecards<br/>SLA Tracking<br/>Trend Dashboards]
+    P[Prevention] --> D
+    D[Detection] --> R
+    R[Remediation] --> M
+    M[Monitoring]
     M -->|feedback loop| P
 ```
+
+| Node | Details |
+|------|---------|
+| **Prevention** | Data Contracts, Schema Registry, Input Validation |
+| **Detection** | Expectations, Tests, Anomaly Detection |
+| **Remediation** | Quarantine, Alerts, Dead Letter Queue |
+| **Monitoring** | DQ Scorecards, SLA Tracking, Trend Dashboards |
 
 ### Layer 1: Prevention
 Stop bad data from entering the platform.

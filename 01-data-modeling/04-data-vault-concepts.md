@@ -9,12 +9,21 @@ Data Vault has three core entity types:
 
 ```mermaid
 graph TD
-    H1[HUB: Customer<br/>business key: customer_id] --> L1[LINK: Customer_Order<br/>joins hubs]
-    H2[HUB: Order<br/>business key: order_id] --> L1
-    H1 --> S1[SAT: Customer_Details<br/>name, email, city, updated_at]
-    H1 --> S2[SAT: Customer_Contact<br/>phone, address, updated_at]
-    L1 --> S3[SAT: Order_Relationship<br/>relationship metadata]
+    H1[HUB: Customer] --> L1[LINK: Customer_Order]
+    H2[HUB: Order] --> L1
+    H1 --> S1[SAT: Customer_Details]
+    H1 --> S2[SAT: Customer_Contact]
+    L1 --> S3[SAT: Order_Relationship]
 ```
+
+| Node | Details |
+|------|---------|
+| **HUB: Customer** | business key: customer_id |
+| **LINK: Customer_Order** | joins hubs |
+| **HUB: Order** | business key: order_id |
+| **SAT: Customer_Details** | name, email, city, updated_at |
+| **SAT: Customer_Contact** | phone, address, updated_at |
+| **SAT: Order_Relationship** | relationship metadata |
 
 ### Hubs — Business Keys
 Store unique business keys. Never change. One row per unique business entity.

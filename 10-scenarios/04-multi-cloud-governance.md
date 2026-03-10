@@ -11,28 +11,37 @@ Enterprise running Databricks on Azure (primary) + Snowflake on GCP (analytics) 
 graph TD
     subgraph Azure[Azure — Primary Platform]
         ADB[Databricks Workspace]
-        UC[Unity Catalog<br/>primary governance]
-        ADLS[ADLS Gen2<br/>Delta Lake]
+        UC[Unity Catalog]
+        ADLS[ADLS Gen2]
         ADB --> ADLS
         UC --> ADLS
     end
 
     subgraph GCP[GCP — Analytics Platform]
-        SF[Snowflake on GCP<br/>SQL analytics + BI]
-        SFH[Snowflake Horizon<br/>masking + row filters]
+        SF[Snowflake on GCP]
+        SFH[Snowflake Horizon]
         SF --> SFH
     end
 
     subgraph Shared
-        DH[DataHub<br/>unified catalogue + lineage]
-        POL[Policy Sync<br/>UC tags → SF tags]
+        DH[DataHub]
+        POL[Policy Sync]
     end
 
-    ADLS -->|Delta UniForm<br/>Iceberg metadata| SF
+    ADLS -->|Delta UniForm, Iceberg metadata| SF
     UC -->|OpenLineage| DH
     SF -->|Snowflake connector| DH
     UC -->|tag export| POL --> SFH
 ```
+
+| Node | Details |
+|------|---------|
+| **Unity Catalog** | primary governance |
+| **ADLS Gen2** | Delta Lake |
+| **Snowflake on GCP** | SQL analytics + BI |
+| **Snowflake Horizon** | masking + row filters |
+| **DataHub** | unified catalogue + lineage |
+| **Policy Sync** | UC tags → SF tags |
 
 ## Governance Alignment Pattern
 

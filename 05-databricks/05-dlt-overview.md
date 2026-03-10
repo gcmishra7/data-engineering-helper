@@ -8,14 +8,21 @@ Building production data pipelines requires wiring together ingestion, transform
 ```mermaid
 graph LR
     S[Source: Kafka / Files / Delta] --> B
-    B[Bronze Table<br/>@dlt.table + @dlt.expect] --> SL
-    SL[Silver Table<br/>@dlt.table + @dlt.expect_or_drop] --> G
-    G[Gold Table<br/>@dlt.table + @dlt.expect_or_fail] --> BI[BI / ML]
+    B[Bronze Table] --> SL
+    SL[Silver Table] --> G
+    G[Gold Table] --> BI[BI / ML]
 
-    EL[Event Log<br/>quality metrics<br/>lineage<br/>timing] -.-> B
+    EL[Event Log] -.-> B
     EL -.-> SL
     EL -.-> G
 ```
+
+| Node | Details |
+|------|---------|
+| **Bronze Table** | @dlt.table + @dlt.expect |
+| **Silver Table** | @dlt.table + @dlt.expect_or_drop |
+| **Gold Table** | @dlt.table + @dlt.expect_or_fail |
+| **Event Log** | quality metrics, lineage, timing |
 
 ### Streaming vs materialised view
 

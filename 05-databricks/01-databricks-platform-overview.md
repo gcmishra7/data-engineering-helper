@@ -8,12 +8,12 @@ Running Apache Spark in production requires managing clusters, installing depend
 ```mermaid
 graph TD
     subgraph Databricks Platform
-        WS[Workspace<br/>UI · Notebooks · Repos]
-        C[Compute<br/>Clusters · SQL Warehouses · Serverless]
-        DL[Delta Lake<br/>Bronze · Silver · Gold]
-        UC[Unity Catalog<br/>Governance · Lineage · Security]
-        WF[Workflows<br/>Jobs · DLT · Triggers]
-        ML[ML Platform<br/>MLflow · Feature Store · Model Serving]
+        WS[Workspace]
+        C[Compute]
+        DL[Delta Lake]
+        UC[Unity Catalog]
+        WF[Workflows]
+        ML[ML Platform]
     end
 
     WS --> C
@@ -22,8 +22,18 @@ graph TD
     WF --> C
     ML --> DL
 
-    ADLS[ADLS Gen2 / S3 / GCS<br/>Object Storage] <--> DL
+    ADLS[ADLS Gen2 / S3 / GCS] <--> DL
 ```
+
+| Node | Details |
+|------|---------|
+| **Workspace** | UI, Notebooks, Repos |
+| **Compute** | Clusters, SQL Warehouses, Serverless |
+| **Delta Lake** | Bronze, Silver, Gold |
+| **Unity Catalog** | Governance, Lineage, Security |
+| **Workflows** | Jobs, DLT, Triggers |
+| **ML Platform** | MLflow, Feature Store, Model Serving |
+| **ADLS Gen2 / S3 / GCS** | Object Storage |
 
 ### Core components
 

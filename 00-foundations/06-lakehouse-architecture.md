@@ -9,23 +9,35 @@ Data warehouses are fast but expensive and closed. Data lakes are cheap and flex
 ```mermaid
 graph TD
     subgraph "Data Lake (old)"
-        L1[Object Storage<br/>S3/ADLS/GCS] --> L2[Raw Files<br/>Parquet/CSV]
-        L2 --> L3[No ACID · No schema enforcement<br/>No time travel · Slow BI queries]
+        L1[Object Storage] --> L2[Raw Files]
+        L2 --> L3[Limitations]
     end
 
     subgraph "Data Warehouse (old)"
         W1[Proprietary Storage] --> W2[Managed Tables]
-        W2 --> W3[ACID · Fast BI<br/>Expensive · Closed · No ML]
+        W2 --> W3[Tradeoffs]
     end
 
     subgraph "Lakehouse (now)"
-        LH1[Object Storage<br/>S3/ADLS/GCS] --> LH2[Open Table Format<br/>Delta Lake · Iceberg · Hudi]
-        LH2 --> LH3[ACID Transactions<br/>Schema Enforcement<br/>Time Travel<br/>Fast BI + ML]
-        LH3 --> LH4a[Databricks SQL<br/>BI Queries]
-        LH3 --> LH4b[Spark / Python<br/>ML + DS]
-        LH3 --> LH4c[Snowflake<br/>via Iceberg External Tables]
+        LH1[Object Storage] --> LH2[Open Table Format]
+        LH2 --> LH3[Lakehouse Features]
+        LH3 --> LH4a[Databricks SQL]
+        LH3 --> LH4b[Spark / Python]
+        LH3 --> LH4c[Snowflake]
     end
 ```
+
+| Node | Details |
+|------|---------|
+| **Object Storage** (L1, LH1) | S3/ADLS/GCS |
+| **Raw Files** | Parquet/CSV |
+| **Limitations** | No ACID, No schema enforcement, No time travel, Slow BI queries |
+| **Tradeoffs** | ACID, Fast BI, Expensive, Closed, No ML |
+| **Open Table Format** | Delta Lake, Iceberg, Hudi |
+| **Lakehouse Features** | ACID Transactions, Schema Enforcement, Time Travel, Fast BI + ML |
+| **Databricks SQL** | BI Queries |
+| **Spark / Python** | ML + DS |
+| **Snowflake** | via Iceberg External Tables |
 
 ### Key Properties of a Lakehouse
 

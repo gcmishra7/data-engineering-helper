@@ -9,12 +9,18 @@ Databricks excels at ML and large-scale Spark processing. Snowflake excels at go
 
 ```mermaid
 graph LR
-    K[Kafka] --> DB_S[Databricks<br/>writes Delta with UniForm]
-    DB_S --> ADLS[ADLS Gen2 / S3<br/>one copy of data]
-    ADLS -->|reads as Iceberg metadata| SF[Snowflake<br/>External Iceberg Table]
+    K[Kafka] --> DB_S[Databricks]
+    DB_S --> ADLS[ADLS Gen2 / S3]
+    ADLS -->|reads as Iceberg metadata| SF[Snowflake]
     DB_S -->|ML / Feature Store| ML[ML Models]
     SF -->|SQL Analytics| BI[Tableau / Looker]
 ```
+
+| Node | Details |
+|------|---------|
+| **Databricks** | writes Delta with UniForm |
+| **ADLS Gen2 / S3** | one copy of data |
+| **Snowflake** | External Iceberg Table |
 
 Zero data duplication. Databricks writes, Snowflake reads. Works on Azure (ADLS) and AWS (S3).
 

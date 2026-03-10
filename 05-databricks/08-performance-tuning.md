@@ -8,18 +8,30 @@ A Spark job that takes 4 hours can often be reduced to 15 minutes with targeted 
 ```mermaid
 graph TD
     SLOW[Slow Job] --> UI[Check Spark UI]
-    UI --> SKEW{Data Skew?<br/>few tasks >> others}
-    UI --> SPILL{Memory Spill?<br/>disk spill in task}
-    UI --> SHUFFLE{Large Shuffle?<br/>huge shuffle read/write}
-    UI --> GC{High GC?<br/>>10% of task time}
-    UI --> SMALL{Small Files?<br/>millions of tiny reads}
+    UI --> SKEW{Data Skew?}
+    UI --> SPILL{Memory Spill?}
+    UI --> SHUFFLE{Large Shuffle?}
+    UI --> GC{High GC?}
+    UI --> SMALL{Small Files?}
 
     SKEW --> F1[Salt key / Broadcast / AQE skew join]
-    SPILL --> F2[Increase executor memory<br/>Reduce partition size]
-    SHUFFLE --> F3[Repartition before join<br/>Tune shuffle partitions]
-    GC --> F4[Increase executor memory<br/>Reduce object creation in UDFs]
-    SMALL --> F5[OPTIMIZE Delta table<br/>Enable autoCompact]
+    SPILL --> F2[Increase executor memory]
+    SHUFFLE --> F3[Repartition before join]
+    GC --> F4[Increase executor memory]
+    SMALL --> F5[OPTIMIZE Delta table]
 ```
+
+| Node | Details |
+|------|---------|
+| **Data Skew?** | few tasks >> others |
+| **Memory Spill?** | disk spill in task |
+| **Large Shuffle?** | huge shuffle read/write |
+| **High GC?** | >10% of task time |
+| **Small Files?** | millions of tiny reads |
+| **Increase executor memory** (Spill fix) | Reduce partition size |
+| **Repartition before join** | Tune shuffle partitions |
+| **Increase executor memory** (GC fix) | Reduce object creation in UDFs |
+| **OPTIMIZE Delta table** | Enable autoCompact |
 
 ### Step 1 — Profile the job in Spark UI
 

@@ -7,13 +7,22 @@ Data quality rules spread across ad-hoc SQL checks, notebook assertions, and und
 
 ```mermaid
 graph LR
-    DS[Data Source<br/>Spark · Pandas · SQL] --> VAL[Validation Run]
-    EXP[Expectation Suite<br/>JSON definition] --> VAL
-    VAL --> RES[Validation Result<br/>pass/fail per expectation]
-    RES --> CP[Checkpoint<br/>batch orchestration]
-    CP --> DOCS[Data Docs<br/>HTML quality report]
-    CP --> ALERT[Alert on Failure<br/>Slack · email · PagerDuty]
+    DS[Data Source] --> VAL[Validation Run]
+    EXP[Expectation Suite] --> VAL
+    VAL --> RES[Validation Result]
+    RES --> CP[Checkpoint]
+    CP --> DOCS[Data Docs]
+    CP --> ALERT[Alert on Failure]
 ```
+
+| Node | Details |
+|------|---------|
+| **Data Source** | Spark, Pandas, SQL |
+| **Expectation Suite** | JSON definition |
+| **Validation Result** | pass/fail per expectation |
+| **Checkpoint** | batch orchestration |
+| **Data Docs** | HTML quality report |
+| **Alert on Failure** | Slack, email, PagerDuty |
 
 ### Core concepts
 

@@ -7,11 +7,16 @@ Writing correct, fault-tolerant streaming code from scratch is hard. Structured 
 
 ```mermaid
 graph LR
-    K[Kafka / Delta / Files] -->|readStream| T[Unbounded Table<br/>new rows = new events]
+    K[Kafka / Delta / Files] -->|readStream| T[Unbounded Table]
     T -->|transformations| O[Output Table]
     O -->|writeStream| D[Delta Lake / Kafka / Console]
-    CP[Checkpoint Location<br/>S3/ADLS/GCS] <-->|offset tracking| O
+    CP[Checkpoint Location] <-->|offset tracking| O
 ```
+
+| Node | Details |
+|------|---------|
+| **Unbounded Table** | new rows = new events |
+| **Checkpoint Location** | S3/ADLS/GCS |
 
 ### Reading from Kafka
 

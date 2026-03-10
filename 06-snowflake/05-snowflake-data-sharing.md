@@ -8,26 +8,33 @@ Traditional data sharing requires extracting data, transferring it, and loading 
 ```mermaid
 graph LR
     subgraph Provider Account
-        PT[Provider Table<br/>fact_orders · dim_product]
-        SH[Share Object<br/>tables + views]
+        PT[Provider Table]
+        SH[Share Object]
         PT --> SH
     end
 
     subgraph Recipient 1 - Snowflake Account
-        DB1[Shared Database<br/>read-only]
+        DB1[Shared Database]
         SH --> DB1
     end
 
     subgraph Recipient 2 - Snowflake Account
-        DB2[Shared Database<br/>read-only]
+        DB2[Shared Database]
         SH --> DB2
     end
 
     subgraph Recipient 3 - Non-Snowflake
-        DSC[Delta Sharing Client<br/>Python · Spark · Power BI]
+        DSC[Delta Sharing Client]
         SH -->|Open Protocol| DSC
     end
 ```
+
+| Node | Details |
+|------|---------|
+| **Provider Table** | fact_orders, dim_product |
+| **Share Object** | tables + views |
+| **Shared Database** | read-only |
+| **Delta Sharing Client** | Python, Spark, Power BI |
 
 No data is copied. Recipients query provider's storage directly via Snowflake's metadata layer.
 

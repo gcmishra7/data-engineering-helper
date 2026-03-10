@@ -7,12 +7,18 @@ When a dashboard shows wrong numbers, how do you find the root cause? Without li
 
 ```mermaid
 graph LR
-    SPARK[Spark Job] -->|OpenLineage event| MQ[Marquez / DataHub<br/>lineage backend]
+    SPARK[Spark Job] -->|OpenLineage event| MQ[Marquez / DataHub]
     AIRFLOW[Airflow DAG] -->|OpenLineage event| MQ
     DBT[dbt run] -->|dbt-ol adapter| MQ
-    MQ --> UI[DataHub UI<br/>lineage graph · search · docs]
-    MQ --> API[Lineage API<br/>programmatic access]
+    MQ --> UI[DataHub UI]
+    MQ --> API[Lineage API]
 ```
+
+| Node | Details |
+|------|---------|
+| **Marquez / DataHub** | lineage backend |
+| **DataHub UI** | lineage graph, search, docs |
+| **Lineage API** | programmatic access |
 
 ### OpenLineage — the open standard
 

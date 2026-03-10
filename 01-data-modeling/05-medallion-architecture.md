@@ -7,26 +7,34 @@ Without layering, data engineers either overwrite raw data (losing auditability)
 
 ```mermaid
 graph LR
-    SRC[Sources<br/>DBs · APIs · Events] --> B
+    SRC[Sources] --> B
 
     subgraph B[Bronze — Raw]
-        B1[Append-only<br/>Schema-on-read<br/>Full history<br/>No transformations]
+        B1[Append-only]
     end
 
     B --> S
 
     subgraph S[Silver — Cleaned]
-        S1[Deduplication<br/>Type casting<br/>Null handling<br/>PII masked<br/>Schema enforced]
+        S1[Deduplication]
     end
 
     S --> G
 
     subgraph G[Gold — Serving]
-        G1[Star schema<br/>Aggregations<br/>Business logic<br/>Optimised for BI/ML]
+        G1[Star schema]
     end
 
-    G --> BI[BI Tools<br/>ML Models<br/>APIs]
+    G --> BI[BI Tools]
 ```
+
+| Node | Details |
+|------|---------|
+| **Sources** | DBs, APIs, Events |
+| **Append-only** (Bronze) | Schema-on-read, Full history, No transformations |
+| **Deduplication** (Silver) | Type casting, Null handling, PII masked, Schema enforced |
+| **Star schema** (Gold) | Aggregations, Business logic, Optimised for BI/ML |
+| **BI Tools** | ML Models, APIs |
 
 ### Layer Responsibilities
 

@@ -15,18 +15,25 @@ graph TD
     end
 
     subgraph VWH[Virtual Warehouse Layer - Compute]
-        W1[Warehouse: ANALYTICS_WH<br/>XL — 16 nodes]
-        W2[Warehouse: LOADING_WH<br/>M — 4 nodes]
-        W3[Warehouse: ML_WH<br/>L — 8 nodes]
+        W1[Warehouse: ANALYTICS_WH]
+        W2[Warehouse: LOADING_WH]
+        W3[Warehouse: ML_WH]
     end
 
     subgraph DSL[Database Storage Layer]
-        MP[Micro-partitions<br/>compressed columnar Parquet<br/>S3 / Azure Blob / GCS]
+        MP[Micro-partitions]
     end
 
     CS --> VWH
     VWH --> DSL
 ```
+
+| Node | Details |
+|------|---------|
+| **Warehouse: ANALYTICS_WH** | XL, 16 nodes |
+| **Warehouse: LOADING_WH** | M, 4 nodes |
+| **Warehouse: ML_WH** | L, 8 nodes |
+| **Micro-partitions** | compressed columnar Parquet, S3 / Azure Blob / GCS |
 
 ### Three Layers
 

@@ -7,11 +7,17 @@ Full table refreshes on 500M-row fact tables take 30+ minutes and cost significa
 
 ```mermaid
 graph LR
-    A[First run] --> B[Process ALL rows<br/>build full table]
+    A[First run] --> B[Process ALL rows]
     C[Subsequent runs] --> D{incremental mode}
-    D --> E[Filter: only rows<br/>since last run]
-    E --> F[MERGE or INSERT<br/>into existing table]
+    D --> E[Filter: only rows]
+    E --> F[MERGE or INSERT]
 ```
+
+| Node | Details |
+|------|---------|
+| **Process ALL rows** | build full table |
+| **Filter: only rows** | since last run |
+| **MERGE or INSERT** | into existing table |
 
 ### Strategies
 

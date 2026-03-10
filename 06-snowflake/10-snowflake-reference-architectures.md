@@ -10,19 +10,19 @@ graph TD
         API[APIs]
     end
     subgraph Ingestion
-        FV[Fivetran<br/>managed connectors]
-        SNOW_PIPE[Snowpipe<br/>continuous file loading]
+        FV[Fivetran]
+        SNOW_PIPE[Snowpipe]
     end
     subgraph Snowflake
-        RAW[Raw Schema<br/>per-source landing]
-        STG[Staging<br/>dbt staging models]
-        INT[Intermediate<br/>dbt cross-source]
-        GOLD[Gold Marts<br/>dbt marts]
+        RAW[Raw Schema]
+        STG[Staging]
+        INT[Intermediate]
+        GOLD[Gold Marts]
     end
     subgraph Serving
-        BI[Tableau · Power BI<br/>Looker]
-        SHARE[Data Sharing<br/>partners · suppliers]
-        SP[Snowpark<br/>Python ML]
+        BI[Tableau / Power BI]
+        SHARE[Data Sharing]
+        SP[Snowpark]
     end
 
     ERP --> FV
@@ -35,6 +35,18 @@ graph TD
     GOLD --> SHARE
     GOLD --> SP
 ```
+
+| Node | Details |
+|------|---------|
+| **Fivetran** | managed connectors |
+| **Snowpipe** | continuous file loading |
+| **Raw Schema** | per-source landing |
+| **Staging** | dbt staging models |
+| **Intermediate** | dbt cross-source |
+| **Gold Marts** | dbt marts |
+| **Tableau / Power BI** | Looker |
+| **Data Sharing** | partners, suppliers |
+| **Snowpark** | Python ML |
 
 **Key design decisions:**
 - Fivetran handles all source connectors (no custom ingestion code)
@@ -50,21 +62,30 @@ graph TD
 ```mermaid
 graph LR
     subgraph Databricks[Azure Databricks — ML + Streaming]
-        STREAM[Structured Streaming<br/>Kafka ingestion]
-        DELTA[Delta Lake<br/>Bronze · Silver]
-        ML[MLflow<br/>model training]
+        STREAM[Structured Streaming]
+        DELTA[Delta Lake]
+        ML[MLflow]
         DELTA --> ML
     end
     subgraph Snowflake[Snowflake on Azure — SQL + BI]
-        GOLD_SF[Gold Tables<br/>via UniForm / external]
-        DBT[dbt on Snowflake<br/>mart models]
-        BI_WH[SQL Warehouses<br/>Tableau · Power BI]
+        GOLD_SF[Gold Tables]
+        DBT[dbt on Snowflake]
+        BI_WH[SQL Warehouses]
     end
 
     STREAM --> DELTA
-    DELTA -->|Delta UniForm<br/>or COPY INTO| GOLD_SF
+    DELTA -->|Delta UniForm, or COPY INTO| GOLD_SF
     GOLD_SF --> DBT --> BI_WH
 ```
+
+| Node | Details |
+|------|---------|
+| **Structured Streaming** | Kafka ingestion |
+| **Delta Lake** | Bronze, Silver |
+| **MLflow** | model training |
+| **Gold Tables** | via UniForm / external |
+| **dbt on Snowflake** | mart models |
+| **SQL Warehouses** | Tableau, Power BI |
 
 **When to use this pattern:**
 - Streaming ingestion volume too high for Snowpipe → use Databricks Structured Streaming
@@ -78,17 +99,17 @@ graph LR
 ```mermaid
 graph TD
     subgraph Domain A — Finance
-        SF_A[Snowflake — Finance<br/>fact_gl_entries · dim_cost_center]
+        SF_A[Snowflake — Finance]
         DBT_A[dbt Finance models]
     end
     subgraph Domain B — Marketing
-        SF_B[Snowflake — Marketing<br/>fact_campaigns · dim_segment]
+        SF_B[Snowflake — Marketing]
         DBT_B[dbt Marketing models]
     end
     subgraph Shared Platform
-        SHARE_A[Snowflake Data Share<br/>from Finance domain]
-        SHARE_B[Snowflake Data Share<br/>from Marketing domain]
-        DH[DataHub<br/>cross-domain catalogue]
+        SHARE_A[Snowflake Data Share]
+        SHARE_B[Snowflake Data Share]
+        DH[DataHub]
     end
 
     SF_A -->|publish contract| SHARE_A
@@ -96,6 +117,14 @@ graph TD
     SHARE_A --> DH
     SHARE_B --> DH
 ```
+
+| Node | Details |
+|------|---------|
+| **Snowflake — Finance** | fact_gl_entries, dim_cost_center |
+| **Snowflake — Marketing** | fact_campaigns, dim_segment |
+| **Snowflake Data Share** (Finance) | from Finance domain |
+| **Snowflake Data Share** (Marketing) | from Marketing domain |
+| **DataHub** | cross-domain catalogue |
 
 **Data mesh principles applied:**
 - Each domain owns its Snowflake schema and dbt models

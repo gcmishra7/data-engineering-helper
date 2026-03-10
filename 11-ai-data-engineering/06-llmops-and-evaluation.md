@@ -8,17 +8,24 @@ An LLM pipeline that looks good in demos can silently degrade in production — 
 ```mermaid
 graph TD
     subgraph Development
-        BUILD[Build RAG Pipeline] --> EVAL[Offline Evaluation<br/>benchmark dataset]
-        EVAL --> ITERATE[Iterate on chunking<br/>retrieval · prompts]
+        BUILD[Build RAG Pipeline] --> EVAL[Offline Evaluation]
+        EVAL --> ITERATE[Iterate on chunking]
     end
     subgraph Production
-        DEPLOY[Deploy] --> LOG[Log all requests<br/>+ responses + retrievals]
-        LOG --> MON[Online Monitoring<br/>latency · cost · quality signals]
+        DEPLOY[Deploy] --> LOG[Log all requests]
+        LOG --> MON[Online Monitoring]
         MON --> ALERT[Alert on degradation]
         ALERT --> RETUNE[Retune or rollback]
     end
     ITERATE --> DEPLOY
 ```
+
+| Node | Details |
+|------|---------|
+| **Offline Evaluation** | benchmark dataset |
+| **Iterate on chunking** | retrieval, prompts |
+| **Log all requests** | + responses + retrievals |
+| **Online Monitoring** | latency, cost, quality signals |
 
 ### RAG evaluation metrics
 

@@ -9,19 +9,32 @@ Data governance is the system of policies, processes, roles, and technologies th
 
 ```mermaid
 graph TD
-    G[Data Governance] --> P[Policies<br/>What rules apply]
-    G --> R[Roles<br/>Who is accountable]
-    G --> Pro[Processes<br/>How changes are made]
-    G --> T[Technology<br/>Catalogues · Access control · Lineage]
+    G[Data Governance] --> P[Policies]
+    G --> R[Roles]
+    G --> Pro[Processes]
+    G --> T[Technology]
 
-    P --> D[Data Classification<br/>PII · PCI · PHI · Internal]
-    P --> A[Access Policies<br/>RBAC · ABAC]
-    P --> Q[Quality Standards<br/>SLAs · Expectations]
+    P --> D[Data Classification]
+    P --> A[Access Policies]
+    P --> Q[Quality Standards]
 
-    R --> O[Data Owner<br/>Business accountability]
-    R --> S[Data Steward<br/>Day-to-day curation]
-    R --> C[Data Custodian<br/>Technical implementation]
+    R --> O[Data Owner]
+    R --> S[Data Steward]
+    R --> C[Data Custodian]
 ```
+
+| Node | Details |
+|------|---------|
+| **Policies** | What rules apply |
+| **Roles** | Who is accountable |
+| **Processes** | How changes are made |
+| **Technology** | Catalogues, Access control, Lineage |
+| **Data Classification** | PII, PCI, PHI, Internal |
+| **Access Policies** | RBAC, ABAC |
+| **Quality Standards** | SLAs, Expectations |
+| **Data Owner** | Business accountability |
+| **Data Steward** | Day-to-day curation |
+| **Data Custodian** | Technical implementation |
 
 ### The Four Pillars
 

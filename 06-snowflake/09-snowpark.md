@@ -7,10 +7,17 @@ Data engineers want to use Python (pandas, scikit-learn, custom libraries) but r
 
 ```mermaid
 graph LR
-    PY[Python Code<br/>local or notebook] -->|Snowpark API| SF[Snowflake<br/>query plan]
-    SF --> EX[Executes on<br/>Virtual Warehouse]
-    EX --> SNOW[Snowflake Storage<br/>no data egress]
+    PY[Python Code] -->|Snowpark API| SF[Snowflake]
+    SF --> EX[Executes on]
+    EX --> SNOW[Snowflake Storage]
 ```
+
+| Node | Details |
+|------|---------|
+| **Python Code** | local or notebook |
+| **Snowflake** | query plan |
+| **Executes on** | Virtual Warehouse |
+| **Snowflake Storage** | no data egress |
 
 Snowpark translates Python DataFrame operations into SQL query plans executed inside Snowflake. Data never leaves Snowflake.
 

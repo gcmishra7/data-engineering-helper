@@ -10,13 +10,19 @@ Reads the database's write-ahead log (WAL/binlog/redo log) — the same log used
 
 ```mermaid
 graph LR
-    DB[(PostgreSQL<br/>WAL)] --> D[Debezium<br/>Connector]
-    D --> K[Kafka Topic<br/>postgres.public.orders]
+    DB[(PostgreSQL)] --> D[Debezium]
+    D --> K[Kafka Topic]
     K --> S[Spark Structured Streaming]
     K --> F[Flink Job]
     S --> DL[Delta Lake]
     F --> ES[Elasticsearch]
 ```
+
+| Node | Details |
+|------|---------|
+| **PostgreSQL** | WAL |
+| **Debezium** | Connector |
+| **Kafka Topic** | postgres.public.orders |
 
 ### Query-based CDC
 Polls the source table periodically: `SELECT * WHERE updated_at > last_poll_time`. Adds load to source, misses deletes, requires `updated_at` column.

@@ -8,19 +8,27 @@ Data pipelines have dependencies — run job B only after job A succeeds, retry 
 ```mermaid
 graph TD
     subgraph Airflow Components
-        S[Scheduler<br/>parses DAGs<br/>triggers tasks] --> MQ[Message Queue<br/>Celery / Redis]
+        S[Scheduler] --> MQ[Message Queue]
         MQ --> W1[Worker 1]
         MQ --> W2[Worker 2]
         MQ --> W3[Worker 3]
-        S --> DB[(Metadata DB<br/>PostgreSQL)]
-        WS[Webserver<br/>UI + REST API] --> DB
+        S --> DB[(Metadata DB)]
+        WS[Webserver] --> DB
         W1 --> DB
         W2 --> DB
         W3 --> DB
     end
 
-    DAG[DAG Files<br/>S3 / Git / Local] --> S
+    DAG[DAG Files] --> S
 ```
+
+| Node | Details |
+|------|---------|
+| **Scheduler** | parses DAGs, triggers tasks |
+| **Message Queue** | Celery / Redis |
+| **Metadata DB** | PostgreSQL |
+| **Webserver** | UI + REST API |
+| **DAG Files** | S3 / Git / Local |
 
 ### Core Concepts
 

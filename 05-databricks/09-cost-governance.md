@@ -7,17 +7,28 @@ Databricks bills by DBU (Databricks Unit) per second. Without governance, engine
 
 ```mermaid
 graph TD
-    SPEND[DBU Spend] --> C[Compute Cost<br/>Cluster DBUs]
-    SPEND --> S[Storage Cost<br/>ADLS/S3/GCS]
-    SPEND --> SQL[SQL Warehouse Cost<br/>DBUs while running]
+    SPEND[DBU Spend] --> C[Compute Cost]
+    SPEND --> S[Storage Cost]
+    SPEND --> SQL[SQL Warehouse Cost]
 
-    C --> JC[Job Clusters<br/>terminate after job]
-    C --> AC[All-Purpose Clusters<br/>risk: idle billing]
-    C --> POOL[Cluster Pools<br/>pre-warmed, shared]
+    C --> JC[Job Clusters]
+    C --> AC[All-Purpose Clusters]
+    C --> POOL[Cluster Pools]
 
-    SQL --> SV[Serverless<br/>per-query billing]
-    SQL --> PR[Pro Warehouse<br/>per-second billing]
+    SQL --> SV[Serverless]
+    SQL --> PR[Pro Warehouse]
 ```
+
+| Node | Details |
+|------|---------|
+| **Compute Cost** | Cluster DBUs |
+| **Storage Cost** | ADLS/S3/GCS |
+| **SQL Warehouse Cost** | DBUs while running |
+| **Job Clusters** | terminate after job |
+| **All-Purpose Clusters** | risk: idle billing |
+| **Cluster Pools** | pre-warmed, shared |
+| **Serverless** | per-query billing |
+| **Pro Warehouse** | per-second billing |
 
 ### DBU pricing model
 

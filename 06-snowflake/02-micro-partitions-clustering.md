@@ -8,15 +8,15 @@ Snowflake stores data in micro-partitions (50–500MB). Without clustering, a qu
 ```mermaid
 graph LR
     subgraph Before_Clustering[Without Clustering]
-        MP1[Partition 1<br/>dates: Jan, Mar, Jul]
-        MP2[Partition 2<br/>dates: Feb, Jan, Sep]
-        MP3[Partition 3<br/>dates: Mar, Nov, Dec]
+        MP1[Partition 1]
+        MP2[Partition 2]
+        MP3[Partition 3]
     end
 
     subgraph After_Clustering[With Clustering on date]
-        CP1[Partition 1<br/>dates: Jan 1–10]
-        CP2[Partition 2<br/>dates: Jan 11–20]
-        CP3[Partition 3<br/>dates: Jan 21–31]
+        CP1[Partition 1]
+        CP2[Partition 2]
+        CP3[Partition 3]
     end
 
     Q[Query: WHERE date = 'Jan 15'] --> Before_Clustering
@@ -24,6 +24,15 @@ graph LR
     Before_Clustering -->|scans ALL 3 partitions| R1[Slow]
     After_Clustering -->|scans ONLY Partition 2| R2[Fast]
 ```
+
+| Node | Details |
+|------|---------|
+| **Partition 1** (before) | dates: Jan, Mar, Jul |
+| **Partition 2** (before) | dates: Feb, Jan, Sep |
+| **Partition 3** (before) | dates: Mar, Nov, Dec |
+| **Partition 1** (after) | dates: Jan 1-10 |
+| **Partition 2** (after) | dates: Jan 11-20 |
+| **Partition 3** (after) | dates: Jan 21-31 |
 
 ### Clustering Key
 

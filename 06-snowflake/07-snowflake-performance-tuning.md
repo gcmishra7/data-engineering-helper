@@ -7,17 +7,29 @@ Snowflake auto-optimises many things (micro-partition pruning, result cache), bu
 
 ```mermaid
 graph TD
-    SLOW[Slow Query] --> QP[Query Profile<br/>in Snowflake UI]
-    QP --> SCAN{Full Table Scan?<br/>partitions_scanned ≈ partitions_total}
-    QP --> SPILL{Spill to Disk?<br/>bytes_spilled_to_local > 0}
-    QP --> QUEUE{Queued?<br/>queued_overload_time > 0}
-    QP --> JOIN{Inefficient Join?<br/>large intermediate result}
+    SLOW[Slow Query] --> QP[Query Profile]
+    QP --> SCAN{Full Table Scan?}
+    QP --> SPILL{Spill to Disk?}
+    QP --> QUEUE{Queued?}
+    QP --> JOIN{Inefficient Join?}
 
-    SCAN --> F1[Add partition filter<br/>Cluster the table<br/>Use search optimisation]
-    SPILL --> F2[Increase warehouse size<br/>Reduce intermediate size<br/>Filter earlier]
-    QUEUE --> F3[Multi-cluster warehouse<br/>or separate warehouses]
-    JOIN --> F4[Review join order<br/>Filter before join<br/>Materialise intermediate]
+    SCAN --> F1[Add partition filter]
+    SPILL --> F2[Increase warehouse size]
+    QUEUE --> F3[Multi-cluster warehouse]
+    JOIN --> F4[Review join order]
 ```
+
+| Node | Details |
+|------|---------|
+| **Query Profile** | in Snowflake UI |
+| **Full Table Scan?** | partitions_scanned ≈ partitions_total |
+| **Spill to Disk?** | bytes_spilled_to_local > 0 |
+| **Queued?** | queued_overload_time > 0 |
+| **Inefficient Join?** | large intermediate result |
+| **Add partition filter** | Cluster the table, Use search optimisation |
+| **Increase warehouse size** | Reduce intermediate size, Filter earlier |
+| **Multi-cluster warehouse** | or separate warehouses |
+| **Review join order** | Filter before join, Materialise intermediate |
 
 ### Query Profile — the primary diagnostic tool
 

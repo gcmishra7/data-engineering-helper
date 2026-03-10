@@ -5,17 +5,25 @@
 ```mermaid
 graph TD
     subgraph GCP Project
-        DB[Databricks Workspace<br/>GKE-based workers]
-        GCS[Google Cloud Storage<br/>Bronze · Silver · Gold]
-        PS[Cloud Pub/Sub<br/>Streaming events]
-        CC[Cloud Composer<br/>Managed Airflow]
-        WIF[Workload Identity Federation<br/>No service account keys]
+        DB[Databricks Workspace]
+        GCS[Google Cloud Storage]
+        PS[Cloud Pub/Sub]
+        CC[Cloud Composer]
+        WIF[Workload Identity Federation]
     end
 
     DB -->|WIF auth| GCS
     DB -->|Pub/Sub connector| PS
     CC -->|Databricks provider| DB
 ```
+
+| Node | Details |
+|------|---------|
+| **Databricks Workspace** | GKE-based workers |
+| **Google Cloud Storage** | Bronze, Silver, Gold |
+| **Cloud Pub/Sub** | Streaming events |
+| **Cloud Composer** | Managed Airflow |
+| **Workload Identity Federation** | No service account keys |
 
 **GCS access via Workload Identity**
 ```python

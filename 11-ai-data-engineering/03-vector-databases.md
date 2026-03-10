@@ -9,18 +9,25 @@ Traditional databases can't efficiently find "similar" rows. A SQL `LIKE` or ful
 graph LR
     subgraph Indexing
         TEXT[Text / Image / Audio] --> EMBED[Embedding Model]
-        EMBED --> VEC[Vector<br/>1536 float32 values]
-        VEC --> IDX[ANN Index<br/>HNSW · IVF · DiskANN]
+        EMBED --> VEC[Vector]
+        VEC --> IDX[ANN Index]
     end
 
     subgraph Query
         Q[Query Text] --> QE[Embed Query]
         QE --> QVEC[Query Vector]
-        QVEC --> SEARCH[ANN Search<br/>cosine similarity]
+        QVEC --> SEARCH[ANN Search]
         IDX --> SEARCH
-        SEARCH --> TOP[Top-K Results<br/>+ metadata + score]
+        SEARCH --> TOP[Top-K Results]
     end
 ```
+
+| Node | Details |
+|------|---------|
+| **Vector** | 1536 float32 values |
+| **ANN Index** | HNSW, IVF, DiskANN |
+| **ANN Search** | cosine similarity |
+| **Top-K Results** | + metadata + score |
 
 ### ANN algorithms
 

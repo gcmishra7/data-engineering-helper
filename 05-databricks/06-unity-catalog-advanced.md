@@ -7,21 +7,29 @@ The Unity Catalog overview covers RBAC basics. This guide covers the patterns ne
 
 ```mermaid
 graph TD
-    ACC[Databricks Account] --> MS[Metastore<br/>1 per region]
+    ACC[Databricks Account] --> MS[Metastore]
 
     MS --> WP[Workspace: Prod]
     MS --> WD[Workspace: Dev]
     MS --> WM[Workspace: ML]
 
-    MS --> SC[Storage Credential<br/>Managed Identity / SA / GCP SA]
-    SC --> EL[External Location<br/>abfss://bronze@... <br/>gs://bucket/...]
-    EL --> ET[External Tables<br/>Delta on ADLS / GCS]
+    MS --> SC[Storage Credential]
+    SC --> EL[External Location]
+    EL --> ET[External Tables]
 
     MS --> CAT[Catalog: prod]
     CAT --> SCH[Schema: sales]
     SCH --> TBL[Tables + Views]
-    SCH --> VOL[Volumes<br/>unstructured files]
+    SCH --> VOL[Volumes]
 ```
+
+| Node | Details |
+|------|---------|
+| **Metastore** | 1 per region |
+| **Storage Credential** | Managed Identity / SA / GCP SA |
+| **External Location** | abfss://bronze@..., gs://bucket/... |
+| **External Tables** | Delta on ADLS / GCS |
+| **Volumes** | unstructured files |
 
 ### Metastore and workspace assignment
 

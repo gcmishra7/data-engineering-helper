@@ -7,13 +7,21 @@ Streaming systems deal with two clocks: when an event *happened* vs when the sys
 
 ```mermaid
 graph LR
-    E[Event occurs<br/>at 10:00:00] --> N[Network delay<br/>+2 min] --> K[Kafka ingestion<br/>at 10:02:00]
-    K --> P[Processing delay<br/>+30 sec] --> S[Spark processes<br/>at 10:02:30]
+    E[Event occurs] --> N[Network delay] --> K[Kafka ingestion]
+    K --> P[Processing delay] --> S[Spark processes]
 
     style E fill:#2196F3
     style K fill:#FF9800
     style S fill:#4CAF50
 ```
+
+| Node | Details |
+|------|---------|
+| **Event occurs** | at 10:00:00 |
+| **Network delay** | +2 min |
+| **Kafka ingestion** | at 10:02:00 |
+| **Processing delay** | +30 sec |
+| **Spark processes** | at 10:02:30 |
 
 | Clock | What it measures | Controlled by |
 |-------|-----------------|---------------|

@@ -9,15 +9,24 @@ Real-time data quality monitoring for a streaming payments pipeline — detect b
 
 ```mermaid
 graph LR
-    K[Kafka<br/>payments topic] --> DLT[DLT Pipeline<br/>with Expectations]
-    DLT -->|clean records| S[Silver Delta<br/>silver.payments]
-    DLT -->|failed records| Q[Quarantine Delta<br/>silver.payments_quarantine]
+    K[Kafka] --> DLT[DLT Pipeline]
+    DLT -->|clean records| S[Silver Delta]
+    DLT -->|failed records| Q[Quarantine Delta]
     DLT -->|event log| EL[DLT Event Log]
-    EL --> MON[Quality Dashboard<br/>Databricks SQL]
+    EL --> MON[Quality Dashboard]
     MON -->|threshold breach| ALERT[PagerDuty / Slack]
-    Q --> HEAL[Auto-Heal Job<br/>attempt reprocessing]
+    Q --> HEAL[Auto-Heal Job]
     HEAL -->|fixed records| S
 ```
+
+| Node | Details |
+|------|---------|
+| **Kafka** | payments topic |
+| **DLT Pipeline** | with Expectations |
+| **Silver Delta** | silver.payments |
+| **Quarantine Delta** | silver.payments_quarantine |
+| **Quality Dashboard** | Databricks SQL |
+| **Auto-Heal Job** | attempt reprocessing |
 
 ## DLT Pipeline with Quality Expectations
 

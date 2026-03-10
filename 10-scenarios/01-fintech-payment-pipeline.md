@@ -9,14 +9,23 @@ Real-time payment processing pipeline: Kafka → Databricks fraud scoring → De
 
 ```mermaid
 graph LR
-    PG[(PostgreSQL<br/>transactions)] -->|Debezium CDC| K[Kafka<br/>payments topic]
+    PG[(PostgreSQL)] -->|Debezium CDC| K[Kafka]
     APP[Mobile/Web App] -->|direct produce| K
-    K -->|Structured Streaming| DB[Databricks<br/>Fraud ML Scoring]
-    DB -->|Delta with UniForm| ADLS[ADLS Gen2<br/>Bronze · Silver · Gold]
-    ADLS -->|Iceberg metadata| SF[Snowflake<br/>Compliance Reporting]
+    K -->|Structured Streaming| DB[Databricks]
+    DB -->|Delta with UniForm| ADLS[ADLS Gen2]
+    ADLS -->|Iceberg metadata| SF[Snowflake]
     SF -->|Data Sharing| AUD[External Auditors]
-    ADLS -->|Feature Store| ML[MLflow<br/>Fraud Model]
+    ADLS -->|Feature Store| ML[MLflow]
 ```
+
+| Node | Details |
+|------|---------|
+| **PostgreSQL** | transactions |
+| **Kafka** | payments topic |
+| **Databricks** | Fraud ML Scoring |
+| **ADLS Gen2** | Bronze, Silver, Gold |
+| **Snowflake** | Compliance Reporting |
+| **MLflow** | Fraud Model |
 
 ## Pipeline Stages
 

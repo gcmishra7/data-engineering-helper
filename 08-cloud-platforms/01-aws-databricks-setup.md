@@ -6,18 +6,27 @@
 graph TD
     subgraph AWS Account
         subgraph VPC[Customer VPC]
-            DB_CP[Databricks Control Plane<br/>Cross-account IAM role]
-            DB_DP[Databricks Data Plane<br/>EC2 Driver + Workers]
+            DB_CP[Databricks Control Plane]
+            DB_DP[Databricks Data Plane]
         end
-        S3[Amazon S3<br/>Bronze · Silver · Gold]
-        MSK[Amazon MSK<br/>Managed Kafka]
-        GLUE[AWS Glue<br/>Data Catalog optional]
-        IAM[IAM Instance Profile<br/>Grants EC2 → S3 access]
+        S3[Amazon S3]
+        MSK[Amazon MSK]
+        GLUE[AWS Glue]
+        IAM[IAM Instance Profile]
     end
 
     DB_DP -->|Instance Profile| S3
     DB_DP -->|Kafka protocol| MSK
 ```
+
+| Node | Details |
+|------|---------|
+| **Databricks Control Plane** | Cross-account IAM role |
+| **Databricks Data Plane** | EC2 Driver + Workers |
+| **Amazon S3** | Bronze, Silver, Gold |
+| **Amazon MSK** | Managed Kafka |
+| **AWS Glue** | Data Catalog optional |
+| **IAM Instance Profile** | Grants EC2 to S3 access |
 
 **S3 access via instance profile (Unity Catalog)**
 ```terraform

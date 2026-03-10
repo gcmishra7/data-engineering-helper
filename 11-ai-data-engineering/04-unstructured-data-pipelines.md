@@ -8,24 +8,24 @@
 ```mermaid
 graph TD
     subgraph Raw Unstructured Data
-        PDF[PDFs<br/>contracts · reports · invoices]
-        IMG[Images<br/>screenshots · diagrams · scans]
-        AUDIO[Audio<br/>call recordings · meetings]
-        EMAIL[Email / Slack<br/>conversations]
-        HTML[HTML / Web<br/>pages · docs]
+        PDF[PDFs]
+        IMG[Images]
+        AUDIO[Audio]
+        EMAIL[Email / Slack]
+        HTML[HTML / Web]
     end
 
     subgraph Extraction Layer
-        PARSE[Parser<br/>Unstructured.io · PyMuPDF · Tika]
-        OCR[OCR<br/>Tesseract · Azure Document Intelligence]
-        ASR[Speech-to-Text<br/>Whisper · Azure Speech]
-        VIS[Vision Model<br/>GPT-4o · Claude · Gemini]
+        PARSE[Parser]
+        OCR[OCR]
+        ASR[Speech-to-Text]
+        VIS[Vision Model]
     end
 
     subgraph Processing Layer
-        CHUNK[Chunker + Embedder] --> VS[Vector Store<br/>RAG retrieval]
-        EXTRACT[LLM Extraction<br/>structured JSON from text] --> DELTA[Delta Table<br/>structured analytics]
-        CLASS[Classifier<br/>route by content type] --> ROUTE[Processing Route]
+        CHUNK[Chunker + Embedder] --> VS[Vector Store]
+        EXTRACT[LLM Extraction] --> DELTA[Delta Table]
+        CLASS[Classifier] --> ROUTE[Processing Route]
     end
 
     PDF --> PARSE
@@ -47,6 +47,22 @@ graph TD
     VIS --> EXTRACT
     VIS --> CLASS
 ```
+
+| Node | Details |
+|------|---------|
+| **PDFs** | contracts, reports, invoices |
+| **Images** | screenshots, diagrams, scans |
+| **Audio** | call recordings, meetings |
+| **Email / Slack** | conversations |
+| **HTML / Web** | pages, docs |
+| **Parser** | Unstructured.io, PyMuPDF, Tika |
+| **OCR** | Tesseract, Azure Document Intelligence |
+| **Speech-to-Text** | Whisper, Azure Speech |
+| **Vision Model** | GPT-4o, Claude, Gemini |
+| **Vector Store** | RAG retrieval |
+| **LLM Extraction** | structured JSON from text |
+| **Delta Table** | structured analytics |
+| **Classifier** | route by content type |
 
 ### PDF parsing — layout-aware extraction
 

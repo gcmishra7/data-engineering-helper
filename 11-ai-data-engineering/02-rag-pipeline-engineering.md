@@ -8,28 +8,28 @@ A prototype RAG chatbot running on 100 documents breaks at 1 million documents. 
 ```mermaid
 graph TD
     subgraph Sources
-        S3[S3 / ADLS / GCS<br/>blob storage]
-        CONF[Confluence / Notion<br/>wiki systems]
-        DB[PostgreSQL / MySQL<br/>structured + text columns]
-        SLACK[Slack / Teams<br/>conversations]
+        S3[S3 / ADLS / GCS]
+        CONF[Confluence / Notion]
+        DB[PostgreSQL / MySQL]
+        SLACK[Slack / Teams]
     end
 
     subgraph Ingestion Layer
-        WATCH[Change Detector<br/>file events · webhooks · CDC]
-        WATCH --> Q[Message Queue<br/>Kafka · SQS]
+        WATCH[Change Detector]
+        WATCH --> Q[Message Queue]
     end
 
     subgraph Processing Layer - Spark / Databricks
         Q --> LOAD[Document Loader]
-        LOAD --> PARSE[Parser<br/>PDF · HTML · DOCX]
+        LOAD --> PARSE[Parser]
         PARSE --> CHUNK[Chunker]
-        CHUNK --> META[Metadata Extractor<br/>title · date · author · tags]
-        META --> EMBED[Embedding Worker<br/>batch API calls]
-        EMBED --> UPSERT[Vector Store Upsert<br/>idempotent by doc_id]
+        CHUNK --> META[Metadata Extractor]
+        META --> EMBED[Embedding Worker]
+        EMBED --> UPSERT[Vector Store Upsert]
     end
 
     subgraph Vector Store
-        VS[Pinecone / Weaviate<br/>pgvector / Chroma]
+        VS[Pinecone / Weaviate]
     end
 
     UPSERT --> VS
@@ -38,6 +38,20 @@ graph TD
     DB --> WATCH
     SLACK --> WATCH
 ```
+
+| Node | Details |
+|------|---------|
+| **S3 / ADLS / GCS** | blob storage |
+| **Confluence / Notion** | wiki systems |
+| **PostgreSQL / MySQL** | structured + text columns |
+| **Slack / Teams** | conversations |
+| **Change Detector** | file events, webhooks, CDC |
+| **Message Queue** | Kafka, SQS |
+| **Parser** | PDF, HTML, DOCX |
+| **Metadata Extractor** | title, date, author, tags |
+| **Embedding Worker** | batch API calls |
+| **Vector Store Upsert** | idempotent by doc_id |
+| **Pinecone / Weaviate** | pgvector / Chroma |
 
 ### Production indexing pipeline (Databricks + Delta Lake)
 

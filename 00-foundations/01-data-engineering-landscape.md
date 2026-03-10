@@ -8,16 +8,27 @@ Raw data is useless at scale. A company generating 10TB/day of events cannot let
 
 ```mermaid
 graph TD
-    A[Raw Sources<br/>DBs · APIs · Events · Files] --> B[Ingestion<br/>Fivetran · Airbyte · Kafka · Debezium]
-    B --> C[Storage<br/>Data Lake · Lakehouse · Warehouse]
-    C --> D[Transformation<br/>Spark · dbt · SQL]
-    D --> E[Serving<br/>Snowflake · Databricks SQL · BI Tools]
-    E --> F[Consumers<br/>Analysts · Scientists · Apps]
-    G[Orchestration<br/>Airflow · Workflows] --> B
+    A[Raw Sources] --> B[Ingestion]
+    B --> C[Storage]
+    C --> D[Transformation]
+    D --> E[Serving]
+    E --> F[Consumers]
+    G[Orchestration] --> B
     G --> D
-    H[Governance & Quality<br/>Unity Catalog · GE] --> C
+    H[Governance] --> C
     H --> D
 ```
+
+| Layer | Tools |
+|-------|-------|
+| **Raw Sources** | DBs, APIs, Events, Files |
+| **Ingestion** | Fivetran, Airbyte, Kafka, Debezium |
+| **Storage** | Data Lake, Lakehouse, Warehouse |
+| **Transformation** | Spark, dbt, SQL |
+| **Serving** | Snowflake, Databricks SQL, BI Tools |
+| **Consumers** | Analysts, Scientists, Apps |
+| **Orchestration** | Airflow, Workflows |
+| **Governance** | Unity Catalog, Great Expectations |
 
 ### Roles
 

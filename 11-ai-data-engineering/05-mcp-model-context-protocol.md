@@ -8,16 +8,16 @@ LLMs are isolated from external systems. Every integration (database, file syste
 ```mermaid
 graph LR
     subgraph Host Application
-        APP[Claude / GPT / Cursor<br/>AI assistant]
-        MCPClient[MCP Client<br/>manages connections]
+        APP[Claude / GPT / Cursor]
+        MCPClient[MCP Client]
         APP --> MCPClient
     end
 
     subgraph MCP Servers
-        DB_SRV[Database Server<br/>query_sql · list_tables]
-        FS_SRV[Filesystem Server<br/>read_file · write_file · list_dir]
-        API_SRV[API Server<br/>call_endpoint · get_schema]
-        K8S_SRV[Kubernetes Server<br/>get_pods · get_logs]
+        DB_SRV[Database Server]
+        FS_SRV[Filesystem Server]
+        API_SRV[API Server]
+        K8S_SRV[Kubernetes Server]
     end
 
     MCPClient -->|JSON-RPC over stdio/HTTP| DB_SRV
@@ -30,6 +30,15 @@ graph LR
     FS_SRV --> FILES[Local / Cloud Files]
     API_SRV --> REST[REST APIs]
 ```
+
+| Node | Details |
+|------|---------|
+| **Claude / GPT / Cursor** | AI assistant |
+| **MCP Client** | manages connections |
+| **Database Server** | query_sql, list_tables |
+| **Filesystem Server** | read_file, write_file, list_dir |
+| **API Server** | call_endpoint, get_schema |
+| **Kubernetes Server** | get_pods, get_logs |
 
 ### MCP primitives
 

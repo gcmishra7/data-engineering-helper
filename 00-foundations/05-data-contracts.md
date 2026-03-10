@@ -14,11 +14,17 @@ A data contract specifies:
 
 ```mermaid
 graph LR
-    P[Producer<br/>Source System Team] -->|signs| C[Data Contract<br/>schema · SLA · semantics]
+    P[Producer] -->|signs| C[Data Contract]
     C -->|validated by| I[Ingestion Pipeline]
     I -->|on violation| A[Alert + Quarantine]
-    C -->|consumed by| D[Consumer<br/>Analytics / ML Team]
+    C -->|consumed by| D[Consumer]
 ```
+
+| Node | Details |
+|------|---------|
+| **Producer** | Source System Team |
+| **Data Contract** | schema, SLA, semantics |
+| **Consumer** | Analytics / ML Team |
 
 ## Contract Structure (YAML example)
 

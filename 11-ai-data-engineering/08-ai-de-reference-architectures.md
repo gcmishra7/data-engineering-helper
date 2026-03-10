@@ -7,27 +7,27 @@ graph TD
     subgraph Sources
         CONF[Confluence]
         S3[S3/ADLS]
-        DB_SRC[(PostgreSQL<br/>product docs)]
+        DB_SRC[(PostgreSQL)]
     end
     subgraph Indexing Pipeline - Databricks
-        AL[Auto Loader<br/>detect changes]
-        PARSE[Document Parser<br/>Unstructured.io]
-        PII[PII Scrubber<br/>Presidio]
-        CHUNK[Chunker<br/>semantic + parent-child]
-        EMBED[Embedding Worker<br/>text-embedding-3-small]
-        IDX_DELTA[Document Index<br/>Delta Lake]
+        AL[Auto Loader]
+        PARSE[Document Parser]
+        PII[PII Scrubber]
+        CHUNK[Chunker]
+        EMBED[Embedding Worker]
+        IDX_DELTA[Document Index]
     end
     subgraph Query Platform
-        API[FastAPI<br/>RAG endpoint]
-        GUARD[Guardrails<br/>input + output]
-        VS[Pinecone<br/>vector store]
-        LLM_GW[LLM Gateway<br/>rate limit · fallback]
+        API[FastAPI]
+        GUARD[Guardrails]
+        VS[Pinecone]
+        LLM_GW[LLM Gateway]
         LLM[GPT-4o / Claude]
     end
     subgraph Observability
-        LANGFUSE[Langfuse<br/>tracing]
-        LINEAGE_TBL[Query Lineage<br/>Delta Table]
-        DASH[Quality Dashboard<br/>Databricks SQL]
+        LANGFUSE[Langfuse]
+        LINEAGE_TBL[Query Lineage]
+        DASH[Quality Dashboard]
     end
 
     CONF --> AL
@@ -39,6 +39,23 @@ graph TD
     API --> GUARD --> VS --> LLM_GW --> LLM
     API --> LANGFUSE --> LINEAGE_TBL --> DASH
 ```
+
+| Node | Details |
+|------|---------|
+| **PostgreSQL** | product docs |
+| **Auto Loader** | detect changes |
+| **Document Parser** | Unstructured.io |
+| **PII Scrubber** | Presidio |
+| **Chunker** | semantic + parent-child |
+| **Embedding Worker** | text-embedding-3-small |
+| **Document Index** | Delta Lake |
+| **FastAPI** | RAG endpoint |
+| **Guardrails** | input + output |
+| **Pinecone** | vector store |
+| **LLM Gateway** | rate limit, fallback |
+| **Langfuse** | tracing |
+| **Query Lineage** | Delta Table |
+| **Quality Dashboard** | Databricks SQL |
 
 **Key design decisions:**
 - Databricks for indexing (parallelise over millions of documents)
@@ -60,14 +77,14 @@ graph LR
         EMAIL[Emails]
     end
     subgraph Silver - Extracted + Structured
-        PARSED[Parsed Text<br/>Delta Table]
-        EXTRACTED[LLM Extractions<br/>invoices · contracts · claims]
-        TRANSCRIPTS[Transcripts<br/>call recordings]
+        PARSED[Parsed Text]
+        EXTRACTED[LLM Extractions]
+        TRANSCRIPTS[Transcripts]
     end
     subgraph Gold - Analytical
-        CLASSIFIED[Classified Documents<br/>category · sentiment · topics]
-        METRICS[Business Metrics<br/>invoice totals · claim amounts]
-        EMBEDDINGS[Embedding Store<br/>Delta + pgvector]
+        CLASSIFIED[Classified Documents]
+        METRICS[Business Metrics]
+        EMBEDDINGS[Embedding Store]
     end
 
     PDF --> PARSED
@@ -80,6 +97,15 @@ graph LR
     EXTRACTED --> METRICS
     PARSED --> EMBEDDINGS
 ```
+
+| Node | Details |
+|------|---------|
+| **Parsed Text** | Delta Table |
+| **LLM Extractions** | invoices, contracts, claims |
+| **Transcripts** | call recordings |
+| **Classified Documents** | category, sentiment, topics |
+| **Business Metrics** | invoice totals, claim amounts |
+| **Embedding Store** | Delta + pgvector |
 
 **SLA targets:**
 
@@ -95,14 +121,14 @@ graph LR
 
 ```mermaid
 graph TD
-    TRIGGER[Trigger<br/>schedule · event · user] --> AGENT[AI Agent<br/>Claude / GPT-4o with tools]
+    TRIGGER[Trigger] --> AGENT[AI Agent]
 
     subgraph MCP Tools Available to Agent
-        SQL[execute_sql<br/>Snowflake / Databricks]
-        SCHEMA[get_schema<br/>Unity Catalog]
-        PROFILE[profile_table<br/>data quality]
-        PIPELINE[trigger_pipeline<br/>Databricks Workflows]
-        NOTIFY[send_notification<br/>Slack · PagerDuty]
+        SQL[execute_sql]
+        SCHEMA[get_schema]
+        PROFILE[profile_table]
+        PIPELINE[trigger_pipeline]
+        NOTIFY[send_notification]
     end
 
     AGENT --> SQL
@@ -110,10 +136,22 @@ graph TD
     AGENT --> PROFILE
     AGENT --> PIPELINE
     AGENT --> NOTIFY
-    AGENT --> PLAN[Execution Plan<br/>human-approved]
+    AGENT --> PLAN[Execution Plan]
     PLAN --> EXECUTE[Autonomous execution]
-    EXECUTE --> REPORT[Summary report<br/>to data team Slack]
+    EXECUTE --> REPORT[Summary report]
 ```
+
+| Node | Details |
+|------|---------|
+| **Trigger** | schedule, event, user |
+| **AI Agent** | Claude / GPT-4o with tools |
+| **execute_sql** | Snowflake / Databricks |
+| **get_schema** | Unity Catalog |
+| **profile_table** | data quality |
+| **trigger_pipeline** | Databricks Workflows |
+| **send_notification** | Slack, PagerDuty |
+| **Execution Plan** | human-approved |
+| **Summary report** | to data team Slack |
 
 **Use cases:**
 - Automated data quality investigation: "silver.payments has 15% null rate spike — investigate root cause and report"
@@ -127,24 +165,34 @@ graph TD
 ```mermaid
 graph LR
     subgraph Training Data
-        QDELTA[Q&A Pairs<br/>Delta Table<br/>human-curated]
-        SYNTHETIC[Synthetic Q&A<br/>GPT-4o generated<br/>from corpus]
+        QDELTA[Q&A Pairs]
+        SYNTHETIC[Synthetic Q&A]
     end
     subgraph Training Pipeline - Databricks ML
-        PREP[Data Prep<br/>format · filter · split]
-        FINETUNE[Fine-Tune<br/>Llama 3.1 8B<br/>on domain data]
-        EVAL[Evaluation<br/>RAGAS · custom rubric]
+        PREP[Data Prep]
+        FINETUNE[Fine-Tune]
+        EVAL[Evaluation]
         MR[MLflow Model Registry]
     end
     subgraph Deployment
-        SERVING[Databricks Model Serving<br/>or vLLM on GPU]
-        RAG2[RAG Pipeline<br/>domain LLM + vector search]
+        SERVING[Databricks Model Serving]
+        RAG2[RAG Pipeline]
     end
 
     QDELTA --> PREP
     SYNTHETIC --> PREP
     PREP --> FINETUNE --> EVAL --> MR --> SERVING --> RAG2
 ```
+
+| Node | Details |
+|------|---------|
+| **Q&A Pairs** | Delta Table, human-curated |
+| **Synthetic Q&A** | GPT-4o generated, from corpus |
+| **Data Prep** | format, filter, split |
+| **Fine-Tune** | Llama 3.1 8B, on domain data |
+| **Evaluation** | RAGAS, custom rubric |
+| **Databricks Model Serving** | or vLLM on GPU |
+| **RAG Pipeline** | domain LLM + vector search |
 
 **When to fine-tune vs pure RAG:**
 

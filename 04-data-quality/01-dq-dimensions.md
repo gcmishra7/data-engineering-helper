@@ -7,13 +7,22 @@
 
 ```mermaid
 graph TD
-    DQ[Data Quality] --> AC[Accuracy<br/>Is it correct?]
-    DQ --> CO[Completeness<br/>Is it all there?]
-    DQ --> CN[Consistency<br/>Does it agree?]
-    DQ --> TI[Timeliness<br/>Is it fresh?]
-    DQ --> VA[Validity<br/>Does it conform?]
-    DQ --> UN[Uniqueness<br/>Is it deduplicated?]
+    DQ[Data Quality] --> AC[Accuracy]
+    DQ --> CO[Completeness]
+    DQ --> CN[Consistency]
+    DQ --> TI[Timeliness]
+    DQ --> VA[Validity]
+    DQ --> UN[Uniqueness]
 ```
+
+| Node | Details |
+|------|---------|
+| **Accuracy** | Is it correct? |
+| **Completeness** | Is it all there? |
+| **Consistency** | Does it agree? |
+| **Timeliness** | Is it fresh? |
+| **Validity** | Does it conform? |
+| **Uniqueness** | Is it deduplicated? |
 
 ### 1. Accuracy
 Data correctly represents reality.

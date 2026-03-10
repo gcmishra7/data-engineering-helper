@@ -11,17 +11,26 @@ graph TD
     DQ --> EXTERNAL[External / Observability]
     DQ --> NATIVE[Platform Native]
 
-    INLINE --> DLT[DLT Expectations<br/>Databricks pipelines]
-    INLINE --> GX[Great Expectations<br/>any platform]
-    INLINE --> DBT[dbt Tests<br/>SQL transformations]
+    INLINE --> DLT[DLT Expectations]
+    INLINE --> GX[Great Expectations]
+    INLINE --> DBT[dbt Tests]
 
-    EXTERNAL --> MC[Monte Carlo<br/>ML anomaly detection]
-    EXTERNAL --> BIGEYE[Bigeye<br/>automated monitoring]
-    EXTERNAL --> SOD[Soda<br/>YAML-defined checks]
+    EXTERNAL --> MC[Monte Carlo]
+    EXTERNAL --> BIGEYE[Bigeye]
+    EXTERNAL --> SOD[Soda]
 
     NATIVE --> DMF[Snowflake Data Metric Functions]
     NATIVE --> DLT2[Databricks DLT Expectations]
 ```
+
+| Node | Details |
+|------|---------|
+| **DLT Expectations** | Databricks pipelines |
+| **Great Expectations** | any platform |
+| **dbt Tests** | SQL transformations |
+| **Monte Carlo** | ML anomaly detection |
+| **Bigeye** | automated monitoring |
+| **Soda** | YAML-defined checks |
 
 ## Tool Comparison
 

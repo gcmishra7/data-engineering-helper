@@ -7,19 +7,30 @@ Plain Parquet on S3/ADLS has no ACID guarantees. Two writers corrupt data. No ro
 
 ```mermaid
 graph TD
-    W1[Writer 1<br/>INSERT] --> TL
-    W2[Writer 2<br/>UPDATE] --> TL
-    R1[Reader<br/>SELECT] --> TL
+    W1[Writer 1] --> TL
+    W2[Writer 2] --> TL
+    R1[Reader] --> TL
 
     subgraph TL[Transaction Log — _delta_log/]
-        C0[000.json<br/>initial schema]
-        C1[001.json<br/>add files A,B]
-        C2[002.json<br/>add file C<br/>remove file A]
-        C3[003.json<br/>schema change]
+        C0[000.json]
+        C1[001.json]
+        C2[002.json]
+        C3[003.json]
     end
 
-    TL --> D[Data Files<br/>Parquet on S3/ADLS/GCS]
+    TL --> D[Data Files]
 ```
+
+| Node | Details |
+|------|---------|
+| **Writer 1** | INSERT |
+| **Writer 2** | UPDATE |
+| **Reader** | SELECT |
+| **000.json** | initial schema |
+| **001.json** | add files A, B |
+| **002.json** | add file C, remove file A |
+| **003.json** | schema change |
+| **Data Files** | Parquet on S3/ADLS/GCS |
 
 ### The Transaction Log
 Every write creates a new JSON commit file in `_delta_log/`. Each file records:

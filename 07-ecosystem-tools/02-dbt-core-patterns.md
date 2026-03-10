@@ -7,18 +7,28 @@ SQL transformation logic lives in ad-hoc scripts, stored procedures, or BI tool 
 
 ```mermaid
 graph LR
-    SRC[Sources<br/>raw schema tables] --> STG[Staging Models<br/>one-to-one source<br/>light casting]
-    STG --> INT[Intermediate Models<br/>cross-source joins<br/>dedup logic]
-    INT --> MART[Mart Models<br/>fact + dim tables<br/>business logic]
-    MART --> BI[BI Tools<br/>Tableau · Power BI]
+    SRC[Sources] --> STG[Staging Models]
+    STG --> INT[Intermediate Models]
+    INT --> MART[Mart Models]
+    MART --> BI[BI Tools]
 
-    TEST[dbt tests<br/>not_null · unique<br/>accepted_values] --> STG
+    TEST[dbt tests] --> STG
     TEST --> INT
     TEST --> MART
-    DOC[dbt docs<br/>auto-generated] --> STG
+    DOC[dbt docs] --> STG
     DOC --> INT
     DOC --> MART
 ```
+
+| Node | Details |
+|------|---------|
+| **Sources** | raw schema tables |
+| **Staging Models** | one-to-one source, light casting |
+| **Intermediate Models** | cross-source joins, dedup logic |
+| **Mart Models** | fact + dim tables, business logic |
+| **BI Tools** | Tableau, Power BI |
+| **dbt tests** | not_null, unique, accepted_values |
+| **dbt docs** | auto-generated |
 
 ### Project structure
 

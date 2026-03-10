@@ -7,7 +7,7 @@ Before Unity Catalog, each Databricks workspace had its own Hive metastore — s
 
 ```mermaid
 graph TD
-    A[Databricks Account] --> M[Metastore<br/>one per region]
+    A[Databricks Account] --> M[Metastore]
     M --> W1[Workspace: Production]
     M --> W2[Workspace: Development]
     M --> W3[Workspace: ML]
@@ -19,6 +19,10 @@ graph TD
     Sch1 --> T1[Table: fact_orders]
     Sch1 --> T2[Table: dim_customer]
 ```
+
+| Node | Details |
+|------|---------|
+| **Metastore** | one per region |
 
 ### Three-Level Namespace
 `catalog.schema.table`

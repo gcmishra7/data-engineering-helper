@@ -36,15 +36,22 @@ Warehouse/Lakehouse → [Reverse ETL Tool] → Salesforce · HubSpot · Product 
 ```mermaid
 graph LR
     subgraph ETL
-        S1[Source] --> T1[Transform<br/>external] --> W1[Warehouse]
+        S1[Source] --> T1[Transform] --> W1[Warehouse]
     end
     subgraph ELT
-        S2[Source] --> L2[Raw Load] --> W2[Warehouse] --> T2[Transform<br/>inside]
+        S2[Source] --> L2[Raw Load] --> W2[Warehouse] --> T2[Transform]
     end
     subgraph Reverse ETL
-        W3[Warehouse] --> R3[Reverse ETL<br/>Census · Hightouch] --> O3[Operational<br/>Systems]
+        W3[Warehouse] --> R3[Reverse ETL] --> O3[Operational Systems]
     end
 ```
+
+| Node | Details |
+|------|---------|
+| **Transform** (T1) | external |
+| **Transform** (T2) | inside |
+| **Reverse ETL** | Census, Hightouch |
+| **Operational Systems** | (previously multi-line) |
 
 ## Comparison
 

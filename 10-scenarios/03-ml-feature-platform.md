@@ -10,31 +10,40 @@ End-to-end ML feature platform serving both real-time (< 100ms) and batch infere
 ```mermaid
 graph TD
     subgraph Offline[Offline Store — Delta Lake]
-        SF[Silver Tables<br/>raw events]
-        FT[Feature Tables<br/>precomputed daily]
+        SF[Silver Tables]
+        FT[Feature Tables]
         SF --> FT
     end
 
     subgraph Training[Model Training]
-        FS[Feature Store<br/>training set creation]
+        FS[Feature Store]
         EXP[MLflow Experiments]
         MR[Model Registry]
         FT --> FS --> EXP --> MR
     end
 
     subgraph Online[Online Store — Redis]
-        REDIS[Redis<br/>latest features per entity]
+        REDIS[Redis]
         FT -->|nightly sync| REDIS
     end
 
     subgraph Serving[Inference]
-        BATCH[Batch Scoring Job<br/>daily Delta table]
-        RT[FastAPI + Model Serving<br/>real-time < 100ms]
+        BATCH[Batch Scoring Job]
+        RT[FastAPI + Model Serving]
         MR --> BATCH
         MR --> RT
         REDIS --> RT
     end
 ```
+
+| Node | Details |
+|------|---------|
+| **Silver Tables** | raw events |
+| **Feature Tables** | precomputed daily |
+| **Feature Store** | training set creation |
+| **Redis** | latest features per entity |
+| **Batch Scoring Job** | daily Delta table |
+| **FastAPI + Model Serving** | real-time < 100ms |
 
 ## Feature Engineering
 

@@ -7,14 +7,22 @@ Understanding Spark's execution model is required for tuning — knowing why a j
 
 ```mermaid
 graph TD
-    D[Driver<br/>SparkContext<br/>DAG Scheduler<br/>Task Scheduler] --> C[Cluster Manager<br/>YARN · K8s · Standalone · Databricks]
-    C --> E1[Executor 1<br/>JVM process<br/>4 cores · 16GB RAM]
-    C --> E2[Executor 2<br/>JVM process<br/>4 cores · 16GB RAM]
-    C --> E3[Executor 3<br/>JVM process<br/>4 cores · 16GB RAM]
+    D[Driver] --> C[Cluster Manager]
+    C --> E1[Executor 1]
+    C --> E2[Executor 2]
+    C --> E3[Executor 3]
     E1 --> T1[Task · Task · Task · Task]
     E2 --> T2[Task · Task · Task · Task]
     E3 --> T3[Task · Task · Task · Task]
 ```
+
+| Node | Details |
+|------|---------|
+| **Driver** | SparkContext, DAG Scheduler, Task Scheduler |
+| **Cluster Manager** | YARN, K8s, Standalone, Databricks |
+| **Executor 1** | JVM process, 4 cores, 16GB RAM |
+| **Executor 2** | JVM process, 4 cores, 16GB RAM |
+| **Executor 3** | JVM process, 4 cores, 16GB RAM |
 
 ### Driver
 - Runs your Python/Scala/SQL code
@@ -36,8 +44,14 @@ graph TD
 
 ```mermaid
 graph LR
-    S1[Stage 1<br/>read + filter + map] -->|shuffle<br/>groupBy| S2[Stage 2<br/>aggregate] -->|shuffle<br/>join| S3[Stage 3<br/>join + write]
+    S1[Stage 1] -->|shuffle, groupBy| S2[Stage 2] -->|shuffle, join| S3[Stage 3]
 ```
+
+| Node | Details |
+|------|---------|
+| **Stage 1** | read + filter + map |
+| **Stage 2** | aggregate |
+| **Stage 3** | join + write |
 
 ### Memory model
 

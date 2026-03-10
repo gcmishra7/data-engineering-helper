@@ -8,20 +8,29 @@ LLMs have a knowledge cutoff and no access to your private data. Retraining or f
 ```mermaid
 graph LR
     subgraph Indexing Pipeline - offline
-        DOC[Raw Documents<br/>PDFs · Confluence · Slack] --> CHUNK[Chunking]
-        CHUNK --> EMBED[Embedding Model<br/>text-embedding-3-small]
-        EMBED --> VS[Vector Store<br/>Pinecone · Weaviate · pgvector]
+        DOC[Raw Documents] --> CHUNK[Chunking]
+        CHUNK --> EMBED[Embedding Model]
+        EMBED --> VS[Vector Store]
     end
 
     subgraph Query Pipeline - online
         Q[User Question] --> QE[Embed Question]
-        QE --> RET[Retrieve Top-K<br/>similarity search]
+        QE --> RET[Retrieve Top-K]
         VS --> RET
-        RET --> CTX[Build Context<br/>question + chunks]
-        CTX --> LLM[LLM<br/>GPT-4 · Claude · Llama]
+        RET --> CTX[Build Context]
+        CTX --> LLM[LLM]
         LLM --> ANS[Answer]
     end
 ```
+
+| Node | Details |
+|------|---------|
+| **Raw Documents** | PDFs, Confluence, Slack |
+| **Embedding Model** | text-embedding-3-small |
+| **Vector Store** | Pinecone, Weaviate, pgvector |
+| **Retrieve Top-K** | similarity search |
+| **Build Context** | question + chunks |
+| **LLM** | GPT-4, Claude, Llama |
 
 ### The two pipelines
 

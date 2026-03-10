@@ -8,24 +8,37 @@ AI pipelines introduce new governance challenges not covered by traditional data
 ```mermaid
 graph TD
     subgraph Data Governance Layer
-        PII[PII Detection<br/>before embedding / LLM call]
-        ACCESS[Access Control<br/>which users can query which data]
-        LINEAGE[AI Lineage<br/>question → chunks → answer]
-        RETENTION[Data Retention<br/>conversation logs · embeddings]
+        PII[PII Detection]
+        ACCESS[Access Control]
+        LINEAGE[AI Lineage]
+        RETENTION[Data Retention]
     end
 
     subgraph AI Safety Layer
-        GUARD[Guardrails<br/>input + output validation]
-        PROMPT[Prompt Injection Detection<br/>adversarial input filtering]
-        HALLUC[Hallucination Detection<br/>faithfulness scoring]
+        GUARD[Guardrails]
+        PROMPT[Prompt Injection Detection]
+        HALLUC[Hallucination Detection]
     end
 
     subgraph Audit Layer
-        AUDIT_LOG[Audit Log<br/>who queried what when]
-        EXPLAIN[Explainability<br/>which chunks drove the answer]
-        COST_LOG[Cost Attribution<br/>per team · per use case]
+        AUDIT_LOG[Audit Log]
+        EXPLAIN[Explainability]
+        COST_LOG[Cost Attribution]
     end
 ```
+
+| Node | Details |
+|------|---------|
+| **PII Detection** | before embedding / LLM call |
+| **Access Control** | which users can query which data |
+| **AI Lineage** | question → chunks → answer |
+| **Data Retention** | conversation logs, embeddings |
+| **Guardrails** | input + output validation |
+| **Prompt Injection Detection** | adversarial input filtering |
+| **Hallucination Detection** | faithfulness scoring |
+| **Audit Log** | who queried what when |
+| **Explainability** | which chunks drove the answer |
+| **Cost Attribution** | per team, per use case |
 
 ### PII handling in AI pipelines
 

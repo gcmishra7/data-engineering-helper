@@ -7,15 +7,24 @@ When a dashboard shows wrong numbers, how do you find the root cause? When a sou
 
 ```mermaid
 graph LR
-    S1[(PostgreSQL<br/>orders)] -->|Debezium CDC| K[Kafka<br/>orders topic]
-    K -->|Spark Streaming| B[Bronze<br/>raw_orders]
-    B -->|dbt staging| SL[Silver<br/>stg_orders]
-    SL -->|dbt mart| G[Gold<br/>fact_orders]
+    S1[(PostgreSQL)] -->|Debezium CDC| K[Kafka]
+    K -->|Spark Streaming| B[Bronze]
+    B -->|dbt staging| SL[Silver]
+    SL -->|dbt mart| G[Gold]
     G -->|Tableau| D1[Revenue Dashboard]
     G -->|ML Pipeline| M[Churn Model]
-    G -->|dbt| G2[Gold<br/>fact_revenue]
+    G -->|dbt| G2[Gold]
     G2 --> D2[Finance Report]
 ```
+
+| Node | Details |
+|------|---------|
+| **PostgreSQL** | orders |
+| **Kafka** | orders topic |
+| **Bronze** | raw_orders |
+| **Silver** | stg_orders |
+| **Gold** (G) | fact_orders |
+| **Gold** (G2) | fact_revenue |
 
 ### Lineage levels
 

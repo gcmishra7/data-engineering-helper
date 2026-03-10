@@ -6,13 +6,13 @@
 graph TD
     subgraph Azure Subscription
         subgraph ADB[Azure Databricks Workspace]
-            CP[Control Plane<br/>Databricks-managed<br/>UI · APIs · Jobs]
-            DP[Data Plane<br/>Your VNet<br/>Driver + Worker VMs]
+            CP[Control Plane]
+            DP[Data Plane]
         end
-        ADLS[Azure Data Lake Storage Gen2<br/>Bronze · Silver · Gold data]
-        EH[Azure Event Hubs<br/>Kafka-compatible streaming]
-        KV[Azure Key Vault<br/>Secrets management]
-        MI[Managed Identity<br/>No passwords for storage auth]
+        ADLS[Azure Data Lake Storage Gen2]
+        EH[Azure Event Hubs]
+        KV[Azure Key Vault]
+        MI[Managed Identity]
     end
 
     CP <--> DP
@@ -20,6 +20,15 @@ graph TD
     DP -->|Kafka protocol| EH
     DP -->|secret scope| KV
 ```
+
+| Node | Details |
+|------|---------|
+| **Control Plane** | Databricks-managed, UI, APIs, Jobs |
+| **Data Plane** | Your VNet, Driver + Worker VMs |
+| **Azure Data Lake Storage Gen2** | Bronze, Silver, Gold data |
+| **Azure Event Hubs** | Kafka-compatible streaming |
+| **Azure Key Vault** | Secrets management |
+| **Managed Identity** | No passwords for storage auth |
 
 ### Key Azure-specific features
 

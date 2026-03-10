@@ -13,16 +13,28 @@ All three add a metadata layer on top of Parquet files on object storage to prov
 
 ```mermaid
 graph TD
-    P[Parquet Files<br/>on S3/ADLS/GCS] --> D[Delta Lake<br/>_delta_log/ JSON+Parquet]
-    P --> I[Apache Iceberg<br/>metadata/ JSON+Avro]
-    P --> H[Apache Hudi<br/>.hoodie/ avro+parquet]
+    P[Parquet Files] --> D[Delta Lake]
+    P --> I[Apache Iceberg]
+    P --> H[Apache Hudi]
 
-    D --> DB[Databricks<br/>native]
-    D --> SF[Snowflake<br/>via External Iceberg Tables]
-    I --> SF2[Snowflake<br/>native Iceberg]
-    I --> DB2[Databricks<br/>native]
-    H --> EMR[AWS EMR<br/>Spark on Hadoop]
+    D --> DB[Databricks]
+    D --> SF[Snowflake]
+    I --> SF2[Snowflake]
+    I --> DB2[Databricks]
+    H --> EMR[AWS EMR]
 ```
+
+| Node | Details |
+|------|---------|
+| **Parquet Files** | on S3/ADLS/GCS |
+| **Delta Lake** | _delta_log/ JSON+Parquet |
+| **Apache Iceberg** | metadata/ JSON+Avro |
+| **Apache Hudi** | .hoodie/ avro+parquet |
+| **Databricks** | native |
+| **Snowflake** | via External Iceberg Tables |
+| **Snowflake** | native Iceberg |
+| **Databricks** | native |
+| **AWS EMR** | Spark on Hadoop |
 
 ## Feature Comparison
 
