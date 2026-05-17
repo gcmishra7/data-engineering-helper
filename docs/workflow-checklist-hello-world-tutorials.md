@@ -125,8 +125,8 @@ User runs each command locally; agent authors implementation guides + assists.
 
 | # | Slice | Owner | Issue | Status |
 |---|---|---|---|---|
-| S1 | Tutorial 1: write implementation guide | agent | _TBD_ | pending |
-| S2 | Tutorial 1: user executes guide step-by-step | user | _TBD_ | pending |
+| S1 | Tutorial 1: write implementation guide | agent | [#2](https://github.com/gcmishra7/data-engineering-helper/issues/2) | **done** |
+| S2 | Tutorial 1: user executes guide step-by-step | user | _TBD_ | **in progress** |
 | S3 | Tutorial 2: write implementation guide | agent | _TBD_ | pending |
 | S4 | Tutorial 2: user executes guide step-by-step | user | _TBD_ | pending |
 | S5 | Tutorial 3: write implementation guide | agent | _TBD_ | pending |

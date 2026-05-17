@@ -36,3 +36,17 @@ Append-only log of agent-assisted sessions on this repo. Most recent at top.
 **Next**: commit & push doc scaffolding, open parent issue + S1 issue, begin authoring the Tutorial 1 implementation guide.
 
 **State**: gate at step 3.5 (to-issues), starting now.
+
+---
+
+## Session #003 — 2026-05-17
+
+**Actions**:
+- Opened parent issue #1 and S1 issue #2 on GitHub.
+- S1 deliverable written: `12-hands-on-tutorials/01-dbt-hello-world/README.md` — 18-step implementation guide covering Postgres + dbt Compose stack, dbt project skeleton (seed + 2 models + tests), expected output at every step, troubleshooting hints, cleanup.
+
+**Pinned versions used in guide**:
+- `postgres:15-alpine`
+- `dbt-postgres>=1.7,<1.8` (built in a small `python:3.11-slim` Dockerfile)
+
+**Next**: hand off to user (S2) — user executes Steps 0–18 locally, reports output after each major checkpoint. Agent revises the guide if any divergence.
